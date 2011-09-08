@@ -16,7 +16,7 @@
           <h3><a href="#">Volunteer</a></h3>
 
           <ul>
-            <li><% if user_signed_in? %><%= link_to "Sign out #{current_user.email}", destroy_user_session_path, :method => :delete  %><% else %><%= link_to "Sign in", new_user_session_url %><% end %></a></li>
+            <li><% if user_signed_in? %><%= link_to "Sign out #{current_user.email}", destroy_user_session_path, :method => :delete  %><% else %><%= link_to "Sign in", new_user_session_url %><% end %></li>
           </ul>
         </div>
       </div>
