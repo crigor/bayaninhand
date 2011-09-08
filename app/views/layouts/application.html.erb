@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ssfoo</title>
+  <title>Volunteer</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -13,14 +13,10 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <h3><a href="#">FooBar</a></h3>
+          <h3><a href="#">Volunteer</a></h3>
 
           <ul>
-            <li><a href="#masthead">Overview</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#grid-system">Grid</a></li>
-            <li><a href="#layouts">Layouts</a></li>
-            <li><a href=""><% if user_signed_in? %><%= current_user.email %><% else %><%= "Sign in" %><% end %></a></li>
+            <li><% if user_signed_in? %><%= link_to "Sign out #{current_user.email}", destroy_user_session_path, :method => :delete  %><% else %><%= link_to "Sign in", new_user_session_url %><% end %></a></li>
           </ul>
         </div>
       </div>

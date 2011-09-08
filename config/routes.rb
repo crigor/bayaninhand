@@ -1,10 +1,16 @@
 Ssfoo::Application.routes.draw do
+  resources :participations
+
   devise_for :users
 
   #resources :events
 
   resources :organizations do
-    resources :events
+    resources :events do 
+      member do
+        get 'volunteer'
+      end
+    end
   end
 
   # The priority is based upon order of creation:

@@ -1,3 +1,10 @@
-<%= @event.title %>
+<h1><%= @event.title %></h1>
 
-Volunteer
+<p>Click <%= link_to "here", volunteer_organization_event_url(@event.organization, @event) %> to volunteer.</p>
+
+People who volunteered (<%= @event.volunteers.size %>)
+<ul>
+  <% @event.volunteers.each do |user| %>
+    <li><%= user.email%></li>
+  <% end %>
+</ul>
