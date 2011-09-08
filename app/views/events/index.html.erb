@@ -1,0 +1,4 @@
+<%= @organization.name %>
+<% @organization.events.each do |event| %>
+  <li><%= link_to event.title, organization_event_url(@organization, event) %></li>
+<% end %>

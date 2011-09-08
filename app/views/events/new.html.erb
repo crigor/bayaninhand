@@ -1,0 +1,23 @@
+<%= form_for [@organization, @event] do |f| %>
+  <fieldset>
+    <legend>Create new event</legend>
+  <div class="clearfix">
+  <%= f.label "Title" %>
+  <div class="input">
+    <%= f.text_field :title, :class => "xlarge" %>
+</div>
+  </div> <!-- /clearfix -->
+  <div class="clearfix">
+  <%= f.label "Description" %>
+  <div class="input">
+    <%= f.text_area :description, :rows => 5, :class => "xxlarge" %>
+  </div>
+  </div> <!-- /clearfix -->
+  <div class="actions">
+    <button type="submit" class="btn primary">Create event</button>&nbsp;<button type="reset" class="btn">Cancel</button>
+  </div>
+
+  <%# f.submit %>
+  </fieldset>
+<% end %>
+
