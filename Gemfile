@@ -9,6 +9,7 @@ gem 'mysql2', '0.3.7'
 gem 'inherited_resources', '1.2.2'
 gem 'devise'
 gem 'cancan', '1.6.5'
+gem 'unicorn'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
