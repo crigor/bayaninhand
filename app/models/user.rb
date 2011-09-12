@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def can_manage?(organization)
     self.owned_organizations.include?(organization)
   end
+
+  def volunteered?(event)
+    !Participation.where("event_id = ? AND user_id = ?", event.id, self.id).empty?
+  end
 end

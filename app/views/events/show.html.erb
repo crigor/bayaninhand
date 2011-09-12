@@ -1,6 +1,10 @@
 <h1><%= @event.title %></h1>
 
+<% if user_signed_in? && current_user.volunteered?(@event) %>
+<p>You volunteered for this event.</p>
+<% else %>
 <p>Click <%= link_to "here", volunteer_organization_event_url(@event.organization, @event) %> to volunteer.</p>
+<% end %>
 
 People who volunteered (<%= @event.volunteers.size %>)
 <ul>
