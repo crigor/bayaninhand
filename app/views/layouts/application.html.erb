@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Volunteer</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.0.min.css">
-</head>
-<body>
+  <head>
+    <title>Volunteer</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
+  </head>
+  <body>
     <!-- Topbar
     ================================================== -->
     <div class="topbar">
@@ -16,22 +16,31 @@
           <h3><a href="#">Volunteer</a></h3>
 
           <ul>
-            <li><% if user_signed_in? %><%= link_to "Sign out #{current_user.email}", destroy_user_session_path, :method => :delete  %><% else %><%= link_to "Sign in", new_user_session_url %><% end %></li>
+            <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle"><%= current_user.email %></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              </ul>
+            </li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_url %></li>
+            <% end %>
           </ul>
         </div>
       </div>
     </div>
 
-  <div class="container" style="margin-top: 40px">
+    <div class="container" style="margin-top: 40px">
       <!--div class="alert-message error">
-        <a class="close" href="#">&times;</a>
-        <p><strong>Oh snap!</strong> Change this and that and try again.</p>
+      <a class="close" href="#">&times;</a>
+      <p><strong>Oh snap!</strong> Change this and that and try again.</p>
       </div-->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-  <%= yield %>
-  </div>
+      <%= yield %>
+    </div>
 
-</body>
+  </body>
 </html>

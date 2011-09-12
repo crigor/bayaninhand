@@ -10,11 +10,16 @@ class User < ActiveRecord::Base
   has_many :organizations, :through => :organization_roles
   has_many :owned_organizations, :source => :organization, :through => :organization_roles, :conditions => ['role = ?', 'owner']
   has_many :organization_roles
+  has_many :administered_organizations, :source => :organization, :through => :organization_roles, :conditions => ["organization_roles.role in ('owner', 'admin')"]
   def can_manage?(organization)
     self.owned_organizations.include?(organization)
   end
 
   def volunteered?(event)
     !Participation.where("event_id = ? AND user_id = ?", event.id, self.id).empty?
+  end
+
+  def organization_admin?(organization)
+    self.administered_organizations.include?(organization)
   end
 end
