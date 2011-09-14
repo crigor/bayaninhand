@@ -20,6 +20,9 @@
               <li class="dropdown">
               <a href="#" class="dropdown-toggle"><%= current_user.email %></a>
               <ul class="dropdown-menu">
+                <% current_user.administered_organizations.each do |organization| %>
+                  <li><%= link_to organization.name, admin_organization_url(organization) %></li>
+                <% end %>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
               </ul>
               </li>

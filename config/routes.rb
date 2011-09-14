@@ -6,7 +6,10 @@ Ssfoo::Application.routes.draw do
   #resources :events
 
   resources :organizations do
-    resources :events do 
+    member do
+      get 'admin'
+    end
+    resources :events do
       member do
         get 'volunteer'
       end
