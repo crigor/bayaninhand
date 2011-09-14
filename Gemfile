@@ -28,3 +28,8 @@ gem 'jquery-rails'
 group :development do
   gem 'awesome_print'
 end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+end
