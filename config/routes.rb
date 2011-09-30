@@ -1,4 +1,4 @@
-Ssfoo::Application.routes.draw do
+Bayaninhand::Application.routes.draw do
   resources :participations
 
   devise_for :users
