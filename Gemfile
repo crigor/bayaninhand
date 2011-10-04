@@ -10,6 +10,8 @@ gem 'inherited_resources', '1.2.2'
 gem 'devise'
 gem 'cancan', '1.6.5'
 gem 'unicorn'
+gem 'haml'
+gem 'haml-rails'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -30,6 +32,6 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem "cucumber-rails", "~> 1.1.1"
   gem 'database_cleaner'
 end
