@@ -1,5 +1,4 @@
-## Setting up
----
+# Setting up
 
 #### 1. Fork the repo
 
@@ -27,8 +26,7 @@ Please use Ruby 1.9.2.
 # Start coding!
 
 
-## Contributing
----
+# Contributing
 
 #### 1. Clone the repo using the steps above
 
