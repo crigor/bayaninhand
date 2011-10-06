@@ -23,4 +23,4 @@ Please use atomic commits and make the commit messages short but descriptive. "F
 
 #### 6. Create a pull request
 
-Go to https://github.com/crigor/bayaninhand/ and click "Pull request" in the upper right.
+Go to https://github.com/crigor/bayaninhand/ and click "Pull request" in the upper right. Add some comments and press "Send pull request".
