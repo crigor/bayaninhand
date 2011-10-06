@@ -1,4 +1,4 @@
-# Setting up
+### Setting up
 
 #### 1. Fork the repo
 
@@ -23,10 +23,10 @@ Please use Ruby 1.9.2.
 
 	$ bundle exec cucumber
 
-# Start coding!
+### Start coding!
+---
 
-
-# Contributing
+### Contributing
 
 #### 1. Clone the repo using the steps above
 
