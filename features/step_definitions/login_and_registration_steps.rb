@@ -1,3 +1,3 @@
 Given /^I am an unauthenticated user$/ do
-  assert @user == nil
+  visit('/users/sign_out')
 end
