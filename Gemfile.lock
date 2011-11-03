@@ -30,6 +30,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     arel (2.2.1)
     awesome_print (0.4.0)
     bcrypt-ruby (3.0.0)
@@ -70,6 +71,8 @@ GEM
     erubis (2.7.0)
     execjs (1.2.4)
       multi_json (~> 1.0)
+    factory_girl (2.2.0)
+      activesupport
     ffi (1.0.9)
     gherkin (2.5.1)
       json (>= 1.4.6)
@@ -91,6 +94,8 @@ GEM
     json (1.6.1)
     json_pure (1.6.1)
     kgio (2.6.0)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -173,10 +178,12 @@ DEPENDENCIES
   cucumber-rails (~> 1.1.1)
   database_cleaner
   devise
+  factory_girl
   haml
   haml-rails
   inherited_resources (= 1.2.2)
   jquery-rails
+  launchy
   mysql2 (= 0.3.7)
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)
