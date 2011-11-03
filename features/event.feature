@@ -13,3 +13,11 @@ Feature: Event
     Given "me@crigor.com" is logged in
     And I am on the new event page for "DSWD"
     Then show me the page
+
+  @allow-rescue
+  Scenario: Regular user tries to create an event
+    Given a user exists with an email of "me@crigor.com"
+    And an organization exists with a name of "DSWD"
+    Given "me@crigor.com" is logged in
+    And I am on the new event page for "DSWD"
+    Then I should not get a response with status 200
