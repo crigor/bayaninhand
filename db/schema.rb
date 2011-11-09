@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031101156) do
+ActiveRecord::Schema.define(:version => 20111104145703) do
 
   create_table "event_participations", :force => true do |t|
     t.integer  "user_id"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(:version => 20111031101156) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "date"
+    t.text     "address"
+    t.string   "map"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.time     "start_time"
+    t.time     "end_time"
   end
 
   create_table "organization_roles", :force => true do |t|
