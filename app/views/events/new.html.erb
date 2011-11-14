@@ -34,6 +34,7 @@
     </div>
   </div>
   </div><!-- /clearfix -->
+  <div class="clearfix">
   <%= f.label "End date" %>
   <div class="input">
     <div class="inline-inputs">
@@ -42,7 +43,18 @@
     </div>
   </div>
   </div><!-- /clearfix -->
-
+  <div class="clearfix">
+  <%= f.label "Categories" %>
+  <div class="input">
+    <%= f.collection_select :category_ids, Category.all, :id, :name, {}, {:multiple => true, :class => "xlarge", :size => 5} %>
+  </div>
+  </div> <!-- /clearfix -->
+  <div class="clearfix">
+  <%= f.label "Event Types" %>
+  <div class="input">
+    <%= f.collection_select :event_type_ids, EventType.all, :id, :name, {}, {:multiple => true, :class => "xlarge", :size => 5} %>
+  </div>
+  </div> <!-- /clearfix -->
 
   <div class="actions">
     <button type="submit" class="btn primary">Create event</button>&nbsp;<%= link_to "Cancel", admin_organization_url(@organization), :class => "btn" %>
