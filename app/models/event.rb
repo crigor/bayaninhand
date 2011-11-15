@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :organization
-  validates_presence_of :title
+  validates_presence_of :title, :description, :organization, :start_date
   has_many :participations
   has_many :volunteers, :source => :user, :through => :participations
   scope :upcoming, lambda { where("date >= ?", Date.today) }

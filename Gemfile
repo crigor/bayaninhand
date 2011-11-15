@@ -12,6 +12,7 @@ gem 'cancan', '1.6.5'
 gem 'unicorn'
 gem 'haml'
 gem 'haml-rails'
+gem 'dynamic_form'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
