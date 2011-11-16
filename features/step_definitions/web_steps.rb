@@ -252,3 +252,12 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then /^I should not get a response with status (\d+)$/ do |status|
+  page.driver.status_code.should_not == status
+end
+
+Then /^I should get a response with status (\d+)$/ do |status|
+  page.driver.status_code.should == status
+end
+
