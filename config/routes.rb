@@ -1,4 +1,8 @@
 Bayaninhand::Application.routes.draw do
+  resources :event_types
+
+  resources :categories
+
   resources :participations
 
   devise_for :users

@@ -12,6 +12,7 @@ gem 'cancan', '1.6.5'
 gem 'unicorn'
 gem 'haml'
 gem 'haml-rails'
+gem 'dynamic_form'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -33,6 +34,8 @@ end
 
 group :test do
   gem "cucumber-rails", "~> 1.1.1"
-  gem 'database_cleaner'
+  gem "database_cleaner"
+  gem "factory_girl"
+  gem "launchy"
   gem 'email_spec'
 end
