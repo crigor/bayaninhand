@@ -1,5 +1,4 @@
-<%= form_for @organization do |f| %>
-  <%= f.label "Name" %>
-  <%= f.text_field :name %>
+<%= semantic_form_for @organization do |f| %>
+  <%= f.inputs %>
   <%= f.submit %>
 <% end %>
