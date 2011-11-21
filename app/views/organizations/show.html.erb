@@ -1,1 +1,7 @@
 <%= @organization.name %>
+<p><%= @organization.description %></p>
+
+<h2>Upcoming Events</h2>
+<% @upcoming_events.each do |event| %>
+  <li><%= link_to event.title, organization_event_url(@organization, event) %></li>
+<% end %>
