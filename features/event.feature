@@ -22,11 +22,10 @@ Feature: Event
     And I am on the new event page for "DSWD"
     Then I should not get a response with status 200
 
-  @wip
   Scenario: User volunteers for an event
     Given a user exists with an email of "me@crigor.com"
     And "me@crigor.com" is logged in
     Given an event exists with a title of "Event"
     And I am on the event page of "Event"
     And I follow "here"
-    Then show me the page
+    Then "me@crigor.com" should be on the list of volunteers for "Event"
