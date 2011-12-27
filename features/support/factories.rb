@@ -13,4 +13,10 @@ Factory.define :organization_role do |role|
   role.organization
 end
 
+Factory.define :event do |e|
+  e.description "Description"
+  e.association :organization
+  e.start_date { Time.now + 1.week }
+end
+
 require "factory_girl/step_definitions"
