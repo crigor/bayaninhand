@@ -79,8 +79,8 @@
       <div class="opp-feat-image"><img src="/assets/img-feed-child.jpg" /></div>
       <div class="opp-feat-title"><h2><%= event.title %></h2></div>
       <img src="/assets/feat-line.gif" />
-      <div class="opp-feat-type">Children &amp; Youth</div>
-      <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+      <div class="opp-feat-type"><%= event.category.name %></div>
+      <div class="opp-feat-date"><%= date_text(event) %></div>
       <div class="opp-feat-number">28 Volunteers needed</div>
       <%= link_to(image_tag("btn-learnmore.gif", :border => "none"), organization_event_url(event.organization, event)) %>
     </div>
