@@ -6,7 +6,7 @@
     <p>iVolunteer aims to gather volunteers from all over the Philippines to
     helpout others who are in need. Volunteers can choose the activities they
     want to participate in.</p>
-    <a href="register.php"><img src="/assets/btn-register.gif" border="none" /></a>
+    <a href="<%= new_user_registration_path %>"><img src="/assets/btn-register.gif" border="none" /></a>
   </div>
 </div>
 
@@ -188,7 +188,3 @@
   <b>Computer Literacy Advcates for the Youth</b><br />
   CLAY aims to spread computer literacy among the less-privileged youth by holding computer classes... <span class="readmore"><a href="">Read More ></a></span>
 </div>
-<h2>Upcoming events</h2>
-<% @events.each do |event| %>
-  <li><%= link_to event.title, organization_event_url(event.organization, event) %></li>
-<% end %>
