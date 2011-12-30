@@ -33,17 +33,16 @@
           </tr>
           <tr>
             <td colspan="2">
-              <form>
-                <input type="text" name="username" id="username" align="top" />
-                <input type="password" name="password" id="password" align="top" />
-                <!--<input type="button" value="Login" onclick="verifyFields();">-->
+              <%= form_for("user", :url => user_session_path) do |f| %>
+                <%= f.text_field :email, :align => "top", :size => nil %>
+                <%= f.password_field :password, :align => "top", :size => nil %>
                 <input type="image" src="/assets/btn-login.gif" border="0" alt="Login" align="top" />
-              </form>
+              <% end %>
             </td>
           </tr>
           <tr>
             <td> </td>
-            <td><a href="forgot-password.html"><small>Forgot Your Password?</small></a></td>
+            <td><a href="<%= new_password_path("user") %>"><small>Forgot Your Password?</small></a></td>
           </tr>
         </table>
       </div>
@@ -53,7 +52,7 @@
 
   <div id="menu">
     <ul id="menu-ul">
-      <li class="selected"><a href="index.html">Home</a></li>
+      <li class="selected"><a href="<%= root_path %>">Home</a></li>
       <li><a href="opportunities.html">Volunteer Opportunities</a></li>
       <li><a href="calendar.html">Calendar</a></li>
       <li><a href="organizations.html">Organizations</a></li>
