@@ -14,6 +14,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'dynamic_form'
 gem 'formtastic'
+gem 'paperclip'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

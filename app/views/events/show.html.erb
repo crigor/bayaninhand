@@ -1,5 +1,7 @@
 <h1><%= @event.title %></h1>
 
+<%= image_tag @event.image.url(:medium) %>
+
 <% if user_signed_in? && current_user.volunteered?(@event) %>
 <p>You volunteered for this event.</p>
 <% else %>
