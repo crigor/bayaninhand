@@ -7,3 +7,5 @@ config/database.yml
 **/*.swp
 .rvmrc
 *.swp
+public/system
+.DS_Store

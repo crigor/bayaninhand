@@ -6,4 +6,5 @@ class Event < ActiveRecord::Base
   scope :upcoming, lambda { where("start_date >= ?", Date.today) }
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :event_types
+  has_attached_file :image, :styles => { :medium => "250x200>", :small => "220x140>" }
 end
