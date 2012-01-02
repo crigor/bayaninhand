@@ -76,7 +76,7 @@
 
     <% @events.each do |event| %>
     <div class="opp-featured">
-      <div class="opp-feat-image"><img src="/assets/img-feed-child.jpg" /></div>
+      <div class="opp-feat-image"><%= image_tag event.image.url(:small) %></div>
       <div class="opp-feat-title"><h2><%= event.title %></h2></div>
       <img src="/assets/feat-line.gif" />
       <div class="opp-feat-type"><%= event.category.name %></div>
