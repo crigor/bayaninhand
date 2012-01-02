@@ -79,7 +79,7 @@
       <div class="opp-feat-image"><%= image_tag event.image.url(:small) %></div>
       <div class="opp-feat-title"><h2><%= event.title %></h2></div>
       <img src="/assets/feat-line.gif" />
-      <div class="opp-feat-type"><%= event.category.name %></div>
+      <div class="opp-feat-type"><%= event.category.name if event.category %></div>
       <div class="opp-feat-date"><%= date_text(event) %></div>
       <div class="opp-feat-number">28 Volunteers needed</div>
       <%= link_to(image_tag("btn-learnmore.gif", :border => "none"), organization_event_url(event.organization, event)) %>
