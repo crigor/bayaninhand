@@ -27,6 +27,6 @@ Feature: Event
     And "me@crigor.com" is logged in
     Given an event exists with a title of "Event"
     And I am on the event page of "Event"
-    And I follow "here"
+    And I click the volunteer button
     Then "me@crigor.com" should be on the list of volunteers for "Event"
     And I should be on the event page of "Event"
