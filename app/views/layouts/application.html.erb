@@ -34,8 +34,8 @@
           <tr>
             <td colspan="2">
               <%= form_for("user", :url => user_session_path) do |f| %>
-                <%= f.text_field :email, :align => "top", :size => nil %>
-                <%= f.password_field :password, :align => "top", :size => nil %>
+                <%= f.text_field :email, :align => "top", :size => nil, :id => "user_email_top" %>
+                <%= f.password_field :password, :align => "top", :size => nil, :id => "user_password_top" %>
                 <input type="image" src="/assets/btn-login.gif" border="0" alt="Login" align="top" />
               <% end %>
             </td>
@@ -62,6 +62,7 @@
   </div>
 
   <div id="content">
+    <p class="notice"><%= notice %></p>
     <%= yield %>
     <div class="clear"></div>
 
