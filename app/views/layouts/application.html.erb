@@ -1,49 +1,80 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Volunteer</title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tag %>
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-  </head>
-  <body>
-    <!-- Topbar
-    ================================================== -->
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <h3><a href="#">Volunteer</a></h3>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iVolunteer Philippines</title>
+<%= stylesheet_link_tag "application" %>
+<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'/>
+</head>
 
-          <ul>
-            <% if user_signed_in? %>
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle"><%= current_user.email %></a>
-              <ul class="dropdown-menu">
-                <% current_user.administered_organizations.each do |organization| %>
-                  <li><%= link_to organization.name, admin_organization_url(organization) %></li>
-                <% end %>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-              </ul>
-              </li>
-            <% else %>
-              <li><%= link_to "Sign in", new_user_session_url %></li>
-            <% end %>
-          </ul>
-        </div>
+<body>
+  <div id="topmost">
+    <div id="search">
+    <form method="post" id="searchform" action="volunteersearch.php" style="margin-bottom:0px">
+      <input type="text" name="searchtext" id="searchtext" value="" size="25" />
+      <input type="button" name="btnSearch" onclick="submitSearch()" value="Search" />
+    </form>
+    </div>
+  </div>
+
+  <div id="header">
+    <div id="header-content">
+      <div id="logo">
+        <img src="/assets/ivolunteer-logo.gif" />
       </div>
+      <div id="member-area">
+        <table>
+          <tr>
+            <td colspan="2"><h2 style="color:#324452;">Member's Corner</h2></td>
+          </tr>
+          <tr>
+            <td width="150">Username:</td>
+            <td>Password:</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <%= form_for("user", :url => user_session_path) do |f| %>
+                <%= f.text_field :email, :align => "top", :size => nil %>
+                <%= f.password_field :password, :align => "top", :size => nil %>
+                <input type="image" src="/assets/btn-login.gif" border="0" alt="Login" align="top" />
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td><a href="<%= new_password_path("user") %>"><small>Forgot Your Password?</small></a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="clear"></div>
     </div>
+  </div>
 
-    <div class="container" style="margin-top: 40px">
-      <!--div class="alert-message error">
-      <a class="close" href="#">&times;</a>
-      <p><strong>Oh snap!</strong> Change this and that and try again.</p>
-      </div-->
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+  <div id="menu">
+    <ul id="menu-ul">
+      <li class="selected"><a href="<%= root_path %>">Home</a></li>
+      <li><a href="opportunities.html">Volunteer Opportunities</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="organizations.html">Organizations</a></li>
+      <li><a href="about-us.html">About iVolunteer Philippines</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </div>
 
-      <%= yield %>
+  <div id="content">
+    <%= yield %>
+    <div class="clear"></div>
+
+  </div><!--content-->
+
+  <div id="footer">
+    <div class="center-text">
+      Home  |  Volunteer Opportunities  |  Calendar  |  Organizations  |  About Us  |  Contact Us
+      <br /><br />
+      Copyright &copy;2012 by iVolunteer.net.ph. All Rights Reserved.
     </div>
+  </div>
 
-  </body>
+</body>
 </html>
+
