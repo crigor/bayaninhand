@@ -11,7 +11,7 @@ Feature: Login and registration
     And I fill in "Password" with "mypassword"
     And I fill in "Password confirmation" with "mypassword"
     And I press "Sign up"
-    Then I should be on the home page
+    Then I should be on the dashboard page
     And I should see "Welcome! You have signed up successfully."
 
   @email
