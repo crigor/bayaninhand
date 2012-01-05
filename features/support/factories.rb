@@ -17,6 +17,7 @@ Factory.define :event do |e|
   e.description "Description"
   e.association :organization
   e.start_date { Time.now + 1.week }
+  e.end_date { Time.now + 2.weeks }
 end
 
 require "factory_girl/step_definitions"

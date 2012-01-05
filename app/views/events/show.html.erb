@@ -55,7 +55,7 @@
       <% if user_signed_in? && current_user.volunteered?(@event) %>
       <img src="/assets/btn-join.gif" border="none" />
       <% else %>
-      <%= link_to(image_tag("btn-join.gif"), volunteer_organization_event_url(@event.organization, @event)) %>
+      <%= link_to(image_tag("btn-join.gif"), volunteer_organization_event_url(@event.organization, @event), :rel => "volunteer-event") %>
       <% end %>
 
     </center>
