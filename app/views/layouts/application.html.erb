@@ -27,6 +27,12 @@
           <tr>
             <td colspan="2"><h2 style="color:#324452;">Member's Corner</h2></td>
           </tr>
+          <% if user_signed_in? %>
+          <tr>
+            <td>You are signed in as <%= link_to current_user.email, dashboard_path %></td>
+            <td><%= link_to "Sign out", destroy_user_session_path %></td>
+          </tr>
+          <% else %>
           <tr>
             <td width="150">Username:</td>
             <td>Password:</td>
@@ -44,6 +50,7 @@
             <td> </td>
             <td><a href="<%= new_password_path("user") %>"><small>Forgot Your Password?</small></a></td>
           </tr>
+          <% end %>
         </table>
       </div>
       <div class="clear"></div>
