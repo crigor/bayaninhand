@@ -16,6 +16,7 @@ gem 'dynamic_form'
 gem 'formtastic'
 gem 'carmen'
 gem 'paperclip'
+gem 'tinymce-rails'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
