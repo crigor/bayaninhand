@@ -36,6 +36,6 @@ class User < ActiveRecord::Base
   protected
   
     def clear_region
-      self.region = "" if self.country != "Philippines"
+      self.region = nil if self.country != "Philippines"
     end
 end
