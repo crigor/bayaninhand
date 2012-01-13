@@ -14,6 +14,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'dynamic_form'
 gem 'formtastic'
+gem 'carmen'
 gem 'paperclip'
 
 group :assets do
