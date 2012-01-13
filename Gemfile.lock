@@ -43,6 +43,7 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    carmen (0.2.8)
     childprocess (0.2.2)
       ffi (~> 1.0.6)
     coffee-rails (3.1.0)
@@ -190,6 +191,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   cancan (= 1.6.5)
+  carmen
   coffee-rails (~> 3.1.0)
   cucumber-rails (~> 1.1.1)
   database_cleaner

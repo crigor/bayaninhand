@@ -21,3 +21,11 @@ $(document).ready(function(){
     return false;
   });
 });
+
+function toggle_region() {
+  if($('#user_country').val() == "Philippines") {
+    $('#region_div').show();
+  } else {
+    $('#region_div').hide();
+  }
+}

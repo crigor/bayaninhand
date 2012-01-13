@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   has_many :owned_organizations, :source => :organization, :through => :organization_roles, :conditions => ['role = ?', 'owner']
   has_many :organization_roles
   has_many :administered_organizations, :source => :organization, :through => :organization_roles, :conditions => ["organization_roles.role in ('owner', 'admin')"]
+  
+  before_save :clear_region
+  
   def can_manage?(organization)
     self.owned_organizations.include?(organization)
   end
@@ -22,4 +25,10 @@ class User < ActiveRecord::Base
   def organization_admin?(organization)
     self.administered_organizations.include?(organization)
   end
+  
+  protected
+  
+    def clear_region
+      self.region = "" if self.country != "Philippines"
+    end
 end
