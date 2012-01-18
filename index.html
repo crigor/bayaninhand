@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iVolunteer Philippines</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="topmost">
+    <div id="search">
+    <form method="post" id="searchform" action="volunteersearch.php" style="margin-bottom:0px">
+      <input type="text" name="searchtext" id="searchtext" value="" size="25" />
+      <input type="button" name="btnSearch" onclick="submitSearch()" value="Search" />
+    </form>
+    </div>
+  </div>
+  
+  <div id="header">
+    <div id="header-content">
+      <div id="logo">
+        <img src="images/ivolunteer-logo.gif" />
+      </div>
+      <div id="member-area">
+        <table>
+          <tr>
+            <td colspan="2"><h2 style="color:#324452;">Member's Corner</h2></td>
+          </tr>
+          <tr>
+            <td width="150">Username:</td>
+            <td>Password:</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <form>
+                <input type="text" name="username" id="username" align="top" />
+                <input type="password" name="password" id="password" align="top" />
+                <!--<input type="button" value="Login" onclick="verifyFields();">-->
+                <input type="image" src="images/btn-login.gif" border="0" alt="Login" align="top" />
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td><a href="forgot-password.html"><small>Forgot Your Password?</small></a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  
+  <div id="menu">
+    <ul id="menu-ul">
+      <li class="selected"><a href="index.html">Home</a></li>
+      <li><a href="opportunities.html">Volunteer Opportunities</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="organizations.html">Organizations</a></li>
+      <li><a href="about-us.html">About iVolunteer Philippines</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <div id="main-image">
+      <div id="main-image-text">
+        <h1 style="margin:0px;">Inpire Others.</h1>
+        <h1 style="margin:0px;">Change Lives.</h1>
+        <h1 style="margin:0px;">Be a Volunteer today.</h1>
+        <p>iVolunteer aims to gather volunteers from all over the Philippines to 
+        helpout others who are in need. Volunteers can choose the activities they 
+        want to participate in.</p>
+        <a href="register.php"><img src="images/btn-register.gif" border="none" /></a>        
+      </div>
+    </div>
+    
+    <div id="opportunities">
+      <table>
+        <tr>
+          <td width="480" align="left"><h1>Volunteer Opportunities</h1></td>
+          <td width="480" align="right"><h2><span class="orange"><a href="opportunities.html">See All Opportunities ></a></span></h2></td>
+        </tr>
+      </table>
+      <hr />
+      <div id="opp-filter">
+        <table>
+          <tr>
+            <td valign="top" width="220">
+              <b>Find Projects by Location</b><br />
+              <select style="width:180px;">
+                <option value="Metro Manila">Metro Manila</option>
+                <option value="Marikina">Marikina</option>
+              </select>
+            </td>
+            <td valign="top" width="220">
+              <b>Find Projects by Category</b><br />
+              <select style="width:200px;">
+                <option value="Agriculture">Agriculture</option>
+                <option value="Animals">Animals</option>
+                <option value="Arts">Arts &amp; Culture</option>
+                <option value="Children">Children &amp; Youth</option>
+                <option value="Community">Community</option>
+                <option value="Computers">Computers &amp; Technology</option>
+                <option value="Disabled">Disabled</option>
+                <option value="Disaster">Disaster Relief</option>
+                <option value="Education">Education</option>
+                <option value="Employment">Employment</option>
+                <option value="Environment">Environment</option>
+                <option value="Gender">Gender</option>
+                <option value="Health">Health</option>
+                <option value="Housing">Housing</option>
+                <option value="Human">Human Rights</option>
+                <option value="Hunger">Hunger</option>
+                <option value="Justice">Justice &amp; Legal</option>
+                <option value="Peace">Peace &amp; Conflict Resolution</option>
+                <option value="Politics">Politics</option>
+                <option value="Poverty">Poverty</option>
+                <option value="Seniors">Seniors</option>
+                <option value="Sports">Sports &amp; Recreation</option>                
+              </select>           
+            </td>
+            <td valign="top">
+              <b>Popular Categories</b><br />
+              Social (8)     Environmental (3)     Educational (1)     Health (12)     Housing (3)
+            </td>
+          </tr>
+        </table>        
+      </div>
+      
+      <div id="opp-items">
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-help-ondoy.jpg" /></div>
+          <div class="opp-feat-title"><h2>Help Ondoy Victims Today!</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - July 31, 2011</div>
+          <div class="opp-feat-number">21 Volunteers needed</div>
+          <a href="event-1.html"><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
+          <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+          <div class="opp-feat-number">28 Volunteers needed</div>
+          <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
+          <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+          <div class="opp-feat-number">28 Volunteers needed</div>
+          <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
+          <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+          <div class="opp-feat-number">28 Volunteers needed</div>
+          <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
+          <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+          <div class="opp-feat-number">28 Volunteers needed</div>
+          <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
+          <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+          <div class="opp-feat-number">28 Volunteers needed</div>
+          <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
+          <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+          <div class="opp-feat-number">28 Volunteers needed</div>
+          <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+        <div class="opp-featured">
+          <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
+          <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
+          <img src="images/feat-line.gif" />
+          <div class="opp-feat-type">Children &amp; Youth</div>
+          <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
+          <div class="opp-feat-number">28 Volunteers needed</div>
+          <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
+        </div>
+        
+      </div><!--opp-items-->      
+    </div><!--opportunities-->
+    
+    <div id="news">
+      <table cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="480" align="left"><h1>Volunteers in Action</h1></td>
+          <td width="480" align="right"><h2><span class="orange"><a href="opportunities.html">See All News ></a></span></h2></td>
+        </tr>
+      </table>
+      <hr />
+      <div class="news-list">
+        <table>
+          <tr>
+            <td valign="top" width="100"><img src="images/news-img-1.jpg" /></td>
+            <td valign="top"><b>Orphanage Visit</b><br /><br />
+            Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20 
+            has been an astounding success. A total of 120 ate's and kuya's signed up for the event, 
+            and each one brought their own energy and... <span class="readmore"><a href="">Read More ></a></span>
+            <br /><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" width="100"><img src="images/news-img-1.jpg" /></td>
+            <td valign="top"><b>Orphanage Visit</b><br /><br />
+            Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20 
+            has been an astounding success. A total of 120 ate's and kuya's signed up for the event, 
+            and each one brought their own energy and... <span class="readmore"><a href="">Read More ></a></span>
+            </td>
+          </tr>
+        </table>
+      </div>    
+    </div>
+    
+    <div id="featured-org">
+      <h1>Featured Organization</h1>
+      <hr />
+      <center><img src="images/featured-org.jpg" /></center><br />
+      <b>Computer Literacy Advcates for the Youth</b><br />
+      CLAY aims to spread computer literacy among the less-privileged youth by holding computer classes... <span class="readmore"><a href="">Read More ></a></span>
+    </div>
+    
+    <div class="clear"></div>
+        
+  </div><!--content-->
+  
+  <div id="footer">
+    <div class="center-text">
+      Home  |  Volunteer Opportunities  |  Calendar  |  Organizations  |  About Us  |  Contact Us
+      <br /><br />
+      Copyright &copy;2012 by iVolunteer.net.ph. All Rights Reserved.
+    </div>
+  </div>
+
+</body>
+</html>
