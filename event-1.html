@@ -23,30 +23,24 @@
         <img src="images/ivolunteer-logo.gif" />
       </div>
       <div id="member-area">
-        <table>
-          <tr>
-            <td colspan="2"><h2 style="color:#324452;">Member's Corner</h2></td>
-          </tr>
-          <tr>
-            <td width="150">Username:</td>
-            <td>Password:</td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <form>
-                <input type="text" name="username" id="username" align="top" />
-                <input type="password" name="password" id="password" align="top" />
-                <!--<input type="button" value="Login" onclick="verifyFields();">-->
-                <input type="image" src="images/btn-login.gif" border="0" alt="Login" align="top" />
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td><a href="forgot-password.html"><small>Forgot Your Password?</small></a></td>
-          </tr>
-        </table>
-      </div>
+        <form>
+          <h2>Member's Corner</h2>
+          
+          <span class="toleft">
+            Username:<br /><input type="text" name="username" id="username" align="top" />
+          </span>
+          
+          <span class="toleft blue">
+            Password:<br /><input type="password" name="password" id="password" align="top" /><br />
+            <a href="forgot-password.html"><small>Forgot Password?</small></a> | 
+            <a href="register.html"><small>Register</small></a>
+          </span>
+          
+          <span class="toleft blue">    
+            <br /><input type="image" src="images/btn-login.gif" border="0" alt="Login" align="top" />
+          </span>
+        </form>               
+      </div><!--member-area-->
       <div class="clear"></div>
     </div>
   </div>
@@ -180,24 +174,27 @@
     <div id="related-events">
       <h1>Related Events</h1>
       <hr />
-      <div class="opp-featured">
-        <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
-        <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
-        <img src="images/feat-line.gif" />
-        <div class="opp-feat-type">Children &amp; Youth</div>
-        <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
-        <div class="opp-feat-number">28 Volunteers needed</div>
-        <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
-      </div>
-      <div class="opp-featured">
-        <div class="opp-feat-image"><img src="images/img-feed-child.jpg" /></div>
-        <div class="opp-feat-title"><h2>Feed a Child Project</h2></div>
-        <img src="images/feat-line.gif" />
-        <div class="opp-feat-type">Children &amp; Youth</div>
-        <div class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</div>
-        <div class="opp-feat-number">28 Volunteers needed</div>
-        <a href=""><img src="images/btn-learnmore.gif" border="none" /></a>
-       </div>
+      <ul id="opp-items">
+        <li class="opp-featured">
+          <img class="opp-feat-image" src="images/img-feed-child.jpg" />
+          <h2 class="opp-feat-title">Feed a Child Project</h2>
+          <img src="images/feat-line.gif" />
+          <span class="opp-feat-type">Children &amp; Youth</span>
+          <p class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</p>
+          <p class="opp-feat-number">18 Volunteers needed</p>
+          <a href="event-1.html"><img src="images/btn-learnmore.gif" border="none" /></a>
+        </li>
+        <li class="opp-featured">
+          <img class="opp-feat-image" src="images/img-feed-child.jpg" />
+          <h2 class="opp-feat-title">Feed a Child Project</h2>
+          <img src="images/feat-line.gif" />
+          <span class="opp-feat-type">Children &amp; Youth</span>
+          <p class="opp-feat-date">June 1, 2011 - Aug. 31, 2011</p>
+          <p class="opp-feat-number">18 Volunteers needed</p>
+          <a href="event-1.html"><img src="images/btn-learnmore.gif" border="none" /></a>
+        </li>
+        <div class="clear"></div>
+      </ul>
     </div>
     
     <div class="clear"></div>

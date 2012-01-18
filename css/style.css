@@ -36,6 +36,7 @@ hr{
 #topmost{
   background: #0f8fba;
   height: 22px;
+  padding: 5px 0px;
 }
 
 #search{
@@ -43,6 +44,7 @@ hr{
   margin: 0px auto;
   text-align: right;  
   color: #ffffff;
+  
 }
 
 #search input{
@@ -128,8 +130,9 @@ hr{
 }
 
 #opportunities{
-}
 
+}
+/* ================= OPPORTUNITY FILTER =======================*/
 #opp-filter{
   background: #be3604;
   height: 60px;
@@ -144,6 +147,19 @@ hr{
   border-bottom-right-radius: 10px;
 }
 
+.section{
+  float: left;
+  margin: 0px 40px 0px 0px;
+}
+
+#opp-filter h4{
+  margin: 0px 0px 7px 0px;
+}
+
+/*==================== FEATURED OPPORTUNITIES ===================*/
+#opp-items{
+  padding: 0px;
+}
 .opp-featured{
   width: 220px;
   height: 340px;
@@ -187,6 +203,20 @@ hr{
 #featured-org{
   width: 460px;
   float: right;
+}
+
+.news-image{
+  float: left;
+  margin: 0px 12px 20px 0px;
+}
+
+.news-desc{
+  width:350px;
+  float: left;
+}
+
+.news-desc h4{
+  margin: 0px 0px 7px 0px;
 }
 
 /*==================== EVENT DETAILS ====================*/
@@ -274,6 +304,32 @@ hr{
 }
 
 
+/*====================  USER SIGNUP   ====================*/
+.signup{
+  background-color: #f8f8f8;
+  padding: 20px;
+  width: 500px;
+  
+  margin: 0px auto;
+}
+    
+.signup label, .signup input, .signup select{
+  float: left;
+  margin-bottom: 10px;
+}
+ 
+.signup label{
+  width: 120px;
+  padding-right: 20px;
+}
+
+.signup hr{
+  background-color: #cccccc;
+}
+
+.forceCenter{
+  margin-left: 185px;
+}
 
 
 /*==================== FOOTER ====================*/
@@ -285,7 +341,7 @@ hr{
   text-align: center;
 }
 
-/*====================     ====================*/
+/*====================  GENERAL   ====================*/
 
 .orange a{
   color: #be3604;
@@ -293,6 +349,15 @@ hr{
 }
 .orange a:hover{
   color: #f54200;
+  text-decoration: underline;
+}
+
+.blue a{
+  color: #0066FF;
+  text-decoration: none;
+}
+.blue a:hover{
+  color: #0033FF;
   text-decoration: underline;
 }
 
@@ -308,9 +373,20 @@ hr{
   margin: 0px auto;
 }
 
+.toleft{
+  float: left;
+  margin-right: 5px;
+}
+
+.toright{
+  float:right;
+}
+
 label{
   font-weight:bold;
 }
+
 .clear{
   clear:both;
 }
+
