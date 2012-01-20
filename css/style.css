@@ -304,8 +304,8 @@ hr{
 }
 
 
-/*====================  USER SIGNUP   ====================*/
-.signup{
+/*====================  USER SIGNUP / ORG REGISTRATION ====================*/
+.register{
   background-color: #f8f8f8;
   padding: 20px;
   width: 500px;
@@ -313,22 +313,52 @@ hr{
   margin: 0px auto;
 }
     
-.signup label, .signup input, .signup select{
+.register label, .register input, .register select{
   float: left;
   margin-bottom: 10px;
 }
  
-.signup label{
+.register label{
   width: 120px;
   padding-right: 20px;
 }
 
-.signup hr{
+.register hr{
   background-color: #cccccc;
 }
 
 .forceCenter{
-  margin-left: 185px;
+  margin: 20px 0px 0px 185px;
+}
+
+/*====================  USER DASHBOARD  ====================*/
+.dashboard-left{
+  float: left;
+  
+  background: url(../images/dash-menu-bg.gif) repeat-y;
+  width: 160px;
+  margin: 0px 20px 0px 0px;
+}
+
+.dashboard-left h4{
+  padding: 0px 0px 0px 10px;
+}
+
+.dashboard-left ul{
+  line-height: 18px;
+}
+
+.dashboard-right{
+  float: left;
+  width: 750px;
+  padding: 0px 0px 0px 20px;
+  
+  border: solid 1px #cccccc;
+   -moz-border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 

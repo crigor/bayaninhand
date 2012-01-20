@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iVolunteer Philippines</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="topmost">
+    <div id="search">
+    <form method="post" id="searchform" action="volunteersearch.php" style="margin-bottom:0px">
+      <input type="text" name="searchtext" id="searchtext" value="" size="25" />
+      <input type="button" name="btnSearch" onclick="submitSearch()" value="Search" />
+    </form>
+    </div>
+  </div>
+  
+  <div id="header">
+    <div id="header-content">
+      <div id="logo">
+        <img src="images/ivolunteer-logo.gif" />
+      </div>
+      
+      <div id="member-area">
+        <form>
+          <h2>Member's Corner</h2>
+          
+          <span class="toleft">
+            Username:<br /><input type="text" name="username" id="username" align="top" />
+          </span>
+          
+          <span class="toleft blue">
+            Password:<br /><input type="password" name="password" id="password" align="top" /><br />
+            <a href="forgot-password.html"><small>Forgot Password?</small></a> | 
+            <a href="register.html"><small>Register</small></a>
+          </span>
+          
+          <span class="toleft blue">    
+            <br /><input type="image" src="images/btn-login.gif" border="0" alt="Login" align="top" />
+          </span>
+        </form>               
+      </div><!--member-area-->
+      
+      <div class="clear"></div>
+    </div><!--header-content-->
+  </div>
+  
+  <div id="menu">
+    <ul id="menu-ul">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="opportunities.html">Volunteer Opportunities</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="organizations.html">Organizations</a></li>
+      <li><a href="about-us.html">About iVolunteer Philippines</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <h1>Create an Event</h1>
+    <hr />
+    
+    <div class="register">
+      <p>
+        Please fill up the form below to register your organization. Once your organization account is activated, you may start creating Events and looking for volunteers.<br /><br />
+      </p>
+
+      <form>
+      
+        <label for="event_title">Title:</label>
+        <input id="event_title" name="event[title]" size="50" type="text" />
+        <div class="clear"></div> 
+        
+        <label for="event_org">Organization:</label>
+        <input id="event_org" name="event[org]" size="50" type="text" />
+        <div class="clear"></div> 
+        
+        <label for="event_address">Event Address:</label>
+        <input id="event_address" name="event[address]" size="50" type="text" />
+        <div class="clear"></div> 
+        
+        <label for="event_category">Category:</label>
+        <select id="event_category" style="width:250px;">
+          <option value="Agriculture">Agriculture</option>
+          <option value="Animals">Animals</option>
+          <option value="Arts">Arts &amp; Culture</option>
+          <option value="Children">Children &amp; Youth</option>
+          <option value="Community">Community</option>
+          <option value="Computers">Computers &amp; Technology</option>
+          <option value="Disabled">Disabled</option>
+          <option value="Disaster">Disaster Relief</option>
+          <option value="Education">Education</option>
+          <option value="Employment">Employment</option>
+          <option value="Environment">Environment</option>
+          <option value="Gender">Gender</option>
+          <option value="Health">Health</option>
+          <option value="Housing">Housing</option>
+          <option value="Human">Human Rights</option>
+          <option value="Hunger">Hunger</option>
+          <option value="Justice">Justice &amp; Legal</option>
+          <option value="Peace">Peace &amp; Conflict Resolution</option>
+          <option value="Politics">Politics</option>
+          <option value="Poverty">Poverty</option>
+          <option value="Seniors">Seniors</option>
+          <option value="Sports">Sports &amp; Recreation</option>                
+        </select>     
+        <div class="clear"></div> 
+        
+        <label for="event_type">Event Type:</label>
+        <select id="event_type" style="width:250px;">        
+          <option value="consulting">Consulting</option>
+          <option value="coordination">Coordination &amp; Facilitation</option>
+          <option value="design">Design</option>
+          <option value="itdevelopment">IT Development</option>
+          <option value="projdevelopment">Project Development &amp; Management</option>
+          <option value="research">Research</option>
+          <option value="training">Training &amp; Coaching</option>
+          <option value="translation">Translation</option>
+          <option value="writing">Writing &amp; Editing</option>          
+         </select>
+        <div class="clear"></div> 
+        
+        <label for="event_start_date">Start Date:</label>
+        <select id="event_start_year" name="event[start_year]">
+          <option selected="selected" value="2012">2012</option>
+          <option value="2013">2013</option>
+        </select>
+        
+        <select id="event_start_month" name="event[start_month]">
+          <option selected="selected" value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+            
+        <select id="event_start_day" name="event[start_day]">
+          <option selected="selected" value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+              
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+              
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        <div class="clear"></div>         
+        
+        <label for="event_start_time">Start Time:</label>
+        <select id="event_start_hour" name="event[start_hour]">
+          <option value="1">01:00</option>
+          <option value="1b">01:30</option>
+          <option value="2">02:00</option>
+          <option value="2b">02:30</option>
+          <option value="3">03:00</option>
+          <option value="3b">03:30</option>
+          <option value="4">04:00</option>
+          <option value="4b">04:30</option>
+          <option value="5">05:00</option>
+          <option value="5b">05:30</option>
+          <option value="6">06:00</option>
+          <option value="6b">06:30</option>
+          <option value="7">07:00</option>
+          <option value="7b">07:30</option>
+          <option selected="selected" value="8">08:00</option>
+          <option value="8b">08:30</option>
+          <option value="9">09:00</option>
+          <option value="9b">09:30</option>
+          <option value="10">10:00</option>
+          <option value="10b">10:30</option>
+          <option value="11">11:00</option>
+          <option value="11b">11:30</option>
+          <option value="12">12:00</option>
+          <option value="12b">12:30</option>
+        </select>
+        
+        <select id="event_start_ampm" name="event[start_ampm]">
+          <option selected="selected" value="am">AM</option>
+          <option value="pm">PM</option>          
+        </select>
+        <div class="clear"></div> 
+        
+        <label for="event_end_date">End Date:</label>
+         <select id="event_end_year" name="event[end_year]">
+          <option selected="selected" value="2012">2012</option>
+          <option value="2013">2013</option>
+        </select>
+        
+        <select id="event_end_month" name="event[end_month]">
+          <option selected="selected" value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+            
+        <select id="event_end_day" name="event[end_day]">
+          <option selected="selected" value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+              
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+              
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        <div class="clear"></div> 
+        
+        <label for="event_end_time">End Time:</label>
+        <select id="event_end_hour" name="event[end_hour]">
+          <option value="1">01:00</option>
+          <option value="1b">01:30</option>
+          <option value="2">02:00</option>
+          <option value="2b">02:30</option>
+          <option value="3">03:00</option>
+          <option value="3b">03:30</option>
+          <option value="4">04:00</option>
+          <option value="4b">04:30</option>
+          <option selected="selected" value="5">05:00</option>
+          <option value="5b">05:30</option>
+          <option value="6">06:00</option>
+          <option value="6b">06:30</option>
+          <option value="7">07:00</option>
+          <option value="7b">07:30</option>
+          <option value="8">08:00</option>
+          <option value="8b">08:30</option>
+          <option value="9">09:00</option>
+          <option value="9b">09:30</option>
+          <option value="10">10:00</option>
+          <option value="10b">10:30</option>
+          <option value="11">11:00</option>
+          <option value="11b">11:30</option>
+          <option value="12">12:00</option>
+          <option value="12b">12:30</option>
+        </select>
+        
+        <select id="event_end_ampm" name="event[end_ampm]">
+          <option value="am">AM</option>
+          <option selected="selected" value="pm">PM</option>          
+        </select>
+        <div class="clear"></div> 
+        
+        <label for="event_map">Map (if available):</label>
+        <input id="event_map" name="event[map]" size="35" type="text" />
+        <button name="browse">Browse...</button>
+        <div class="clear"></div> 
+        
+        <label for="event_image">Image (if available):</label>
+        <input id="event_image" name="event[image]" size="35" type="text" />
+        <button name="browse">Browse...</button>
+        <div class="clear"></div> 
+              
+        <label for="event_description">Event Description:</label><br />
+        <textarea id="event_description" name="event[description]" cols="58" rows="20"></textarea><br /><br />
+        <div class="clear"></div>      
+        
+        <!--NOTE: had to force this by setting margin-left because it doesn't align using <center> tag-->
+        <div class="forceCenter"><input type="image" src="images/btn-submit.gif" alt="Submit" /></div>
+        <div class="clear"></div>
+      </form>
+    </div><!--register-->
+    
+  </div><!--content-->
+  
+  <div id="footer">
+    <div class="center-text">
+      Home  |  Volunteer Opportunities  |  Calendar  |  Organizations  |  About Us  |  Contact Us
+      <br /><br />
+      Copyright &copy;2012 by iVolunteer.net.ph. All Rights Reserved.
+    </div>
+  </div>
+
+</body>
+</html>
