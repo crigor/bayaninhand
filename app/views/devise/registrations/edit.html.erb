@@ -36,7 +36,7 @@
   <div class="clearfix">
     <%= f.label :country %>
     <div class="input">
-      <%= f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, :onchange => "toggler_region()", :class => "xlarge" %>
+      <%= f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, :onchange => "toggle_region()", :class => "xlarge" %>
     </div>
   </div>
   <div class="clearfix">
