@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   has_many :owned_organizations, :source => :organization, :through => :organization_roles, :conditions => ['role = ?', 'owner']
   has_many :organization_roles
   has_many :administered_organizations, :source => :organization, :through => :organization_roles, :conditions => ["organization_roles.role in ('owner', 'admin')"]
+  
+  before_save :clear_region
+  
   has_many :participations
   has_many :events, :through => :participations
 
@@ -25,8 +28,14 @@ class User < ActiveRecord::Base
   def organization_admin?(organization)
     self.administered_organizations.include?(organization)
   end
-
+  
   def upcoming_events
     self.events.scoped.where("end_date >= '#{Date.today}'").order("start_date")
   end
+  
+  protected
+  
+    def clear_region
+      self.region = nil if self.country != "Philippines"
+    end
 end
