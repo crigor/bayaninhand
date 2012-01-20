@@ -67,7 +67,7 @@
   <hr />
 
   <img src="<%= @event.image.url(:medium) %>" align="right" style="margin-left: 40px;" />
-  <%= @event.description %>
+  <%= @event.description.html_safe %>
   <% if user_signed_in? && current_user.volunteered?(@event) %>
     <p>You volunteered for this event.</p>
   <% else %>

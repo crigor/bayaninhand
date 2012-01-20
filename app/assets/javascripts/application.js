@@ -8,20 +8,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
-//
-
-  // Dropdown example for topbar nav
-  // ===============================
-
-$(document).ready(function(){
-  $("body").bind("click", function (e) {
-    $('.dropdown-toggle, .menu').parent("li").removeClass("open");
-  });
-  $(".dropdown-toggle, .menu").click(function (e) {
-    var $li = $(this).parent("li").toggleClass('open');
-    return false;
-  });
-});
+//= require tinymce-jquery
 
 function toggle_region() {
   if($('#user_country').val() == "Philippines") {
