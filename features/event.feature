@@ -3,7 +3,6 @@ Feature: Event
   I want to be able to create an event
   So volunteers can join
 
-  @wip
   Scenario: Organization admin creates an event
     Given a user exists with an email of "me@crigor.com"
     And an organization exists with a name of "DSWD"
