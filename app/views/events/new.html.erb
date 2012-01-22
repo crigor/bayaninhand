@@ -1,70 +1,51 @@
-<%= form_for [@organization, @event], :html => { :multipart => true } do |f| %>
-  <%= f.error_messages %>
-  <fieldset>
-    <legend>Create new event</legend>
-  <div class="clearfix">
-  <%= f.label "Title" %>
-  <div class="input">
-    <%= f.text_field :title, :class => "xlarge" %>
-  </div>
-  </div> <!-- /clearfix -->
-  <div class="clearfix">
-  <%= f.label "Description" %>
-  <div class="input">
-    <%= f.text_area :description, :rows => 5, :class => "xxlarge" %>
-  </div>
-  </div> <!-- /clearfix -->
-  <div class="clearfix">
-  <%= f.label "Address" %>
-  <div class="input">
-    <%= f.text_area :address, :rows => 5, :class => "xxlarge" %>
-  </div>
-  </div> <!-- /clearfix -->
-  <div class="clearfix">
-  <%= f.label "Map" %>
-  <div class="input">
-    <%= f.text_field :map, :class => "xlarge" %>
-  </div>
-  </div> <!-- /clearfix -->
-  <div class="clearfix">
-  <%= f.label "Start date" %>
-  <div class="input">
-    <div class="inline-inputs">
-      <%= f.text_field :start_date, :class => "small" %>
-      <%= f.text_field :start_time, :class => "mini" %>
-    </div>
-  </div>
-  </div><!-- /clearfix -->
-  <div class="clearfix">
-  <%= f.label "End date" %>
-  <div class="input">
-    <div class="inline-inputs">
-      <%= f.text_field :end_date, :class => "small" %>
-      <%= f.text_field :end_time, :class => "mini" %>
-    </div>
-  </div>
-  </div><!-- /clearfix -->
-  <div class="clearfix">
-  <%= f.label "Categories" %>
-  <div class="input">
-    <%= f.collection_select :category_ids, Category.all, :id, :name, {}, {:multiple => true, :class => "xlarge", :size => 5} %>
-  </div>
-  </div> <!-- /clearfix -->
-  <div class="clearfix">
-  <%= f.label "Event Types" %>
-  <div class="input">
-    <%= f.collection_select :event_type_ids, EventType.all, :id, :name, {}, {:multiple => true, :class => "xlarge", :size => 5} %>
-  </div>
-  </div> <!-- /clearfix -->
+<h1>Create an Event</h1>
+<hr />
 
-  <%= f.file_field :image %>
-  <div class="actions">
-    <button type="submit" class="btn primary">Create event</button>&nbsp;<%= link_to "Cancel", admin_organization_url(@organization), :class => "btn" %>
-  </div>
+<div class="register">
+  <p>
+  Please fill up the form below to create an event.<br /><br />
+  </p>
 
-  <%# f.submit %>
-  </fieldset>
-<% end %>
+  <%= form_for [@organization, @event], :html => { :multipart => true } do |f| %>
+    <%= f.error_messages %>
+    <%= f.label :title %>
+    <%= f.text_field :title, :size => 50 %>
+    <div class="clear"></div>
+    <%= f.label :address, "Event Address" %>
+    <%= f.text_field :address, :size => 50 %>
+    <div class="clear"></div>
+    <%= label_tag :event_category, "Category" %>
+    <%= f.collection_select :category_ids, Category.all, :id, :name, {}, {:multiple => false, :id => "event_category", :style => "width:250px"} %>
+    <div class="clear"></div>
+    <%= label_tag :event_type, "Event Type" %>
+    <%= f.collection_select :event_type_ids, EventType.all, :id, :name, {}, {:multiple => false, :id => "event_type", :style => "width:250px"} %>
+    <div class="clear"></div>
+    <%= f.label :start_date, "Start Date" %>
+    <%= f.text_field :start_date, :size => 10 %>
+    <div class="clear"></div>
+    <%= f.label :start_time, "Start Time" %>
+    <%= f.select :start_time, @times, :selected => @start_time_selected, :style => "width:250px" %>
+    <div class="clear"></div>
+    <%= f.label :end_date, "End Date" %>
+    <%= f.text_field :end_date, :size => 10 %>
+    <div class="clear"></div>
+    <%= f.label :end_time, "End Time" %>
+    <%= f.select :end_time, @times, :selected => @end_time_selected, :style => "width:250px" %>
+    <div class="clear"></div>
+    <%= f.label :map %>
+    <%= f.text_field :map, :size => 35 %>
+    <div class="clear"></div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <div class="clear"></div>
+    <%= f.label :description, "Event Description" %>
+    <%= f.text_area :description, :rows => 20, :cols => 58 %></br /><br />
+    <div class="forceCenter"><input type="image" src="/assets/btn-submit.gif" alt="Submit" /></div>
+    <div class="clear"></div>
+    <%= link_to "Go back", admin_organization_url(@organization), :class => "btn" %>
+  <% end %>
+
+</div><!--register-->
 
 <script type="text/javascript">
   $('#event_start_date').datepicker({ dateFormat: 'yy-mm-dd' });
@@ -75,4 +56,3 @@
     });
   });
 </script>
-
