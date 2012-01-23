@@ -72,7 +72,7 @@ hr{
 
 /*==================== MENU ====================*/
 #menu{
-  background: url(../images/bg-menu.gif) #324452;
+  background: url(/assets/bg-menu.gif) #324452;
   height: 40px;
 }
 
@@ -117,7 +117,7 @@ hr{
 #main-image{
   margin: 20px 0px 0px 0px;
 
-  background: url(../images/main-image-1b.jpg);
+  background: url(/assets/main-image-1b.jpg);
   width: 960px;
   height: 230px;
 }
@@ -231,7 +231,7 @@ hr{
 
 
 .event-highlight{
-  background: url(../images/event-highlight-bg.gif);
+  background: url(/assets/event-highlight-bg.gif);
   width: 680px;
   height: 225px;
   padding: 15px 20px 10px 20px;
@@ -256,7 +256,7 @@ hr{
 }
 
 .event-time{
-  background:url(../images/event-time-bg.gif);
+  background:url(/assets/event-time-bg.gif);
   width: 190px;
   height: 225px;
   float: right;
@@ -282,7 +282,7 @@ hr{
 }
 
 .vol{
-  background:url(../images/event-time-vol.gif);
+  background:url(/assets/event-time-vol.gif);
   width: 160px;
   height: 50px;
   margin: 10px 0px 15px 0px;
@@ -335,7 +335,7 @@ hr{
 .dashboard-left{
   float: left;
 
-  background: url(../images/dash-menu-bg.gif) repeat-y;
+  background: url(/assets/dash-menu-bg.gif) repeat-y;
   width: 160px;
   margin: 0px 20px 0px 0px;
 }
