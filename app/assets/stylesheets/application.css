@@ -36,6 +36,7 @@ hr{
 #topmost{
   background: #0f8fba;
   height: 22px;
+  padding: 5px 0px;
 }
 
 #search{
@@ -43,6 +44,7 @@ hr{
   margin: 0px auto;
   text-align: right;
   color: #ffffff;
+
 }
 
 #search input{
@@ -70,7 +72,7 @@ hr{
 
 /*==================== MENU ====================*/
 #menu{
-  background: url(/assets/bg-menu.gif) #324452;
+  background: url(../images/bg-menu.gif) #324452;
   height: 40px;
 }
 
@@ -115,7 +117,7 @@ hr{
 #main-image{
   margin: 20px 0px 0px 0px;
 
-  background: url(/assets/main-image-1b.jpg);
+  background: url(../images/main-image-1b.jpg);
   width: 960px;
   height: 230px;
 }
@@ -128,8 +130,9 @@ hr{
 }
 
 #opportunities{
-}
 
+}
+/* ================= OPPORTUNITY FILTER =======================*/
 #opp-filter{
   background: #be3604;
   height: 60px;
@@ -144,6 +147,19 @@ hr{
   border-bottom-right-radius: 10px;
 }
 
+.section{
+  float: left;
+  margin: 0px 40px 0px 0px;
+}
+
+#opp-filter h4{
+  margin: 0px 0px 7px 0px;
+}
+
+/*==================== FEATURED OPPORTUNITIES ===================*/
+#opp-items{
+  padding: 0px;
+}
 .opp-featured{
   width: 220px;
   height: 340px;
@@ -189,6 +205,20 @@ hr{
   float: right;
 }
 
+.news-image{
+  float: left;
+  margin: 0px 12px 20px 0px;
+}
+
+.news-desc{
+  width:350px;
+  float: left;
+}
+
+.news-desc h4{
+  margin: 0px 0px 7px 0px;
+}
+
 /*==================== EVENT DETAILS ====================*/
 .event-detail{
 
@@ -201,7 +231,7 @@ hr{
 
 
 .event-highlight{
-  background: url(/assets/event-highlight-bg.gif);
+  background: url(../images/event-highlight-bg.gif);
   width: 680px;
   height: 225px;
   padding: 15px 20px 10px 20px;
@@ -226,7 +256,7 @@ hr{
 }
 
 .event-time{
-  background:url(/assets/event-time-bg.gif);
+  background:url(../images/event-time-bg.gif);
   width: 190px;
   height: 225px;
   float: right;
@@ -252,7 +282,7 @@ hr{
 }
 
 .vol{
-  background:url(/assets/event-time-vol.gif);
+  background:url(../images/event-time-vol.gif);
   width: 160px;
   height: 50px;
   margin: 10px 0px 15px 0px;
@@ -274,6 +304,62 @@ hr{
 }
 
 
+/*====================  USER SIGNUP / ORG REGISTRATION ====================*/
+.register{
+  background-color: #f8f8f8;
+  padding: 20px;
+  width: 500px;
+
+  margin: 0px auto;
+}
+
+.register label, .register input, .register select{
+  float: left;
+  margin-bottom: 10px;
+}
+
+.register label{
+  width: 120px;
+  padding-right: 20px;
+}
+
+.register hr{
+  background-color: #cccccc;
+}
+
+.forceCenter{
+  margin: 20px 0px 0px 185px;
+}
+
+/*====================  USER DASHBOARD  ====================*/
+.dashboard-left{
+  float: left;
+
+  background: url(../images/dash-menu-bg.gif) repeat-y;
+  width: 160px;
+  margin: 0px 20px 0px 0px;
+}
+
+.dashboard-left h4{
+  padding: 0px 0px 0px 10px;
+}
+
+.dashboard-left ul{
+  line-height: 18px;
+}
+
+.dashboard-right{
+  float: left;
+  width: 750px;
+  padding: 0px 0px 0px 20px;
+
+  border: solid 1px #cccccc;
+   -moz-border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 
 
 /*==================== FOOTER ====================*/
@@ -285,7 +371,7 @@ hr{
   text-align: center;
 }
 
-/*====================     ====================*/
+/*====================  GENERAL   ====================*/
 
 .orange a{
   color: #be3604;
@@ -293,6 +379,15 @@ hr{
 }
 .orange a:hover{
   color: #f54200;
+  text-decoration: underline;
+}
+
+.blue a{
+  color: #0066FF;
+  text-decoration: none;
+}
+.blue a:hover{
+  color: #0033FF;
   text-decoration: underline;
 }
 
@@ -308,9 +403,19 @@ hr{
   margin: 0px auto;
 }
 
+.toleft{
+  float: left;
+  margin-right: 5px;
+}
+
+.toright{
+  float:right;
+}
+
 label{
   font-weight:bold;
 }
+
 .clear{
   clear:both;
 }
