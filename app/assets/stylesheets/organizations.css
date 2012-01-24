@@ -1,0 +1,31 @@
+.sidebar.left{
+	width: 150px;
+	margin-right: 10px;
+	float: left;
+}
+
+.content{
+	float: left;
+	margin-right: 10px;
+	width: 640px;
+}
+
+.sidebar.right{
+	width: 150px;
+	border-right: 10px;
+	float: right;
+	margin-right: 0;
+}
+
+.content ul.events{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.content ul.events img{
+	float: left;
+	width: 60px;
+	height: 60px;
+	padding: 0 10px 10px 0;
+}
