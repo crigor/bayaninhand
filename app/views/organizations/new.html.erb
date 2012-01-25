@@ -31,6 +31,10 @@
     <%= f.text_field :website, :size => 50 %>
     <div class="clear"></div>
 
+    <%= f.label :organization_type_id, "Organization Type" %>
+    <%= f.select :organization_type_id, OrganizationType.all.map{|o| [o.name, o.id]}, {:include_blank => true}, {:style => "width:250px"} %>
+    <div class="clear"></div>
+
     <%= f.label :mission_statement, "Mission Statement" %>
     <%= f.text_area :description, :rows => 5, :cols => 38 %><br /><br />
     <div class="clear"></div>
