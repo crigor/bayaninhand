@@ -26,21 +26,19 @@
 
 <div class="content">
 	<h2>News Feeds</h2>
-	<ul class="events">
-	<% @upcoming_events.each do |event| %>
-  		<li>
-			<%= image_tag event.image.url(:small) %>
-			<h4><%= link_to event.title, organization_event_url(@organization, event) %></h4>
-			<%= event.volunteers.count %> volunteers registered.<br/>
-			<%= event.start_date.strftime "%d %B %Y" %> <%= event.start_time.strftime "%I:%M %p" %>
-		</li>
-	<% end %>
-	</ul>
 </div>
 
 <div class="sidebar right">
   <div class="cell">
     <h3>Upcoming Events</h3>
+	<ul class="events">
+		<% @upcoming_events.each do |event| %>
+		<li>
+			<h5><%= link_to event.title, organization_event_url(@organization, event) %></h5>
+			<%= event.start_date.strftime "%d %B %Y" %>
+		</li>
+		<% end %>
+	</ul>
   </div>
 
   <div class="cell">
