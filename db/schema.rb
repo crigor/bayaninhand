@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125115256) do
+ActiveRecord::Schema.define(:version => 20120125122531) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20120125115256) do
     t.string   "website"
     t.text     "mission_statement"
     t.integer  "organization_type_id"
+    t.string   "country"
   end
 
   create_table "participations", :force => true do |t|

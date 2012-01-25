@@ -1,6 +1,11 @@
 class OrganizationsController < InheritedResources::Base
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :admin]
 
+  def new
+    @organization = Organization.new :country => "Philippines"
+    new!
+  end
+
   def show
     @organization = resource
     @upcoming_events = @organization.events.upcoming
