@@ -1,0 +1,70 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title iVolunteer Philippines
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    %link{:href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Francois+One", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    #topmost
+      #search
+        %form#searchform{:action => "volunteersearch.php", :method => "post", :style => "margin-bottom:0px"}
+          %input#searchtext{:name => "searchtext", :size => "25", :type => "text", :value => ""}/
+          %input{:name => "btnSearch", :onclick => "submitSearch()", :type => "button", :value => "Search"}/
+    #header
+      #header-content
+        #logo
+          %img{:src => "/assets/ivolunteer-logo.gif"}/
+        #member-area
+          %table
+            %tr
+              %td{:colspan => "2"}
+                %h2{:style => "color:#324452;"} Member's Corner
+            - if user_signed_in?
+              %tr
+                %td
+                  You are signed in as #{link_to current_user.email, dashboard_path}
+                %td= link_to "Sign out", destroy_user_session_path
+            - else
+              %tr
+                %td{:width => "150"} Username:
+                %td Password:
+              %tr
+                %td{:colspan => "2"}
+                  = form_for("user", :url => user_session_path) do |f|
+                    = f.text_field :email, :align => "top", :size => nil, :id => "user_email_top"
+                    = f.password_field :password, :align => "top", :size => nil, :id => "user_password_top"
+                    %input{:align => "top", :alt => "Login", :border => "0", :src => "/assets/btn-login.gif", :type => "image"}/
+              %tr
+                %td
+                %td
+                  %a{:href => new_password_path("user")}
+                    %small Forgot Your Password?
+        .clear
+    #menu
+      %ul#menu-ul
+        %li.selected
+          %a{:href => root_path} Home
+        %li
+          %a{:href => "opportunities.html"} Volunteer Opportunities
+        %li
+          %a{:href => "calendar.html"} Calendar
+        %li
+          %a{:href => "organizations.html"} Organizations
+        %li
+          %a{:href => "about-us.html"} About iVolunteer Philippines
+        %li
+          %a{:href => "contact-us.html"} Contact Us
+    #content
+      %p.notice= notice
+      = yield
+      .clear
+    / content
+    #footer
+      .center-text
+        Home  |  Volunteer Opportunities  |  Calendar  |  Organizations  |  About Us  |  Contact Us
+        %br/
+        %br/
+        Copyright ©2012 by iVolunteer.net.ph. All Rights Reserved.
