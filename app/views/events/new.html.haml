@@ -1,0 +1,56 @@
+%h1 Create an Event
+%hr/
+.register
+  %p
+    Please fill up the form below to create an event.
+    %br/
+    %br/
+  = form_for [@organization, @event], :html => { :multipart => true } do |f|
+    = f.error_messages
+    = f.label :title
+    = f.text_field :title, :size => 50
+    .clear
+    = f.label :address, "Event Address"
+    = f.text_field :address, :size => 50
+    .clear
+    = label_tag :event_category, "Category"
+    = f.collection_select :category_ids, Category.all, :id, :name, {}, {:multiple => false, :id => "event_category", :style => "width:250px"}
+    .clear
+    = label_tag :event_type, "Event Type"
+    = f.collection_select :event_type_ids, EventType.all, :id, :name, {}, {:multiple => false, :id => "event_type", :style => "width:250px"}
+    .clear
+    = f.label :start_date, "Start Date"
+    = f.text_field :start_date, :size => 10
+    .clear
+    = f.label :start_time, "Start Time"
+    = f.select :start_time, @times, :selected => @start_time_selected, :style => "width:250px"
+    .clear
+    = f.label :end_date, "End Date"
+    = f.text_field :end_date, :size => 10
+    .clear
+    = f.label :end_time, "End Time"
+    = f.select :end_time, @times, :selected => @end_time_selected, :style => "width:250px"
+    .clear
+    = f.label :map
+    = f.text_field :map, :size => 35
+    .clear
+    = f.label :image
+    = f.file_field :image
+    .clear
+    = f.label :description, "Event Description"
+    = f.text_area :description, :rows => 20, :cols => 58
+    </br />
+    %br/
+    .forceCenter
+      %input{:alt => "Submit", :src => "/assets/btn-submit.gif", :type => "image"}/
+    .clear
+    = link_to "Go back", admin_organization_url(@organization), :class => "btn"
+/ register
+:javascript
+  $('#event_start_date').datepicker({ dateFormat: 'yy-mm-dd' });
+  $('#event_end_date').datepicker({ dateFormat: 'yy-mm-dd' });
+  $(function() {
+    $('#event_description').tinymce({
+      theme: 'advanced'
+    });
+  });

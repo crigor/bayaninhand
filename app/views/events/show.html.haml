@@ -1,0 +1,114 @@
+%h1 Opportunity
+%hr/
+.event-detail
+  .event-highlight
+    .event-image= image_tag @event.image.url(:medium)
+    .event-short
+      %h1= @event.title
+      %table
+        %tr
+          %td{:valign => "top"}
+            %label Who:
+          %td{:valign => "top"}
+            Who
+            %br/
+            %br/
+        %tr
+          %td{:valign => "top"}
+            %label Where:
+          %td{:valign => "top"}
+            = @event.address
+            %br/
+            %br/
+        %tr
+          %td{:valign => "top"}
+            %label When:
+          %td{:valign => "top"}
+            = date_text(@event)
+            %br/
+            %br/
+        %tr
+          %td{:valign => "top"}
+            %label How:
+          %td{:valign => "top"}
+            How
+            %br/
+            %br/
+        %tr
+          %td{:valign => "top"}
+            %label By:
+          %td{:valign => "top"}= link_to @event.organization.name
+    / event-short
+    .clear
+  / event-highlight
+  .event-time
+    %h1 Volunteer Now
+    %label Time Left to Volunteer
+    %center
+      %table
+        %tr
+          %td{:align => "center", :width => "50"}
+            .count> 4
+            days
+          %td :
+          %td{:align => "center", :width => "50"}
+            .count> 20
+            hours
+          %td :
+          %td{:align => "center", :width => "50"}
+            .count> 37
+            mins.
+      %table.vol
+        %tr
+          %td{:align => "center", :width => "80"}
+            .number>= @event.volunteers.size
+            volunteered
+          %td{:align => "center", :width => "80"}
+            .number> 99
+            still needed
+      - if user_signed_in? && current_user.volunteered?(@event)
+        = image_tag("already-joined.gif")
+      - else
+        = link_to(image_tag("btn-join.gif"), volunteer_organization_event_url(@event.organization, @event), :rel => "volunteer-event")
+  .clear
+  %h2 Event Details
+  %hr/
+  %img{:align => "right", :src => @event.image.url(:medium), :style => "margin-left: 40px;"}/
+  = @event.description.html_safe
+  - if user_signed_in? && current_user.volunteered?(@event)
+    %p You volunteered for this event.
+  - else
+    %p
+      Click #{link_to "here", volunteer_organization_event_url(@event.organization, @event)} to volunteer.
+  People who volunteered (#{@event.volunteers.size})
+  %ul
+    - @event.volunteers.each do |user|
+      %li= user.email
+/ event-detail
+#event-comments
+  %h1 Event Comments
+  %hr/
+  %p Facebook commenting here
+#related-events
+  %h1 Related Events
+  %hr/
+  .opp-featured
+    .opp-feat-image= image_tag @event.image.url(:small)
+    .opp-feat-title
+      %h2 Feed a Child Project
+    %img{:src => "images/feat-line.gif"}/
+    .opp-feat-type Children & Youth
+    .opp-feat-date June 1, 2011 - Aug. 31, 2011
+    .opp-feat-number 28 Volunteers needed
+    %a{:href => ""}
+      %img{:border => "none", :src => "images/btn-learnmore.gif"}/
+  .opp-featured
+    .opp-feat-image= image_tag @event.image.url(:small)
+    .opp-feat-title
+      %h2 Feed a Child Project
+    %img{:src => "images/feat-line.gif"}/
+    .opp-feat-type Children & Youth
+    .opp-feat-date June 1, 2011 - Aug. 31, 2011
+    .opp-feat-number 28 Volunteers needed
+    %a{:href => ""}
+      %img{:border => "none", :src => "images/btn-learnmore.gif"}/

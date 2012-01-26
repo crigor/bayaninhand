@@ -1,0 +1,59 @@
+%h2
+  Edit #{resource_name.to_s.humanize}
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = devise_error_messages!
+  %div
+    = f.label :email
+    %br/
+    = f.email_field :email
+  %div
+    = f.label :password
+    %i (leave blank if you don't want to change it)
+    %br/
+    = f.password_field :password
+  %div
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation
+  %div
+    = f.label :current_password
+    %i (we need your current password to confirm your changes)
+    %br/
+    = f.password_field :current_password
+  .clearfix
+    = f.label :first_name
+    .input
+      = f.text_field :first_name, :class => "xlarge"
+  .clearfix
+    = f.label :last_name
+    .input
+      = f.text_field :last_name, :class => "xlarge"
+  .clearfix
+    = f.label :date_of_birth
+    .input
+      = f.date_select :date_of_birth, :start_year => 1900, :class => "xlarge"
+  .clearfix
+    = f.label :country
+    .input
+      = f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, :onchange => "toggle_region()", :class => "xlarge"
+  .clearfix
+    = f.label :region
+    .input
+      = f.text_field :region, :class => "xlarge"
+  .clearfix
+    = f.label :city
+    .input
+      = f.text_field :city, :class => "xlarge"
+  .clearfix
+    = f.label :nationality
+    .input
+      = f.text_field :nationality, :class => "xlarge"
+  %div= f.submit "Update"
+%h3 Cancel my account
+%p
+  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.
+= link_to "Back", :back
+= javascript_tag :defer => "defer" do
+  $(document).ready(function(){
+  toggle_region();
+  });
