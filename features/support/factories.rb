@@ -6,6 +6,10 @@ Factory.define :user do |u|
 end
 
 Factory.define :organization do |o|
+  o.name "iVolunteer"
+end
+
+Factory.define :organization_type do |o|
 end
 
 Factory.define :organization_role do |role|
