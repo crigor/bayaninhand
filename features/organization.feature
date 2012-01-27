@@ -9,14 +9,14 @@ Feature: Organization
     When I go to the new organization page
     And I fill in the following:
       | Name   | DSWD  |
-    And I press "Create Organization"
+    And I press "Submit"
     Then I should be on the organization admin page of "DSWD"
 
   Scenario: Create a blank organization
     Given a user exists with an email of "me@crigor.com"
     And "me@crigor.com" is logged in
     When I go to the new organization page
-    And I press "Create Organization"
+    And I press "Submit"
     Then I should be on the create organization page
 
   @allow-rescue
