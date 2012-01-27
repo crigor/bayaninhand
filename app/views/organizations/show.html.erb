@@ -1,7 +1,51 @@
-<%= @organization.name %>
+<h1><%= @organization.name %></h1>
 <p><%= @organization.description %></p>
 
-<h2>Upcoming Events</h2>
-<% @upcoming_events.each do |event| %>
-  <li><%= link_to event.title, organization_event_url(@organization, event) %></li>
-<% end %>
+<div class="sidebar left">
+  <div class="cell">
+	<h3>UN Volunteer</h3>
+	<ul class="menu">
+		<li><%= link_to "News Feed", "#" %></li>
+		<li><%= link_to "Broadcast", "#" %></li>
+		<li><%= link_to "Profile", "#" %></li>
+		<li><%= link_to "Update Account", "#" %></li>
+		<li><%= link_to "Events", organization_events_url(@organization) %></li>
+		<li><%= link_to "Generate Report", "#" %></li>
+		<li><%= link_to "Members List", "#" %></li>
+	</ul>
+  </div>
+
+  <div class="cell">
+    <h3>Administrators</h3>
+  </div>
+
+  <div class="cell">
+    <h3>Active Topics</h3>
+  </div>
+</div>
+
+<div class="content">
+	<h2>News Feeds</h2>
+</div>
+
+<div class="sidebar right">
+  <div class="cell">
+    <h3>Upcoming Events</h3>
+	<ul class="events">
+		<% @upcoming_events.each do |event| %>
+		<li>
+			<h5><%= link_to event.title, organization_event_url(@organization, event) %></h5>
+			<%= event.start_date.strftime "%d %B %Y" %>
+		</li>
+		<% end %>
+	</ul>
+  </div>
+
+  <div class="cell">
+    <h3>Featured Project</h3>
+  </div>
+
+  <div class="cell">
+    <h3>Quick Links</h3>
+  </div>
+</div>
