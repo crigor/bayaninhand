@@ -1,0 +1,10 @@
+My Events
+- @upcoming_events.each do |event|
+  %li= link_to event.title, organization_event_url(event.organization, event)
+%p
+  = link_to "Create organization", new_organization_url
+  - if !@user.administered_organizations.empty?
+    - @user.administered_organizations.each do |organization|
+      %li
+        = link_to organization.name, organization_url(organization)
+        = link_to "Admin", admin_organization_url(organization)

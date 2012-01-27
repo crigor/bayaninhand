@@ -1,0 +1,5 @@
+= @organization.name
+%p= @organization.description
+%h2 Upcoming Events
+- @upcoming_events.each do |event|
+  %li= link_to event.title, organization_event_url(@organization, event)

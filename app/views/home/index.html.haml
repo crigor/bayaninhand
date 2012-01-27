@@ -1,0 +1,200 @@
+#main-image
+  #main-image-text
+    %h1{:style => "margin:0px;"} Inpire Others.
+    %h1{:style => "margin:0px;"} Change Lives.
+    %h1{:style => "margin:0px;"} Be a Volunteer today.
+    %p
+      iVolunteer aims to gather volunteers from all over the Philippines to
+      helpout others who are in need. Volunteers can choose the activities they
+      want to participate in.
+    %a{:href => new_user_registration_path}
+      %img{:border => "none", :src => "/assets/btn-register.gif"}/
+#opportunities
+  %table
+    %tr
+      %td{:align => "left", :width => "480"}
+        %h1 Volunteer Opportunities
+      %td{:align => "right", :width => "480"}
+        %h2
+          %span.orange
+            %a{:href => "opportunities.html"} See All Opportunities &gt;
+  %hr/
+  #opp-filter
+    %table
+      %tr
+        %td{:valign => "top", :width => "220"}
+          %b Find Projects by Location
+          %br/
+          %select{:style => "width:180px;"}
+            %option{:value => "Metro Manila"} Metro Manila
+            %option{:value => "Marikina"} Marikina
+        %td{:valign => "top", :width => "220"}
+          %b Find Projects by Category
+          %br/
+          %select{:style => "width:200px;"}
+            %option{:value => "Agriculture"} Agriculture
+            %option{:value => "Animals"} Animals
+            %option{:value => "Arts"} Arts &amp; Culture
+            %option{:value => "Children"} Children &amp; Youth
+            %option{:value => "Community"} Community
+            %option{:value => "Computers"} Computers &amp; Technology
+            %option{:value => "Disabled"} Disabled
+            %option{:value => "Disaster"} Disaster Relief
+            %option{:value => "Education"} Education
+            %option{:value => "Employment"} Employment
+            %option{:value => "Environment"} Environment
+            %option{:value => "Gender"} Gender
+            %option{:value => "Health"} Health
+            %option{:value => "Housing"} Housing
+            %option{:value => "Human"} Human Rights
+            %option{:value => "Hunger"} Hunger
+            %option{:value => "Justice"} Justice &amp; Legal
+            %option{:value => "Peace"} Peace &amp; Conflict Resolution
+            %option{:value => "Politics"} Politics
+            %option{:value => "Poverty"} Poverty
+            %option{:value => "Seniors"} Seniors
+            %option{:value => "Sports"} Sports &amp; Recreation
+        %td{:valign => "top"}
+          %b Popular Categories
+          %br/
+          Social (8)     Environmental (3)     Educational (1)     Health (12)     Housing (3)
+  #opp-items
+    .opp-featured
+      .opp-feat-image
+        %img{:src => "/assets/img-help-ondoy.jpg"}/
+      .opp-feat-title
+        %h2 Help Ondoy Victims Today!
+      %img{:src => "/assets/feat-line.gif"}/
+      .opp-feat-type Children &amp; Youth
+      .opp-feat-date June 1, 2011 - July 31, 2011
+      .opp-feat-number 21 Volunteers needed
+      %a{:href => "event-1.html"}
+        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+    - @events.each do |event|
+      .opp-featured
+        .opp-feat-image= image_tag event.image.url(:small)
+        .opp-feat-title
+          %h2= event.title
+        %img{:src => "/assets/feat-line.gif"}/
+        .opp-feat-type= event.category.name if event.category
+        .opp-feat-date= date_text(event)
+        .opp-feat-number 28 Volunteers needed
+        = link_to(image_tag("btn-learnmore.gif", :border => "none"), organization_event_url(event.organization, event))
+    .opp-featured
+      .opp-feat-image
+        %img{:src => "/assets/img-feed-child.jpg"}/
+      .opp-feat-title
+        %h2 Feed a Child Project
+      %img{:src => "/assets/feat-line.gif"}/
+      .opp-feat-type Children &amp; Youth
+      .opp-feat-date June 1, 2011 - Aug. 31, 2011
+      .opp-feat-number 28 Volunteers needed
+      %a{:href => ""}
+        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+    .opp-featured
+      .opp-feat-image
+        %img{:src => "/assets/img-feed-child.jpg"}/
+      .opp-feat-title
+        %h2 Feed a Child Project
+      %img{:src => "/assets/feat-line.gif"}/
+      .opp-feat-type Children &amp; Youth
+      .opp-feat-date June 1, 2011 - Aug. 31, 2011
+      .opp-feat-number 28 Volunteers needed
+      %a{:href => ""}
+        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+    .opp-featured
+      .opp-feat-image
+        %img{:src => "/assets/img-feed-child.jpg"}/
+      .opp-feat-title
+        %h2 Feed a Child Project
+      %img{:src => "/assets/feat-line.gif"}/
+      .opp-feat-type Children &amp; Youth
+      .opp-feat-date June 1, 2011 - Aug. 31, 2011
+      .opp-feat-number 28 Volunteers needed
+      %a{:href => ""}
+        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+    .opp-featured
+      .opp-feat-image
+        %img{:src => "/assets/img-feed-child.jpg"}/
+      .opp-feat-title
+        %h2 Feed a Child Project
+      %img{:src => "/assets/feat-line.gif"}/
+      .opp-feat-type Children &amp; Youth
+      .opp-feat-date June 1, 2011 - Aug. 31, 2011
+      .opp-feat-number 28 Volunteers needed
+      %a{:href => ""}
+        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+    .opp-featured
+      .opp-feat-image
+        %img{:src => "/assets/img-feed-child.jpg"}/
+      .opp-feat-title
+        %h2 Feed a Child Project
+      %img{:src => "/assets/feat-line.gif"}/
+      .opp-feat-type Children &amp; Youth
+      .opp-feat-date June 1, 2011 - Aug. 31, 2011
+      .opp-feat-number 28 Volunteers needed
+      %a{:href => ""}
+        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+    .opp-featured
+      .opp-feat-image
+        %img{:src => "/assets/img-feed-child.jpg"}/
+      .opp-feat-title
+        %h2 Feed a Child Project
+      %img{:src => "/assets/feat-line.gif"}/
+      .opp-feat-type Children &amp; Youth
+      .opp-feat-date June 1, 2011 - Aug. 31, 2011
+      .opp-feat-number 28 Volunteers needed
+      %a{:href => ""}
+        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+  / opp-items
+/ opportunities
+#news
+  %table{:cellpadding => "0", :cellspacing => "0"}
+    %tr
+      %td{:align => "left", :width => "480"}
+        %h1 Volunteers in Action
+      %td{:align => "right", :width => "480"}
+        %h2
+          %span.orange
+            %a{:href => "opportunities.html"} See All News >
+  %hr/
+  .news-list
+    %table
+      %tr
+        %td{:valign => "top", :width => "100"}
+          %img{:src => "/assets/news-img-1.jpg"}/
+        %td{:valign => "top"}
+          %b Orphanage Visit
+          %br/
+          %br/
+          Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20
+          has been an astounding success. A total of 120 ate's and kuya's signed up for the event,
+          and each one brought their own energy and...
+          %span.readmore
+            %a{:href => ""} Read More &gt;
+          %br/
+          %br/
+          %br/
+      %tr
+        %td{:valign => "top", :width => "100"}
+          %img{:src => "/assets/news-img-1.jpg"}/
+        %td{:valign => "top"}
+          %b Orphanage Visit
+          %br/
+          %br/
+          Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20
+          has been an astounding success. A total of 120 ate's and kuya's signed up for the event,
+          and each one brought their own energy and...
+          %span.readmore
+            %a{:href => ""} Read More &gt;
+#featured-org
+  %h1 Featured Organization
+  %hr/
+  %center
+    %img{:src => "/assets/featured-org.jpg"}/
+  %br/
+  %b Computer Literacy Advcates for the Youth
+  %br/
+  CLAY aims to spread computer literacy among the less-privileged youth by holding computer classes...
+  %span.readmore
+    %a{:href => ""} Read More &gt;
