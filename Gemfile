@@ -19,9 +19,9 @@ gem 'paperclip'
 gem 'tinymce-rails'
 
 group :assets do
+  gem 'compass-rails'
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
-  gem 'compass-rails'
   gem 'uglifier'
 end
 
