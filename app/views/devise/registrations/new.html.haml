@@ -42,7 +42,7 @@
       = f.label :region
       = f.select :region, region_options, {:include_blank => true}
     .clear
-    = f.label :city
+    = f.label :city, "City or Province"
     = f.text_field :city, :size => 50
     .clear
     = f.label :nationality
