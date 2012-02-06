@@ -27,3 +27,16 @@ Feature: Login and registration
     Then I should see "confirm" in the email body
     When I follow "Confirm my account" in the email
     Then I should see "successfully confirmed"
+
+  Scenario: User creates an account with expertises
+    Given I am an unauthenticated user
+    And an expertise exists with a name of "Computing"
+    And I am on the new user registration page
+    When I fill in "Email" with "me@ivolunteer.com.ph"
+    And I fill in "Password" with "mypassword"
+    And I fill in "Password confirmation" with "mypassword"
+    #Then show me the page
+    And I check the expertise "Computing"
+    And I press "Sign up"
+    Then I should be on the dashboard page
+    And I should have an expertise of "Computing"

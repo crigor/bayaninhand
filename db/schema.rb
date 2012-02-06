@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125122531) do
+ActiveRecord::Schema.define(:version => 20120206164038) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(:version => 20120125122531) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "expertises", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "expertises_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "expertise_id"
   end
 
   create_table "organization_roles", :force => true do |t|
@@ -119,6 +128,9 @@ ActiveRecord::Schema.define(:version => 20120125122531) do
     t.string   "region"
     t.string   "city"
     t.string   "nationality"
+    t.string   "middle_name"
+    t.string   "mobile_number"
+    t.string   "gender"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
