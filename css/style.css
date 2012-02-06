@@ -19,10 +19,17 @@ h1{
 }
 
 h2{
-  /*opp-featured project title*/
   font-size: 16px;
   font-weight: normal;
   margin: 20px 0px 0px 0px;
+}
+
+h3{
+  font-size: 14px;
+}
+
+h4{
+  font-size: 12px;
 }
 
 hr{
@@ -342,6 +349,10 @@ hr{
 }
 
 /*====================  USER DASHBOARD  ====================*/
+.user-dashboard h2{
+  margin: 10px 0px 10px 0px;
+}
+
 .dashboard-left{
   float: left;
   
@@ -356,12 +367,13 @@ hr{
 
 .dashboard-left ul{
   line-height: 18px;
+  padding: 0px 5px 0px 30px;
 }
 
 .dashboard-right{
   float: left;
-  width: 750px;
-  padding: 0px 0px 0px 20px;
+  width: 720px; /*730*/
+  padding: 0px 20px 20px 20px;
   
   border: solid 1px #cccccc;
    -moz-border-radius: 10px;
@@ -371,8 +383,13 @@ hr{
   border-bottom-right-radius: 10px;
 }
 
+.dashboard-right hr{
+  background-color: #cccccc;
+  margin: 10px 0px 10px 0px;
+}
 
-/*==================== USER DASHBOARD: NEWS FEED ====================*/
+
+/*==================== USER DASHBOARD: NEWS FEED / EVENTS ====================*/
 .feed-list{
   list-style: none;
   padding: 0px;
@@ -389,14 +406,13 @@ hr{
 }
 
 .feed-desc{
-  width: 540px;
+  width: 500px;
   float: left;
 }
 
 .feed-desc h4{
   margin: 0px 0px 7px 0px;
 }
-
 
 /*==================== FOOTER ====================*/
 #footer{
@@ -450,6 +466,10 @@ hr{
 
 label{
   font-weight:bold;
+}
+
+.double-space{
+  line-height:24px;
 }
 
 .clear{
