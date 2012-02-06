@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :region, :city, :nationality
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :region, :city, :nationality, :expertise_ids
 
   has_many :organizations, :through => :organization_roles
   has_many :owned_organizations, :source => :organization, :through => :organization_roles, :conditions => ['role = ?', 'owner']
@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   
   has_many :participations
   has_many :events, :through => :participations
+  has_and_belongs_to_many :expertises
 
   def can_manage?(organization)
     self.owned_organizations.include?(organization)
