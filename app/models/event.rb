@@ -24,4 +24,9 @@ class Event < ActiveRecord::Base
   def start_date_and_time
     Time.local(self.start_date.year, self.start_date.month, self.start_date.day, (self.start_time.hour rescue 0), (self.start_time.min rescue 0))
   end
+
+  def volunteers_still_needed
+    still_needed = (self.volunteers_needed || 0) - self.volunteers.count
+    still_needed < 0 ? 0 : still_needed
+  end
 end

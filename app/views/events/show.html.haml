@@ -50,7 +50,7 @@
             .number>= @event.volunteers.size
             volunteered
           %td{:align => "center", :width => "80"}
-            .number> 99
+            .number>= @event.volunteers_still_needed
             still needed
       - if user_signed_in? && current_user.volunteered?(@event)
         = image_tag("already-joined.gif")
