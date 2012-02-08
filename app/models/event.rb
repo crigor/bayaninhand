@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   scope :upcoming, lambda { where("end_date >= ?", Date.today) }
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :event_types
-  has_attached_file :image, :styles => { :medium => "250x200>", :small => "220x140>" }
+  has_attached_file :image, :styles => { :medium => "250x200!", :small => "220x140!" }
 
   def category
     self.categories.count > 0 ? self.categories[0] : nil
