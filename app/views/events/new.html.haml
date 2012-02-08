@@ -31,6 +31,9 @@
     = f.label :end_time, "End Time"
     = f.select :end_time, @times, :selected => @end_time_selected, :style => "width:250px"
     .clear
+    = f.label :volunteers_needed, "Volunteers Needed"
+    = f.text_field :volunteers_needed, :size => 10
+    .clear
     = f.label :map
     = f.text_field :map, :size => 35
     .clear
