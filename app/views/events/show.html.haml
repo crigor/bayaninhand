@@ -34,16 +34,16 @@
       %table
         %tr
           %td{:align => "center", :width => "50"}
-            .count> 4
-            days
+            .count>= @days_left
+            = pluralize_time(@days_left, "day")
           %td :
           %td{:align => "center", :width => "50"}
-            .count> 20
-            hours
+            .count>= @hours_left
+            = pluralize_time(@hours_left, "hour")
           %td :
           %td{:align => "center", :width => "50"}
-            .count> 37
-            mins.
+            .count>= @minutes_left
+            = pluralize_time(@minutes_left, "min.", "mins.")
       %table.vol
         %tr
           %td{:align => "center", :width => "80"}

@@ -20,6 +20,13 @@ class EventsController < InheritedResources::Base
     authorize! :create, @event
   end
 
+  def show
+    @event = resource
+    @days_left = @event.time_left[0]
+    @hours_left = @event.time_left[1]
+    @minutes_left = @event.time_left[2]
+  end
+
   def volunteer
     Participation.volunteer(resource, current_user)
     redirect_to organization_event_url(@event.organization, @event)
