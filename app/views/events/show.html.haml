@@ -8,13 +8,6 @@
       %table
         %tr
           %td{:valign => "top"}
-            %label Who:
-          %td{:valign => "top"}
-            Who
-            %br/
-            %br/
-        %tr
-          %td{:valign => "top"}
             %label Where:
           %td{:valign => "top"}
             = @event.address
@@ -29,14 +22,7 @@
             %br/
         %tr
           %td{:valign => "top"}
-            %label How:
-          %td{:valign => "top"}
-            How
-            %br/
-            %br/
-        %tr
-          %td{:valign => "top"}
-            %label By:
+            %label Organization:
           %td{:valign => "top"}= link_to @event.organization.name
     / event-short
     .clear
