@@ -24,4 +24,7 @@ Factory.define :event do |e|
   e.end_date { Time.now + 2.weeks }
 end
 
+Factory.define :expertise do |e|
+end
+
 require "factory_girl/step_definitions"

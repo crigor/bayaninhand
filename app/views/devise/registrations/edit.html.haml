@@ -20,34 +20,40 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password
-  .clearfix
-    = f.label :first_name
-    .input
-      = f.text_field :first_name, :class => "xlarge"
-  .clearfix
-    = f.label :last_name
-    .input
-      = f.text_field :last_name, :class => "xlarge"
-  .clearfix
-    = f.label :date_of_birth
-    .input
-      = f.date_select :date_of_birth, :start_year => 1900, :class => "xlarge"
-  .clearfix
-    = f.label :country
-    .input
-      = f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, :onchange => "toggle_region()", :class => "xlarge"
-  .clearfix
+  = f.label :first_name
+  = f.text_field :first_name, :size => 50
+  .clear
+  = f.label :middle_name
+  = f.text_field :middle_name, :size => 50
+  .clear
+  = f.label :last_name
+  = f.text_field :last_name, :size => 50
+  .clear
+  = f.label :mobile_number
+  = f.text_field :mobile_number, :size => 50
+  .clear
+  = f.label :date_of_birth
+  = f.date_select :date_of_birth, :start_year => 1940, :end_year => 2000
+  .clear
+  = f.label :gender
+  = f.radio_button :gender, "Male"
+  = f.label :gender_male, "Male"
+  = f.radio_button :gender, "Female"
+  = f.label :gender_female, "Female"
+  .clear
+  = f.label :country
+  = f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, :onchange => "toggle_region()"
+  .clear
+  #region_div
     = f.label :region
-    .input
-      = f.text_field :region, :class => "xlarge"
-  .clearfix
-    = f.label :city
-    .input
-      = f.text_field :city, :class => "xlarge"
-  .clearfix
-    = f.label :nationality
-    .input
-      = f.text_field :nationality, :class => "xlarge"
+    = f.select :region, region_options, {:include_blank => true}
+  .clear
+  = f.label :city, "City or Province"
+  = f.text_field :city, :size => 50
+  .clear
+  = f.label :nationality
+  = f.text_field :nationality, :size => 50
+  .clear
   %div= f.submit "Update"
 %h3 Cancel my account
 %p
