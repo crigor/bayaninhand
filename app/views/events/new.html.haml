@@ -14,10 +14,10 @@
     = f.text_field :address, :size => 50
     .clear
     = label_tag :event_category, "Category"
-    = f.collection_select :category_ids, Category.all, :id, :name, {}, {:multiple => false, :id => "event_category", :style => "width:250px"}
+    = f.collection_select :category_ids, Category.all, :id, :name, {:include_blank => true}, {:multiple => false, :id => "event_category", :style => "width:250px"}
     .clear
     = label_tag :event_type, "Event Type"
-    = f.collection_select :event_type_ids, EventType.all, :id, :name, {}, {:multiple => false, :id => "event_type", :style => "width:250px"}
+    = f.collection_select :event_type_ids, EventType.all, :id, :name, {:include_blank => true}, {:multiple => false, :id => "event_type", :style => "width:250px"}
     .clear
     = f.label :start_date, "Start Date"
     = f.text_field :start_date, :size => 10

@@ -24,6 +24,12 @@ Factory.define :event do |e|
   e.end_date { Time.now + 2.weeks }
 end
 
+Factory.define :event_type do |e|
+end
+
+Factory.define :category do |c|
+end
+
 Factory.define :expertise do |e|
 end
 

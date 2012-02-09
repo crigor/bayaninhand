@@ -3,9 +3,12 @@ Feature: Event
   I want to be able to create an event
   So volunteers can join
 
+  @wip
   Scenario: Organization admin creates an event
     Given a user exists with an email of "me@crigor.com"
     And an organization exists with a name of "DSWD"
+    And a category exists with a name of "Education"
+    And an event type exists with a name of "IT Development"
     And the following organization role exists:
       | User                 | Organization | Role  |
       | Email: me@crigor.com | Name: DSWD   | owner |
@@ -18,6 +21,8 @@ Feature: Event
       | End Date             | 2020-06-30         |
     And I select "09:00 AM" from "Start Time"
     And I select "05:00 PM" from "End Time"
+    And I select "Education" from "Category"
+    And I select "IT Development" from "Event Type"
     And I press "Submit"
     Then I should be on the event page of "New Event"
 
