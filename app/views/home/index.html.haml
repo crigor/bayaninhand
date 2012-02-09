@@ -68,6 +68,7 @@
         %p.opp-feat-date= date_text(event)
         %p.opp-feat-number= "#{pluralize(event.volunteers_needed, "Volunteer")} needed"
         = link_to(image_tag("btn-learnmore.gif", :border => "none"), organization_event_url(event.organization, event))
+  .clear
   / opp-items
 / opportunities
 #news
