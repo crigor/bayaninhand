@@ -6,6 +6,7 @@
     %br/
     %br/
   = form_for @organization do |f|
+    = f.error_messages
     = f.label :name, "Organization Name"
     = f.text_field :name, :size => 50
     .clear
