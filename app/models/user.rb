@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :region, :city, :nationality, :expertise_ids
-  validates_presence_of :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :region, :city, :nationality
+  validates_presence_of :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :city, :nationality
+  validates_presence_of :region, :if => Proc.new {|u| u.country == "Philippines"}
   validates_presence_of :expertises
 
   has_many :organizations, :through => :organization_roles
