@@ -72,4 +72,4 @@ Feature: Login and registration
     And I check the expertise "Education"
     And I press "Sign up"
     Then I should be on the dashboard page
-    And I should have an expertise of "Computing"
+    And I should have an expertise of "Education"
