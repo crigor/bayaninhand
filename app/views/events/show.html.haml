@@ -61,11 +61,6 @@
   %hr/
   %img{:align => "right", :src => @event.image.url(:medium), :style => "margin-left: 40px;"}/
   = @event.description.html_safe
-  - if user_signed_in? && current_user.volunteered?(@event)
-    %p You volunteered for this event.
-  - else
-    %p
-      Click #{link_to "here", volunteer_organization_event_url(@event.organization, @event)} to volunteer.
   People who volunteered (#{@event.volunteers.size})
   %ul
     - @event.volunteers.each do |user|
