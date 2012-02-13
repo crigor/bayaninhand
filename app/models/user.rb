@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :city, :nationality
   validates_presence_of :region, :if => Proc.new {|u| u.country == "Philippines"}
   validates_presence_of :expertises
+  validates_numericality_of :mobile_number, :only_integer => true, :message => "should be a valid number"
 
   has_many :organizations, :through => :organization_roles
   has_many :owned_organizations, :source => :organization, :through => :organization_roles, :conditions => ['role = ?', 'owner']
