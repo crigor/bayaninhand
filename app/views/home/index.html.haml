@@ -58,94 +58,17 @@
           %b Popular Categories
           %br/
           Social (8)     Environmental (3)     Educational (1)     Health (12)     Housing (3)
-  #opp-items
-    .opp-featured
-      .opp-feat-image
-        %img{:src => "/assets/img-help-ondoy.jpg"}/
-      .opp-feat-title
-        %h2 Help Ondoy Victims Today!
-      %img{:src => "/assets/feat-line.gif"}/
-      .opp-feat-type Children &amp; Youth
-      .opp-feat-date June 1, 2011 - July 31, 2011
-      .opp-feat-number 21 Volunteers needed
-      %a{:href => "event-1.html"}
-        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+  %ul#opp-items
     - @events.each do |event|
-      .opp-featured
-        .opp-feat-image= image_tag event.image.url(:small)
-        .opp-feat-title
-          %h2= event.title
+      %li.opp-featured
+        = image_tag event.image.url(:small), :class => "opp-feat-image"
+        %h2.opp-feat-title= event.title
         %img{:src => "/assets/feat-line.gif"}/
-        .opp-feat-type= event.category.name if event.category
-        .opp-feat-date= date_text(event)
-        .opp-feat-number 28 Volunteers needed
+        %span.opp-feat-type= event.category.name if event.category
+        %p.opp-feat-date= date_text(event)
+        %p.opp-feat-number= "#{pluralize(event.volunteers_needed, "Volunteer")} needed"
         = link_to(image_tag("btn-learnmore.gif", :border => "none"), organization_event_url(event.organization, event))
-    .opp-featured
-      .opp-feat-image
-        %img{:src => "/assets/img-feed-child.jpg"}/
-      .opp-feat-title
-        %h2 Feed a Child Project
-      %img{:src => "/assets/feat-line.gif"}/
-      .opp-feat-type Children &amp; Youth
-      .opp-feat-date June 1, 2011 - Aug. 31, 2011
-      .opp-feat-number 28 Volunteers needed
-      %a{:href => ""}
-        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
-    .opp-featured
-      .opp-feat-image
-        %img{:src => "/assets/img-feed-child.jpg"}/
-      .opp-feat-title
-        %h2 Feed a Child Project
-      %img{:src => "/assets/feat-line.gif"}/
-      .opp-feat-type Children &amp; Youth
-      .opp-feat-date June 1, 2011 - Aug. 31, 2011
-      .opp-feat-number 28 Volunteers needed
-      %a{:href => ""}
-        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
-    .opp-featured
-      .opp-feat-image
-        %img{:src => "/assets/img-feed-child.jpg"}/
-      .opp-feat-title
-        %h2 Feed a Child Project
-      %img{:src => "/assets/feat-line.gif"}/
-      .opp-feat-type Children &amp; Youth
-      .opp-feat-date June 1, 2011 - Aug. 31, 2011
-      .opp-feat-number 28 Volunteers needed
-      %a{:href => ""}
-        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
-    .opp-featured
-      .opp-feat-image
-        %img{:src => "/assets/img-feed-child.jpg"}/
-      .opp-feat-title
-        %h2 Feed a Child Project
-      %img{:src => "/assets/feat-line.gif"}/
-      .opp-feat-type Children &amp; Youth
-      .opp-feat-date June 1, 2011 - Aug. 31, 2011
-      .opp-feat-number 28 Volunteers needed
-      %a{:href => ""}
-        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
-    .opp-featured
-      .opp-feat-image
-        %img{:src => "/assets/img-feed-child.jpg"}/
-      .opp-feat-title
-        %h2 Feed a Child Project
-      %img{:src => "/assets/feat-line.gif"}/
-      .opp-feat-type Children &amp; Youth
-      .opp-feat-date June 1, 2011 - Aug. 31, 2011
-      .opp-feat-number 28 Volunteers needed
-      %a{:href => ""}
-        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
-    .opp-featured
-      .opp-feat-image
-        %img{:src => "/assets/img-feed-child.jpg"}/
-      .opp-feat-title
-        %h2 Feed a Child Project
-      %img{:src => "/assets/feat-line.gif"}/
-      .opp-feat-type Children &amp; Youth
-      .opp-feat-date June 1, 2011 - Aug. 31, 2011
-      .opp-feat-number 28 Volunteers needed
-      %a{:href => ""}
-        %img{:border => "none", :src => "/assets/btn-learnmore.gif"}/
+  .clear
   / opp-items
 / opportunities
 #news
