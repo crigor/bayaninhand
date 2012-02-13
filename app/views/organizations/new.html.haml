@@ -6,6 +6,7 @@
     %br/
     %br/
   = form_for @organization do |f|
+    = f.error_messages
     = f.label :name, "Organization Name"
     = f.text_field :name, :size => 50
     .clear
@@ -31,7 +32,7 @@
     = f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, {:style => "width:250px"}
     .clear
     = f.label :mission_statement, "Mission Statement"
-    = f.text_area :description, :rows => 5, :cols => 38
+    = f.text_area :mission_statement, :rows => 5, :cols => 38
     %br/
     %br/
     .clear

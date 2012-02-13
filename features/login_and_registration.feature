@@ -6,10 +6,22 @@ Feature: Login and registration
 
   Scenario: User creates an account
     Given I am an unauthenticated user
+    And an expertise exists with a name of "Education"
     And I am on the new user registration page
-    When I fill in "Email" with "my_email@email.com"
+    When I fill in "Email" with "test@ivolunteer.com.ph"
     And I fill in "Password" with "mypassword"
     And I fill in "Password confirmation" with "mypassword"
+    And I fill in the following:
+      | First name | First |
+      | Middle name | Middle |
+      | Last name | Last |
+      | Mobile number | 1234 |
+      | City | City |
+      | Nationality| Nationality |
+    And I select "Philippines" from "Country"
+    And I select "NCR" from "Region"
+    And I choose "Male"
+    And I check the expertise "Education"
     And I press "Sign up"
     Then I should be on the dashboard page
     And I should see "Welcome! You have signed up successfully."
@@ -17,12 +29,24 @@ Feature: Login and registration
   @email
   Scenario: User creates an account, should receive email
     Given I am an unauthenticated user
+    And an expertise exists with a name of "Education"
     And I am on the new user registration page
-    When I fill in "Email" with "test@crigor.com"
+    When I fill in "Email" with "test@ivolunteer.com.ph"
     And I fill in "Password" with "mypassword"
     And I fill in "Password confirmation" with "mypassword"
+    And I fill in the following:
+      | First name | First |
+      | Middle name | Middle |
+      | Last name | Last |
+      | Mobile number | 1234 |
+      | City | City |
+      | Nationality| Nationality |
+    And I select "Philippines" from "Country"
+    And I select "NCR" from "Region"
+    And I choose "Male"
+    And I check the expertise "Education"
     And I press "Sign up"
-    Then "test@crigor.com" should receive an email
+    Then "test@ivolunteer.com.ph" should receive an email
     When I open the email
     Then I should see "confirm" in the email body
     When I follow "Confirm my account" in the email
@@ -30,13 +54,22 @@ Feature: Login and registration
 
   Scenario: User creates an account with expertises
     Given I am an unauthenticated user
-    And an expertise exists with a name of "Computing"
+    And an expertise exists with a name of "Education"
     And I am on the new user registration page
-    When I fill in "Email" with "me@ivolunteer.com.ph"
+    When I fill in "Email" with "test@ivolunteer.com.ph"
     And I fill in "Password" with "mypassword"
     And I fill in "Password confirmation" with "mypassword"
-    #Then show me the page
-    And I check the expertise "Computing"
+    And I fill in the following:
+      | First name | First |
+      | Middle name | Middle |
+      | Last name | Last |
+      | Mobile number | 1234 |
+      | City | City |
+      | Nationality| Nationality |
+    And I select "Philippines" from "Country"
+    And I select "NCR" from "Region"
+    And I choose "Male"
+    And I check the expertise "Education"
     And I press "Sign up"
     Then I should be on the dashboard page
-    And I should have an expertise of "Computing"
+    And I should have an expertise of "Education"
