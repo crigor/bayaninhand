@@ -61,16 +61,12 @@
   %hr/
   %img{:align => "right", :src => @event.image.url(:medium), :style => "margin-left: 40px;"}/
   = @event.description.html_safe
-  - if user_signed_in? && current_user.volunteered?(@event)
-    %p You volunteered for this event.
-  - else
-    %p
-      Click #{link_to "here", volunteer_organization_event_url(@event.organization, @event)} to volunteer.
   People who volunteered (#{@event.volunteers.size})
   %ul
     - @event.volunteers.each do |user|
       %li= user.email
 / event-detail
+.clear
 #event-comments
   %h1 Event Comments
   %hr/
@@ -87,7 +83,7 @@
     .opp-feat-date June 1, 2011 - Aug. 31, 2011
     .opp-feat-number 28 Volunteers needed
     %a{:href => ""}
-      %img{:border => "none", :src => "images/btn-learnmore.gif"}/
+      =image_tag("btn-learnmore.gif", :border => "none")
   .opp-featured
     .opp-feat-image= image_tag @event.image.url(:small)
     .opp-feat-title
@@ -97,4 +93,4 @@
     .opp-feat-date June 1, 2011 - Aug. 31, 2011
     .opp-feat-number 28 Volunteers needed
     %a{:href => ""}
-      %img{:border => "none", :src => "images/btn-learnmore.gif"}/
+      =image_tag("btn-learnmore.gif", :border => "none")
