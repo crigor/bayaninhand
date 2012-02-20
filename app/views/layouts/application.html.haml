@@ -28,6 +28,9 @@
                   You are signed in as #{link_to current_user.email, dashboard_path}
                 %td= link_to "Sign out", destroy_user_session_path
             - else
+              - if flash[:alert]
+                %tr
+                  %td{:colspan => "2"}= flash[:alert]
               %tr
                 %td{:width => "150"} Email:
                 %td Password:
