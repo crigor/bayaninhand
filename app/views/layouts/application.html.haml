@@ -7,6 +7,7 @@
     = javascript_include_tag "application"
     %link{:href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css", :media => "all", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "http://fonts.googleapis.com/css?family=Francois+One", :rel => "stylesheet", :type => "text/css"}/
+
   %body
     #topmost
       #search
@@ -17,32 +18,42 @@
       #header-content
         #logo
           = link_to image_tag("ivolunteer-logo.gif"), root_path
+
         #member-area
-          %table
-            %tr
-              %td{:colspan => "2"}
-                %h2{:style => "color:#324452;"} Member's Corner
-            - if user_signed_in?
-              %tr
-                %td
-                  You are signed in as #{link_to current_user.email, dashboard_path}
-                %td= link_to "Sign out", destroy_user_session_path
-            - else
-              %tr
-                %td{:width => "150"} Email:
-                %td Password:
-              %tr
-                %td{:colspan => "2"}
-                  = form_for("user", :url => user_session_path) do |f|
-                    = f.text_field :email, :align => "top", :size => nil, :id => "user_email_top"
-                    = f.password_field :password, :align => "top", :size => nil, :id => "user_password_top"
-                    %input{:align => "top", :alt => "Login", :border => "0", :src => "/assets/btn-login.gif", :type => "image"}/
-              %tr
-                %td
-                %td
-                  %a{:href => new_password_path("user")}
-                    %small Forgot Your Password?
-        .clear
+          - if user_signed_in?
+            %h2 Member's Corner
+            #member-area-user
+              .member-area-welcome
+                Welcome,
+                =link_to current_user.email, dashboard_path
+              %span.blue
+                %a{:href => "user-dashboard.html"} My Dashboard
+                |
+                %a{:href => "user-account.html"} My Account
+              |
+              %span.orange
+                = link_to "Logout", destroy_user_session_path
+          - else
+            = form_for("user", :url => user_session_path) do |f|
+              %h2 Member's Corner
+              %span.toleft
+                Email:
+                %br/
+                = f.text_field :email, :align => "top", :size => nil, :id => "user_email_top"
+              %span.toleft.blue
+                Password:
+                %br/
+                = f.password_field :password, :align => "top", :size => nil, :id => "user_password_top"
+                %br/
+                %a{:href => new_password_path("user")}
+                  %small Forgot Your Password?
+                |
+                %a{:href => "register.html"}
+                  %small Register
+              %span.toleft.blue
+                %br/
+                %input{:align => "top", :alt => "Login", :border => "0", :src => "/assets/btn-login.gif", :type => "image"}/
+
     #menu
       %ul#menu-ul
         %li.selected
