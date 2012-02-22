@@ -54,28 +54,13 @@
                 %br/
                 %input{:align => "top", :alt => "Login", :border => "0", :src => "/assets/btn-login.gif", :type => "image"}/
 
-    #menu
-      %ul#menu-ul
-        %li.selected
-          %a{:href => root_path} Home
-        %li
-          %a{:href => "opportunities.html"} Volunteer Opportunities
-        %li
-          %a{:href => "calendar.html"} Calendar
-        %li
-          %a{:href => "organizations.html"} Organizations
-        %li
-          %a{:href => "about-us.html"} About iVolunteer Philippines
-        %li
-          %a{:href => "contact-us.html"} Contact Us
+    = render :partial => "layouts/nav"
+
     #content
-      %p.notice= notice
+      - if notice
+        %p.notice= notice
+
       = yield
       .clear
-    / content
-    #footer
-      .center-text
-        Home  |  Volunteer Opportunities  |  Calendar  |  Organizations  |  About Us  |  Contact Us
-        %br/
-        %br/
-        Copyright ©2012 by iVolunteer.net.ph. All Rights Reserved.
+
+    = render :partial => "layouts/footer"
