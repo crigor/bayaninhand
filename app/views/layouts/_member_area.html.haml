@@ -1,0 +1,34 @@
+#member-area
+  - if user_signed_in?
+    %h2 Member's Corner
+    #member-area-user
+      .member-area-welcome
+        Welcome,
+        %strong= current_user.first_name
+      %span.blue
+        = link_to "My Dashboard", dashboard_path
+        |
+        %a{:href => "user-account.html"} My Account
+      |
+      %span.orange
+        = link_to "Logout", destroy_user_session_path
+  - else
+    = form_for("user", :url => user_session_path) do |f|
+      %h2 Member's Corner
+      %span.toleft
+        Email:
+        %br/
+        = f.text_field :email, :align => "top", :size => nil, :id => "user_email_top"
+      %span.toleft.blue
+        Password:
+        %br/
+        = f.password_field :password, :align => "top", :size => nil, :id => "user_password_top"
+        %br/
+        %a{:href => new_password_path("user")}
+          %small Forgot Your Password?
+        |
+        %a{:href => "register.html"}
+          %small Register
+      %span.toleft.blue
+        %br/
+        %input{:align => "top", :alt => "Login", :border => "0", :src => "/assets/btn-login.gif", :type => "image"}/
