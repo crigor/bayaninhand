@@ -25,4 +25,9 @@ class OrganizationsController < InheritedResources::Base
       end
     end
   end
+
+  def profile
+    @organization = resource
+  end
+
 end

@@ -13,6 +13,7 @@ Bayaninhand::Application.routes.draw do
   resources :organizations do
     member do
       get 'admin'
+      get 'profile'
     end
     resources :events do
       member do
