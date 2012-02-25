@@ -13,6 +13,8 @@
       %span.orange
         = link_to "Logout", destroy_user_session_path
   - else
+    - if flash[:alert]
+      = flash[:alert]
     = form_for("user", :url => user_session_path) do |f|
       %h2 Member's Corner
       %span.toleft
