@@ -33,5 +33,5 @@ Feature: Organization
     Given I am logged in
     Given an organization exists with a name of "DSWD"
     When I go to the organization admin page of "DSWD"
-    Then I should not get a response with status 200
+    Then I should see "You are not allowed to view this page"
 

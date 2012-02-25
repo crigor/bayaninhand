@@ -10,60 +10,56 @@
     %a{:href => new_user_registration_path}
       %img{:border => "none", :src => "/assets/btn-register.gif"}/
 #opportunities
-  %table
-    %tr
-      %td{:align => "left", :width => "480"}
-        %h1 Volunteer Opportunities
-      %td{:align => "right", :width => "480"}
-        %h2
-          %span.orange
-            %a{:href => "opportunities.html"} See All Opportunities &gt;
+  %h1.toleft Volunteer Opportunities
+  %h2.orange.toright
+    %a{:href => "opportunities.html"} See All Opportunities >
+  .clear
   %hr/
   #opp-filter
-    %table
-      %tr
-        %td{:valign => "top", :width => "220"}
-          %b Find Projects by Location
-          %br/
-          %select{:style => "width:180px;"}
-            %option{:value => "Metro Manila"} Metro Manila
-            %option{:value => "Marikina"} Marikina
-        %td{:valign => "top", :width => "220"}
-          %b Find Projects by Category
-          %br/
-          %select{:style => "width:200px;"}
-            %option{:value => "Agriculture"} Agriculture
-            %option{:value => "Animals"} Animals
-            %option{:value => "Arts"} Arts &amp; Culture
-            %option{:value => "Children"} Children &amp; Youth
-            %option{:value => "Community"} Community
-            %option{:value => "Computers"} Computers &amp; Technology
-            %option{:value => "Disabled"} Disabled
-            %option{:value => "Disaster"} Disaster Relief
-            %option{:value => "Education"} Education
-            %option{:value => "Employment"} Employment
-            %option{:value => "Environment"} Environment
-            %option{:value => "Gender"} Gender
-            %option{:value => "Health"} Health
-            %option{:value => "Housing"} Housing
-            %option{:value => "Human"} Human Rights
-            %option{:value => "Hunger"} Hunger
-            %option{:value => "Justice"} Justice &amp; Legal
-            %option{:value => "Peace"} Peace &amp; Conflict Resolution
-            %option{:value => "Politics"} Politics
-            %option{:value => "Poverty"} Poverty
-            %option{:value => "Seniors"} Seniors
-            %option{:value => "Sports"} Sports &amp; Recreation
-        %td{:valign => "top"}
-          %b Popular Categories
-          %br/
-          Social (8)     Environmental (3)     Educational (1)     Health (12)     Housing (3)
+    %span.section
+      %h4 Find Projects by Location
+      %select{:style => "width:180px;"}
+        %option{:value => "bulacan"} Bulacan
+        %option{:value => "laguna"} Laguna
+        %option{:selected => "selected", :value => "manila"} Manila
+        %option{:value => "marikina"} Marikina
+        %option{:value => "paranaque"} Paranaque
+        %option{:value => "quezon-city"} Quezon City
+        %option{:value => "rizal"} Rizal
+    %span.section
+      %h4 Find Projects by Category
+      %select{:style => "width:200px;"}
+        %option{:value => "Agriculture"} Agriculture
+        %option{:value => "Animals"} Animals
+        %option{:value => "Arts"} Arts & Culture
+        %option{:value => "Children"} Children & Youth
+        %option{:value => "Community"} Community
+        %option{:value => "Computers"} Computers & Technology
+        %option{:value => "Disabled"} Disabled
+        %option{:value => "Disaster"} Disaster Relief
+        %option{:value => "Education"} Education
+        %option{:value => "Employment"} Employment
+        %option{:value => "Environment"} Environment
+        %option{:value => "Gender"} Gender
+        %option{:value => "Health"} Health
+        %option{:value => "Housing"} Housing
+        %option{:value => "Human"} Human Rights
+        %option{:value => "Hunger"} Hunger
+        %option{:value => "Justice"} Justice & Legal
+        %option{:value => "Peace"} Peace & Conflict Resolution
+        %option{:value => "Politics"} Politics
+        %option{:value => "Poverty"} Poverty
+        %option{:value => "Seniors"} Seniors
+        %option{:value => "Sports"} Sports & Recreation
+    %span.section
+      %h4 Popular Categories
+      Social (8)     Environmental (3)     Educational (1)     Health (12)     Housing (3)
   %ul#opp-items
     - @events.each do |event|
       %li.opp-featured
         = image_tag event.image.url(:small), :class => "opp-feat-image"
         %h2.opp-feat-title= event.title
-        %img{:src => "/assets/feat-line.gif"}/
+        = image_tag("feat-line.gif")
         %span.opp-feat-type= event.category.name if event.category
         %p.opp-feat-date= date_text(event)
         %p.opp-feat-number= "#{pluralize(event.volunteers_needed, "Volunteer")} needed"
@@ -71,53 +67,44 @@
   .clear
   / opp-items
 / opportunities
+
 #news
-  %table{:cellpadding => "0", :cellspacing => "0"}
-    %tr
-      %td{:align => "left", :width => "480"}
-        %h1 Volunteers in Action
-      %td{:align => "right", :width => "480"}
-        %h2
-          %span.orange
-            %a{:href => "opportunities.html"} See All News >
+  %h1.toleft Volunteers in Action
+  %h2.orange.toright
+    %a{:href => "opportunities.html"} See All News >
+  .clear
   %hr/
   .news-list
-    %table
-      %tr
-        %td{:valign => "top", :width => "100"}
-          %img{:src => "/assets/news-img-1.jpg"}/
-        %td{:valign => "top"}
-          %b Orphanage Visit
-          %br/
-          %br/
-          Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20
-          has been an astounding success. A total of 120 ate's and kuya's signed up for the event,
-          and each one brought their own energy and...
-          %span.readmore
-            %a{:href => ""} Read More &gt;
-          %br/
-          %br/
-          %br/
-      %tr
-        %td{:valign => "top", :width => "100"}
-          %img{:src => "/assets/news-img-1.jpg"}/
-        %td{:valign => "top"}
-          %b Orphanage Visit
-          %br/
-          %br/
-          Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20
-          has been an astounding success. A total of 120 ate's and kuya's signed up for the event,
-          and each one brought their own energy and...
-          %span.readmore
-            %a{:href => ""} Read More &gt;
+    = image_tag "news-img-1.jpg", :class => "news-image"
+    %span.news-desc
+      %h4 Orphanage Visit
+      Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20
+      has been an astounding success. A total of 120 ate's and kuya's signed up for the event,
+      and each one brought their own energy and...
+      %span.readmore
+        = link_to "Read More >", ""
+  .clear
+  .news-list
+    = image_tag "news-img-1.jpg", :class => "news-image"
+    %span.news-desc
+      %h4 Orphanage Visit
+      Make a child happy for one day by being an ATE or KUYA. The orphanage visit last July 20
+      has been an astounding success. A total of 120 ate's and kuya's signed up for the event,
+      and each one brought their own energy and...
+      %span.readmore
+        = link_to "Read More >", ""
+  .clear
+
 #featured-org
-  %h1 Featured Organization
+  %h1.toleft Featured Organization
+  .clear
   %hr/
   %center
-    %img{:src => "/assets/featured-org.jpg"}/
+    = image_tag "featured-org.jpg"
   %br/
   %b Computer Literacy Advcates for the Youth
   %br/
   CLAY aims to spread computer literacy among the less-privileged youth by holding computer classes...
   %span.readmore
-    %a{:href => ""} Read More &gt;
+    %a{:href => ""} Read More >
+.clear
