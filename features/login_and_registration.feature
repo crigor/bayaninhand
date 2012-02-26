@@ -73,3 +73,16 @@ Feature: Login and registration
     And I press "Sign up"
     Then I should be on the dashboard page
     And I should have an expertise of "Education"
+
+  Scenario: User logins in with valid credentials
+    Given I am an existing user
+    And I am on the login page
+    When I log in with valid credentials
+    Then I should be on the dashboard page
+
+  Scenario: User logins in with invalid credentials
+    Given I am an existing user
+    And I am on the login page
+    When I log in with invalid credentials
+    Then I should be on the home page
+    And I should see "Invalid email or password"
