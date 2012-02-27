@@ -39,4 +39,19 @@
             %span.readmore>= link_to "Read More", organization_event_url(event.organization, event)
           .clear
     %h3 Finished Events
+    %ul.feed-list
+      - @finished_events.each do |event|
+        %li
+          %span.feed-date= event.start_date
+          = image_tag event.image.url(:small), :class => "feed-image", :style => "width:90px;height:90px"
+          %span.feed-desc
+            %h4= event.title
+            %label> Time:&nbsp;
+            = time_text(event)
+            %br
+            %label> Venue:&nbsp;
+            = event.address
+            %br
+            %span.readmore>= link_to "Read More", organization_event_url(event.organization, event)
+          .clear
   .clear
