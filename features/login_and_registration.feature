@@ -17,8 +17,8 @@ Feature: Login and registration
       | Last name | Last |
       | Mobile number | 1234 |
       | City | City |
-      | Nationality| Nationality |
     And I select "Philippines" from "Country"
+    And I select "Philippines" from "Nationality"
     And I select "NCR" from "Region"
     And I choose "Male"
     And I check the expertise "Education"
@@ -40,8 +40,8 @@ Feature: Login and registration
       | Last name | Last |
       | Mobile number | 1234 |
       | City | City |
-      | Nationality| Nationality |
     And I select "Philippines" from "Country"
+    And I select "Philippines" from "Nationality"
     And I select "NCR" from "Region"
     And I choose "Male"
     And I check the expertise "Education"
@@ -65,8 +65,8 @@ Feature: Login and registration
       | Last name | Last |
       | Mobile number | 1234 |
       | City | City |
-      | Nationality| Nationality |
     And I select "Philippines" from "Country"
+    And I select "Philippines" from "Nationality"
     And I select "NCR" from "Region"
     And I choose "Male"
     And I check the expertise "Education"
