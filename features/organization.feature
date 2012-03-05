@@ -38,7 +38,7 @@ Feature: Organization
   Scenario: Ordinary user sees organization profile page
     Given I am an unauthenticated user
     And an organization exists with a name of "DSWD"
-    When I go to the organization profile page of "DSWD"
+    When I go to the organization page of "DSWD"
     Then I should see "123 Test Street"
     And I should see "Contack Pearson"
     And I should see "1234567"

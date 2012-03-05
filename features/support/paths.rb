@@ -28,9 +28,9 @@ module NavigationHelpers
     when /^the organization admin page of "(.*)"$/
       o = Organization.find_by_name($1)
       admin_organization_path(o)
-    when /^the organization profile page of "(.*)"$/
+    when /^the organization page of "(.*)"$/
       o = Organization.find_by_name($1)
-      profile_organization_path(o)
+      organization_path(o)
     when /^the event page of "(.*)"$/
       event = Event.find_by_title($1)
       "/organizations/#{event.organization.id}/events/#{event.id}"
