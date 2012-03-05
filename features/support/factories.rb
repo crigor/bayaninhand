@@ -8,14 +8,14 @@ end
 Factory.define :organization do |o|
   o.name "iVolunteer"
   o.association :organization_type
-  o.address "Address"
-  o.contact_person "Contact Person"
-  o.phone_number "1234"
+  o.address "123 Test Street"
+  o.contact_person "Contack Pearson"
+  o.phone_number "1234567"
   o.email "org@ivolunteer.com.ph"
   o.website "ivolunteer.com.ph"
   o.country "Philippines"
-  o.mission_statement "Mission Statement"
-  o.description "Description"
+  o.mission_statement "Lorem Ipsum Statement"
+  o.description "This is a test organization"
 end
 
 Factory.define :organization_type do |o|
