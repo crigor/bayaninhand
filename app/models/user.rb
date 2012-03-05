@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
   has_many :events, :through => :participations
   has_and_belongs_to_many :expertises
 
+  define_index do
+    indexes :email
+    indexes :last_name
+  end
+
   def can_manage?(organization)
     self.owned_organizations.include?(organization)
   end
