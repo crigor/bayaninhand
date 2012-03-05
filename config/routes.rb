@@ -1,5 +1,5 @@
 Bayaninhand::Application.routes.draw do
-  match "dashboard" => "dashboard#volunteer"
+  match "dashboard" => "dashboard#events"
   resources :event_types
 
   resources :categories

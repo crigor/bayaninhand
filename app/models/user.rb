@@ -33,13 +33,17 @@ class User < ActiveRecord::Base
   def organization_admin?(organization)
     self.administered_organizations.include?(organization)
   end
-  
+
   def upcoming_events
     self.events.scoped.where("end_date >= '#{Date.today}'").order("start_date")
   end
-  
+
+  def finished_events
+    self.events.scoped.where("end_date < '#{Date.today}'").order("start_date DESC")
+  end
+
   protected
-  
+
     def clear_region
       self.region = nil if self.country != "Philippines"
     end

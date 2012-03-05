@@ -7,6 +7,16 @@ module EventsHelper
     end
   end
 
+  def time_text(event)
+    if event.start_time.nil? && event.end_time.nil?
+      "All day"
+    elsif !event.start_time.nil? && !event.end_time.nil?
+      "#{event.start_time.strftime('%I:%M %p')} - #{event.end_time.strftime('%I:%M %p')}"
+    elsif !event.start_time.nil? && event.end_time.nil?
+      "#{event.start_time.strftime('%I:%M %p')}"
+    end
+  end
+
   def pluralize_time(count, singular, plural = nil)
     (count == 1)  ? singular : (plural || singular.pluralize)
   end
