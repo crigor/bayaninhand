@@ -1,7 +1,10 @@
 class Event < ActiveRecord::Base
   belongs_to :organization
-  validates_presence_of :title, :description, :organization, :start_date, :end_date, :map, :volunteers_needed
+  
+  validates_presence_of :title, :description, :organization, :start_date, :end_date, :map, :volunteers_needed, :start_time, :end_time
   validates_presence_of :categories, :event_types
+  validate :check_dates
+  
   has_many :participations
   has_many :volunteers, :source => :user, :through => :participations
   scope :upcoming, lambda { where("end_date >= ?", Date.today).limit(8) }
@@ -29,5 +32,11 @@ class Event < ActiveRecord::Base
   def volunteers_still_needed
     still_needed = (self.volunteers_needed || 0) - self.volunteers.count
     still_needed < 0 ? 0 : still_needed
+  end
+  
+  def check_dates
+    if self.start_date && self.end_date && self.start_time && self.end_time
+      self.errors.add(:base, "Start date cannot be greater than end date.") if Time.parse("#{self.start_date.to_s} #{self.start_time.strftime('%H:%M')}") > Time.parse("#{self.end_date.to_s} #{self.end_time.strftime('%H:%M')}")
+    end
   end
 end
