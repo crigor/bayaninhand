@@ -53,7 +53,8 @@
         %option{:value => "Sports"} Sports & Recreation
     %span.section
       %h4 Popular Categories
-      Social (8)     Environmental (3)     Educational (1)     Health (12)     Housing (3)
+      - @popular_categories.each do |category|
+        = link_to "#{category.name} (#{category.events_count})", root_path(:category => category.name)
   %ul#opp-items
     - @events.each do |event|
       %li.opp-featured

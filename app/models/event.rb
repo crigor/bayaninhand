@@ -14,6 +14,7 @@ class Event < ActiveRecord::Base
 
   define_index do
     indexes :title
+    indexes categories.name, :as => :categories
   end
 
   def category
