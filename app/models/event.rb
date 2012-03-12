@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :organization
   
-  validates_presence_of :title, :description, :organization, :start_date, :end_date, :map, :volunteers_needed, :start_time, :end_time
+  validates_presence_of :title, :description, :organization, :start_date, :end_date, :map, :volunteers_needed
   validates_presence_of :categories, :event_types
   validate :check_dates
   
@@ -35,7 +35,7 @@ class Event < ActiveRecord::Base
   end
   
   def check_dates
-    if self.start_date && self.end_date && self.start_time && self.end_time
+    if !self.start_date.blank? && !self.end_date.blank? && !self.start_time.blank? && !self.end_time.blank?
       self.errors.add(:base, "Start date cannot be greater than end date.") if Time.parse("#{self.start_date.to_s} #{self.start_time.strftime('%H:%M')}") > Time.parse("#{self.end_date.to_s} #{self.end_time.strftime('%H:%M')}")
     end
   end
