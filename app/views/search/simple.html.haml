@@ -1,0 +1,4 @@
+= "#{pluralize(@events_total_entries, "event")} found"
+- @events.each do |event|
+  %li
+    = link_to event.title, organization_event_url(event.organization, event)

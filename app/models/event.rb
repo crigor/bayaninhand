@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
   define_index do
     indexes :title
     indexes categories.name, :as => :categories
+    has :start_date, :end_date
   end
 
   def category
