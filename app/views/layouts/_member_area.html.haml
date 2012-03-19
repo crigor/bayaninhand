@@ -8,7 +8,7 @@
       %span.blue
         = link_to "My Dashboard", dashboard_path
         |
-        %a{:href => "user-account.html"} My Account
+        %a{:href => edit_registration_path(current_user)} My Account
       |
       %span.orange
         = link_to "Logout", destroy_user_session_path
