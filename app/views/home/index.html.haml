@@ -58,7 +58,7 @@
     - @events.each do |event|
       %li.opp-featured
         = image_tag event.image.url(:small), :class => "opp-feat-image"
-        %h2.opp-feat-title= event.title
+        %h2.opp-feat-title= truncate(event.title, :length => 25)
         = image_tag("feat-line.gif")
         %span.opp-feat-type= event.category.name if event.category
         %p.opp-feat-date= date_text(event)

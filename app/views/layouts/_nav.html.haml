@@ -1,9 +1,17 @@
 #menu
   %ul#menu-ul
-    %li.selected
-      %a{:href => root_path} Home
-    %li
-      %a{:href => "opportunities.html"} Volunteer Opportunities
+    - if controller_name == "home"
+      %li.selected
+        %a{:href => root_path} Home
+    - else
+      %li
+        %a{:href => root_path} Home
+    - if controller_name == "events"
+      %li.selected
+        %a{:href => "opportunities.html"} Volunteer Opportunities
+    - else
+      %li
+        %a{:href => "opportunities.html"} Volunteer Opportunities
     %li
       %a{:href => "calendar.html"} Calendar
     %li
