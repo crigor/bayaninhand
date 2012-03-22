@@ -39,19 +39,26 @@ hr{
   margin: 0px 0px 20px 0px;
 }
 
-/*==================== SEARCH ====================*/ 
+/*==================== TOPMOST ====================*/ 
 #topmost{
   background: #0f8fba;
   height: 22px;
   padding: 5px 0px;
 }
 
-#search{
+#topmost-content{
   width: 960px;
-  margin: 0px auto;
-  text-align: right;  
+  margin: 0px auto;   
   color: #ffffff;
-  
+}
+
+#like-btn{
+  float:left;
+}
+
+#search{
+  float: right;  
+  text-align: right; 
 }
 
 #search input{
@@ -413,6 +420,23 @@ hr{
 .feed-desc h4{
   margin: 0px 0px 7px 0px;
 }
+
+
+/*==================== SEARCH ====================*/
+.advanced-search label, .advanced-search input, .advanced-search select{
+  float: left;
+  margin-bottom: 10px;
+}
+
+.advanced-search label{
+  width: 120px;
+  padding-right: 20px;
+}
+
+.search-results li{
+  line-height: 20px;
+}
+
 
 /*==================== FOOTER ====================*/
 #footer{
