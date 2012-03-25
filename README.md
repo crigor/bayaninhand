@@ -32,8 +32,8 @@ Please use Ruby 1.9.2.
 
 #### 2. Create a feature branch
 
-  $ cd bayanihand
-  $ git checkout -b new_feature
+    $ cd bayanihand
+    $ git checkout -b new_feature
 
 Be descriptive in the feature name and use underscores. Also, don't make it too long as it will make it harder for you to push in the long run.
 
