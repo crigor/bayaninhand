@@ -82,7 +82,7 @@ hr{
 
 #member-area{
   float: right;
-  width: 400px;
+  width: 415px;
 }
 
 #member-area-user a{
@@ -351,6 +351,12 @@ hr{
   background-color: #cccccc;
 }
 
+.register .sameline{
+  float: left;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
 .forceCenter{
   margin: 20px 0px 0px 185px;
 }
@@ -420,7 +426,6 @@ hr{
 .feed-desc h4{
   margin: 0px 0px 7px 0px;
 }
-
 
 /*==================== SEARCH ====================*/
 .advanced-search label, .advanced-search input, .advanced-search select{
