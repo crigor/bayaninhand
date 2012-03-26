@@ -21,7 +21,7 @@ h1{
 h2{
   font-size: 16px;
   font-weight: normal;
-  margin: 20px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 h3{
@@ -85,6 +85,22 @@ hr{
 .member-area-welcome{
   padding: 5px 0px 5px 0px;
   color:#666666;
+}
+
+#member-area .member_input{
+  float: left;
+  padding: 3px;
+}
+
+#member-area .member_button{
+  float: left;
+  padding-top: 18px;
+  height: 40px;
+  margin-left: 8px;
+}
+
+#member-area input[type="text"], #member-area input[type="password"]{
+  width: 150px;
 }
 
 /*==================== MENU ====================*/
