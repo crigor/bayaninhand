@@ -17,12 +17,12 @@
       = flash[:alert]
     = form_for("user", :url => user_session_path) do |f|
       %h2 Member's Corner
-      %span.toleft
-        Email:
+      .member_input
+        = f.label :email, :for => "user_email_top"
         %br/
         = f.text_field :email, :align => "top", :size => nil, :id => "user_email_top"
-      %span.toleft.blue
-        Password:
+      .member_input
+        = f.label :password, :for => "user_password_top"
         %br/
         = f.password_field :password, :align => "top", :size => nil, :id => "user_password_top"
         %br/
@@ -31,6 +31,5 @@
         |
         %a{:href => new_registration_path("user")}
           %small Register
-      %span.toleft.blue
-        %br/
-        %input{:align => "top", :alt => "Login", :border => "0", :src => "/assets/btn-login.gif", :type => "image"}/
+      .member_button
+        %input{:align => "top", :alt => "Login", :border => "0", :src => "/assets/btn-login.gif", :type => "image"}
