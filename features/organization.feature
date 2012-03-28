@@ -31,7 +31,19 @@ Feature: Organization
   @allow-rescue
   Scenario: Ordinary user on the org admin page
     Given I am logged in
-    Given an organization exists with a name of "DSWD"
+    And an organization exists with a name of "DSWD"
     When I go to the organization admin page of "DSWD"
     Then I should see "You are not allowed to view this page"
 
+  Scenario: Ordinary user sees organization profile page
+    Given I am an unauthenticated user
+    And an organization exists with a name of "DSWD"
+    When I go to the organization page of "DSWD"
+    Then I should see "123 Test Street"
+    And I should see "Contack Pearson"
+    And I should see "1234567"
+    And I should see "Email"
+    And I should see "Website"
+    And I should see "Philippines"
+    And I should see "Lorem Ipsum Statement"
+    And I should see "This is a test organization"

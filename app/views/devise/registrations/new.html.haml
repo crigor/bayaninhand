@@ -46,7 +46,7 @@
     = f.text_field :city, :size => 50
     .clear
     = f.label :nationality
-    = f.text_field :nationality, :size => 50
+    = f.select :nationality, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}
     .clear
     = label_tag "Expertise"
     - Expertise.all.each do |expertise|

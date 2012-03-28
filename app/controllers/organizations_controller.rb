@@ -25,4 +25,5 @@ class OrganizationsController < InheritedResources::Base
       end
     end
   end
+
 end
