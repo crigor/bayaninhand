@@ -1,17 +1,9 @@
 #menu
   %ul#menu-ul
-    - if controller_name == "home"
-      %li.selected
-        %a{:href => root_path} Home
-    - else
-      %li
-        %a{:href => root_path} Home
-    - if controller_name == "events"
-      %li.selected
-        %a{:href => "opportunities.html"} Volunteer Opportunities
-    - else
-      %li
-        %a{:href => "opportunities.html"} Volunteer Opportunities
+    %li{:class => on_current_page("home")}
+      %a{:href => root_path} Home
+    %li{:class => on_current_page("events")}
+      %a{:href => "opportunities.html"} Volunteer Opportunities
     %li
       %a{:href => "calendar.html"} Calendar
     %li
