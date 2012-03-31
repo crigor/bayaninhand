@@ -48,15 +48,18 @@
     = f.label :nationality
     = f.select :nationality, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}
     .clear
-    = label_tag "Expertise"
-    - Expertise.all.each do |expertise|
-      %div
-        - expertise_name_underscore = expertise.name.gsub(/,/,'').gsub(/\s/, '_').downcase
-        = check_box_tag "user[expertise_ids][]", expertise.id, @user.expertises.include?(expertise), :id => "user_expertise_#{expertise_name_underscore}"
-        = label_tag "user_expertise_#{expertise_name_underscore}", expertise.name
+    .expertise_section
+      = label_tag "Expertise"
+      %p
+        %em Check all applicable
+      - Expertise.all.each_with_index do |expertise, index|
+        .user_expertise
+          - expertise_name_underscore = expertise.name.gsub(/,/,'').gsub(/\s/,'_').downcase
+          = check_box_tag "user[expertise_ids][]", expertise.id, @user.expertises.include?(expertise), :id => "user_expertise_#{expertise_name_underscore}"
+          = label_tag "user_expertise_#{expertise_name_underscore}", expertise.name
     .clear
-    .actions
-      %button.btn.primary{:type => "submit"} Sign up
+    .forceCenter
+      %input.btn.primary{:type => "image", :src => "/assets/btn-submit.gif", :alt => "submit"}
 = javascript_tag :defer => "defer" do
   $(document).ready(function(){
   toggle_region();

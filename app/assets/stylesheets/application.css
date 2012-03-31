@@ -364,6 +364,28 @@ hr{
   margin: 20px 0px 0px 185px;
 }
 
+.expertise_section{
+  width: 100%;
+  min-height: 350px;
+  max-height: 700px;
+}
+.expertise_section label{
+  width: 100%;
+}
+.expertise_section .user_expertise{
+  font-family: tahoma, arial;
+  width: 220px;
+  float: left;
+  font-size: 12px;
+}
+.expertise_section .user_expertise label{
+  width: auto;
+  font-weight: 200;
+}
+.forceCenter .btn{
+  margin-top: -30px;
+}
+
 /*====================  USER DASHBOARD  ====================*/
 .user-dashboard h2{
   margin: 10px 0px 10px 0px;
