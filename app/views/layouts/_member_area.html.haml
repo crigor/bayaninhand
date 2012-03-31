@@ -18,11 +18,11 @@
     = form_for("user", :url => user_session_path) do |f|
       %h2 Member's Corner
       .member_input
-        = f.label :email, :for => "user_email_top"
+        = f.label :email, "Email:", :for => "user_email_top"
         %br/
         = f.text_field :email, :align => "top", :size => nil, :id => "user_email_top"
       .member_input
-        = f.label :password, :for => "user_password_top"
+        = f.label :password, "Password:", :for => "user_password_top"
         %br/
         = f.password_field :password, :align => "top", :size => nil, :id => "user_password_top"
         %br/
