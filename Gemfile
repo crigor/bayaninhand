@@ -17,6 +17,7 @@ gem 'formtastic'
 gem 'carmen'
 gem 'paperclip'
 gem 'tinymce-rails'
+gem 'thinking-sphinx'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
