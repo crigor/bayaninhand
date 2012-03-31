@@ -1,8 +1,8 @@
 #menu
   %ul#menu-ul
-    %li.selected
+    %li{:class => on_current_page("home")}
       %a{:href => root_path} Home
-    %li
+    %li{:class => on_current_page("events")}
       %a{:href => "opportunities.html"} Volunteer Opportunities
     %li
       %a{:href => "calendar.html"} Calendar
