@@ -18,5 +18,9 @@ module ApplicationHelper
      ["Region XII", "Region XII"],
      ["Region XIII", "Region XIII"]]
   end
+  
+  def on_current_page(current_page)
+    return (current_page == controller_name) ? "selected" : ""
+  end
 
 end
