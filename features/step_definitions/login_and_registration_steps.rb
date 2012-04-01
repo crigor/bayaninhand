@@ -48,9 +48,9 @@ def signup
     Given I am an unauthenticated user
     And an expertise exists with a name of "Education"
     And I am on the new user registration page
-    When I fill in "Email" with "test@ivolunteer.com.ph"
-    And I fill in "Password" with "mypassword"
-    And I fill in "Password confirmation" with "mypassword"
+    When I fill in "Email" with "test@ivolunteer.com.ph" within ".register"
+    And I fill in "Password" with "mypassword" within ".register"
+    And I fill in "Password confirmation" with "mypassword" within ".register"
     And I fill in the following:
       | First name | First |
       | Middle name | Middle |
