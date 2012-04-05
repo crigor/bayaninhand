@@ -59,7 +59,7 @@
           = label_tag "user_expertise_#{expertise_name_underscore}", expertise.name
     .clear
     .forceCenter
-      %input.btn.primary{:type => "image", :src => "/assets/btn-submit.gif", :alt => "submit"}
+      %input.btn.primary{:type => "image", :src => "/assets/btn-submit.gif", :alt => "submit", :data => "registration-submit"}
 = javascript_tag :defer => "defer" do
   $(document).ready(function(){
   toggle_region();
