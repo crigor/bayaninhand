@@ -18,6 +18,7 @@ Please use Ruby 1.9.2.
 
 	$ rake db:create
 	$ rake db:test:prepare
+    $ rake db:seed
 
 #### 6. Check if all tests are passing
 
