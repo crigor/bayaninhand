@@ -1,5 +1,6 @@
 Bayaninhand::Application.routes.draw do
   match "dashboard" => "dashboard#events"
+  match "search" => "search#simple"
   resources :event_types
 
   resources :categories
