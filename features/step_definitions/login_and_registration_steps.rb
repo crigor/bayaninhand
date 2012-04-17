@@ -37,6 +37,10 @@ When /^I sign up with email "([^"]*)" and password "([^"]*)"$/ do |email, passwo
   signup(email,password)
 end
 
+When /^I click the submit button$/ do
+  find(:xpath, '//input[@data="registration-submit"]').click
+end
+
 def signin(email=nil, password=nil)
   email ||= "test@ivolunteer.com.ph"
   password ||= "mypassword"
@@ -71,6 +75,6 @@ def signup(email=nil, password=nil)
     And I select "NCR" from "Region"
     And I choose "Male"
     And I check the expertise "Education"
-    And I press "Sign up"
+    And I click the submit button
   }
 end
