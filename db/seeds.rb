@@ -38,3 +38,34 @@ Expertise.transaction do
     Expertise.create(name: profession, id: index) 
   end
 end
+
+#Generate Organization Types
+organization_types = ["Private", "Public"]
+OrganizationType.transaction do
+  OrganizationType.delete_all
+
+  organization_types.each_with_index do |type, index|
+    OrganizationType.create(id: index, name: type)
+  end
+end
+
+#Generate Categories
+categories = ["Blood Transfer", "Charity", "Education", "Disaster help"]
+Category.transaction do
+  Category.delete_all
+
+  categories.each_with_index do |category, index|
+    Category.create(id: index, name: category)
+  end
+end
+
+#Generate Event Types
+event_types = ["Service", "Money"]
+EventType.transaction do
+  EventType.delete_all
+
+  event_types.each_with_index do |type, index|
+    EventType.create(id: index, name: type)
+  end
+end
+
