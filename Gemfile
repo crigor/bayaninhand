@@ -18,6 +18,7 @@ gem 'carmen'
 gem 'paperclip'
 gem 'tinymce-rails'
 gem 'thinking-sphinx'
+gem 'bundler', '1.1.3'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
