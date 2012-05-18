@@ -1,0 +1,4 @@
+environments:
+  193:
+    copy_exclude:
+    - features
