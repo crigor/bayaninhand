@@ -55,7 +55,10 @@
       - if user_signed_in? && current_user.volunteered?(@event)
         = image_tag("already-joined.gif")
       - else
-        = link_to(image_tag("btn-join.gif"), volunteer_organization_event_url(@event.organization, @event), :rel => "volunteer-event", :disabled => @event.volunteers_still_needed == 0)
+        - if @event.volunteers_still_needed <= 0
+          = image_tag("btn-join-disabled.gif")
+        - else
+          = link_to(image_tag("btn-join.gif"), volunteer_organization_event_url(@event.organization, @event), :rel => "volunteer-event")
   .clear
   %h2 Event Details
   %hr/

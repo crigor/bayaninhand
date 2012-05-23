@@ -1,7 +1,9 @@
 class Event < ActiveRecord::Base
   belongs_to :organization
+  
   validates_presence_of :title, :description, :organization, :start_date, :end_date, :map, :volunteers_needed
   validates_presence_of :categories, :event_types
+  validate :check_dates
   validates_numericality_of :volunteers_needed, :greater_than => 0
   has_many :participations
   has_many :volunteers, :source => :user, :through => :participations
@@ -9,6 +11,12 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :event_types
   has_attached_file :image, :styles => { :medium => "250x200!", :small => "220x140!" }
+
+  define_index do
+    indexes :title
+    indexes categories.name, :as => :categories
+    has :start_date, :end_date
+  end
 
   def category
     self.categories.count > 0 ? self.categories[0] : nil
@@ -30,5 +38,11 @@ class Event < ActiveRecord::Base
   def volunteers_still_needed
     still_needed = (self.volunteers_needed || 0) - self.volunteers.count
     still_needed < 0 ? 0 : still_needed
+  end
+  
+  def check_dates
+    if !self.start_date.blank? && !self.end_date.blank? && !self.start_time.blank? && !self.end_time.blank?
+      self.errors.add(:base, "Start date cannot be greater than end date.") if Time.parse("#{self.start_date.to_s} #{self.start_time.strftime('%H:%M')}") > Time.parse("#{self.end_date.to_s} #{self.end_time.strftime('%H:%M')}")
+    end
   end
 end

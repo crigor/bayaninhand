@@ -30,27 +30,40 @@ end
 
 When /^I log in with invalid credentials$/ do
   visit('/users/sign_out')
-  visit('users/sign_in')
-  fill_in("Email", :with => "test@ivolunteer.com.ph")
-  fill_in("Password", :with => "wrongpassword")
-  click_button("Sign in")
+  signin("test@ivolunteer.com.ph", "wrongpassword")
 end
 
-def signin
-  visit('users/sign_in')
-  fill_in("Email", :with => "test@ivolunteer.com.ph")
-  fill_in("Password", :with => "mypassword")
-  click_button("Sign in")
+When /^I sign up with email "([^"]*)" and password "([^"]*)"$/ do |email, password|
+  signup(email,password)
 end
 
-def signup
+When /^I click the submit button$/ do
+  find(:xpath, '//input[@data="registration-submit"]').click
+end
+
+def signin(email=nil, password=nil)
+  email ||= "test@ivolunteer.com.ph"
+  password ||= "mypassword"
+
+  visit('/users/sign_in')
+  within("#sign-in") do
+    fill_in("Email", :with => email)
+    fill_in("Password", :with => password)
+    click_button("Sign in")
+  end
+end
+
+def signup(email=nil, password=nil)
+  email ||= "test@ivolunteer.com.ph"
+  password ||= "mypassword"
+
   steps %Q{
     Given I am an unauthenticated user
     And an expertise exists with a name of "Education"
     And I am on the new user registration page
-    When I fill in "Email" with "test@ivolunteer.com.ph"
-    And I fill in "Password" with "mypassword"
-    And I fill in "Password confirmation" with "mypassword"
+    When I fill in "Email" with "#{email}" within ".register"
+    And I fill in "Password" with "#{password}" within ".register"
+    And I fill in "Password confirmation" with "#{password}" within ".register"
     And I fill in the following:
       | First name | First |
       | Middle name | Middle |
@@ -62,6 +75,6 @@ def signup
     And I select "NCR" from "Region"
     And I choose "Male"
     And I check the expertise "Education"
-    And I press "Sign up"
+    And I click the submit button
   }
 end
