@@ -1,6 +1,9 @@
 Bayaninhand::Application.routes.draw do
   match "dashboard" => "dashboard#events"
   match "search" => "search#simple"
+  resources :volunteers do
+    get 'profile', :on => :collection
+  end
   resources :event_types
 
   resources :categories

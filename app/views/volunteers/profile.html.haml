@@ -1,0 +1,52 @@
+%h1 Volunteer Dashboard
+%hr/
+.user-dashboard
+  = render :partial => "shared/volunteer_dashboard_left"
+
+  .dashboard-right
+    %h2 My Profile
+    %hr/
+    .double-space
+      %label First Name:
+      = @user.first_name
+      %br/
+      %label Last Name:
+      = @user.last_name
+      %br/
+      %label Birthdate:
+      = @user.date_of_birth.strftime("%m/%d/%Y")
+      %br/
+      %label Expertise:
+      %ul.feed-list
+      - @user.expertises.each do |expertise|
+        %li
+          = expertise.name
+      %br/
+      %label Country:
+      = @user.country
+      %br/
+      %label Region:
+      = @user.region
+      %br/
+      %label City:
+      = @user.city
+      %br/
+      %label Nationality:
+      = @user.nationality
+      %br/
+      %label Gender:
+      = @user.gender
+      %br/
+      %label Organizations:
+      %ul.feed-list
+      - @user.organizations.each do |organization|
+        %li
+          = link_to organization.name, organization_path(organization)
+      %br/
+      %label Events:
+      %ul.feed-list
+      - @user.upcoming_events.each do |event|
+        %li
+          = event.title
+      %br/
+  .clear

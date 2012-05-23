@@ -1,64 +1,67 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-  = devise_error_messages!
-  %div
+%h1 Edit Profile
+%hr
+.register
+  %p
+    Welcome to iVolunteer.net.ph, your portal to many volunteer opportunities around the Philippines!
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
     = f.label :email
-    %br/
-    = f.email_field :email
-  %div
+    = f.email_field :email, :size => 50
+    .clear
     = f.label :password
     %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password
-  %div
+    = f.password_field :password, :size => 50
+    .clear
     = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div
+    = f.password_field :password_confirmation, :size => 50
+    .clear
     = f.label :current_password
     %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password
-  = f.label :first_name
-  = f.text_field :first_name, :size => 50
-  .clear
-  = f.label :middle_name
-  = f.text_field :middle_name, :size => 50
-  .clear
-  = f.label :last_name
-  = f.text_field :last_name, :size => 50
-  .clear
-  = f.label :mobile_number
-  = f.text_field :mobile_number, :size => 50
-  .clear
-  = f.label :date_of_birth
-  = f.date_select :date_of_birth, :start_year => 1940, :end_year => 2000
-  .clear
-  = f.label :gender
-  = f.radio_button :gender, "Male"
-  = f.label :gender_male, "Male"
-  = f.radio_button :gender, "Female"
-  = f.label :gender_female, "Female"
-  .clear
-  = f.label :country
-  = f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, :onchange => "toggle_region()"
-  .clear
-  #region_div
-    = f.label :region
-    = f.select :region, region_options, {:include_blank => true}
-  .clear
-  = f.label :city, "City or Province"
-  = f.text_field :city, :size => 50
-  .clear
-  = f.label :nationality
-  = f.text_field :nationality, :size => 50
-  .clear
-  %div= f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.
-= link_to "Back", :back
+    = f.password_field :current_password, :size => 50
+    .clear
+    = f.label :first_name
+    = f.text_field :first_name, :size => 50
+    .clear
+    = f.label :middle_name
+    = f.text_field :middle_name, :size => 50
+    .clear
+    = f.label :last_name
+    = f.text_field :last_name, :size => 50
+    .clear
+    = f.label :mobile_number
+    = f.text_field :mobile_number, :size => 50
+    .clear
+    = f.label :date_of_birth
+    = f.date_select :date_of_birth, :start_year => 1940, :end_year => 2000
+    .clear
+    = f.label :gender
+    = f.radio_button :gender, "Male"
+    = f.label :gender_male, "Male"
+    = f.radio_button :gender, "Female"
+    = f.label :gender_female, "Female"
+    .clear
+    = f.label :country
+    = f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, :onchange => "toggle_region()"
+    .clear
+    #region_div
+      = f.label :region
+      = f.select :region, region_options, {:include_blank => true}
+    .clear
+    = f.label :city, "City or Province"
+    = f.text_field :city, :size => 50
+    .clear
+    = f.label :nationality
+    = f.select :nationality, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}
+    .clear
+    = label_tag "Expertise"
+    - Expertise.all.each do |expertise|
+      %div
+        - expertise_name_underscore = expertise.name.gsub(/,/,'').gsub(/\s/, '_').downcase
+        = check_box_tag "user[expertise_ids][]", expertise.id, @user.expertises.include?(expertise), :id => "user_expertise_#{expertise_name_underscore}"
+        = label_tag "user_expertise_#{expertise_name_underscore}", expertise.name
+    .clear
+    .actions
+      %button.btn.primary{:type => "submit"} Update Profile
 = javascript_tag :defer => "defer" do
   $(document).ready(function(){
   toggle_region();
