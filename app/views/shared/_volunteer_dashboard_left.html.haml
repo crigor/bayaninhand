@@ -1,0 +1,23 @@
+.dashboard-left
+  = image_tag "dash-menu-top.gif"
+  %h4 Volunteer
+  %ul
+    %li> News Feed
+    %li>= link_to "Update Account", edit_registration_path(current_user)
+    %li>= link_to "My Profile", profile_volunteers_path
+    %li>= link_to "My Events", dashboard_url
+  %h4 Owned Organization
+  %ul
+    - if !@user.administered_organizations.empty?
+      - @user.administered_organizations.each do |organization|
+        %li
+          = link_to organization.name, organization_url(organization)
+          = link_to "Admin", admin_organization_url(organization)
+    %li>= link_to "Create organization", new_organization_url
+  %h4 Affiliated Organization
+  %ul
+    - if !@user.organizations.empty?
+      - @user.organizations.each do |organization|
+        %li
+          = link_to organization.name, organization_url(organization)
+  = image_tag "dash-menu-btm.gif"
