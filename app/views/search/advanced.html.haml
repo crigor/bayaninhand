@@ -1,0 +1,16 @@
+%h1 Advanced Search
+%hr
+.advanced-search
+  %form{:action => advanced_search_results_path, :method => "get"}
+    %p Search for a User Name or Organization
+    %label{:for => "search_user_org"} User / Organization Name:
+    %input{:id => "search_user_org", :size => 35, :type => "text"}
+    .clear
+    %input{:alt => "Search", :src => "/assets/btn-search.gif", :type => "image"}
+    .clear
+    %hr
+
+    %p Search for an Event
+    %label{:for => "search_event_name"} Event Name:
+    %input{:id => "search_event_name", :size => 35, :type => "text"}
+    .clear

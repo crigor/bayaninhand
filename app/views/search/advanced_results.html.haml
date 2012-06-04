@@ -1,0 +1,8 @@
+%h1 Search Results
+%hr
+#search-results
+  %b>= "#{pluralize(@users_total_entries, "user")} found"
+  %ul
+    - @users.each do |user|
+      %li
+        = user.email

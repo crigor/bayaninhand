@@ -1,6 +1,8 @@
 Bayaninhand::Application.routes.draw do
   match "dashboard" => "dashboard#events"
   match "search" => "search#simple"
+  match "advanced-search" => "search#advanced"
+  match "advanced-search-results" => "search#advanced_results", :as => :advanced_search_results
   resources :volunteers do
     get 'profile', :on => :collection
   end
