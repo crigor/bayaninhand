@@ -9,4 +9,12 @@ class Organization < ActiveRecord::Base
   define_index do
     indexes :name
   end
+
+  def upcoming_events
+    self.events.scoped.where("end_date >= '#{Date.today}'").order("start_date")
+  end
+
+  def finished_events
+    self.events.scoped.where("end_date < '#{Date.today}'").order("start_date DESC")
+  end
 end
