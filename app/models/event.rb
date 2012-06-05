@@ -16,6 +16,7 @@ class Event < ActiveRecord::Base
     indexes :title
     indexes categories.name, :as => :categories
     has :start_date, :end_date
+    has :created_at
   end
 
   def category
@@ -44,5 +45,13 @@ class Event < ActiveRecord::Base
     if !self.start_date.blank? && !self.end_date.blank? && !self.start_time.blank? && !self.end_time.blank?
       self.errors.add(:base, "Start date cannot be greater than end date.") if Time.parse("#{self.start_date.to_s} #{self.start_time.strftime('%H:%M')}") > Time.parse("#{self.end_date.to_s} #{self.end_time.strftime('%H:%M')}")
     end
+  end
+
+  def self.advanced_search(query, options = {})
+    created_within = options.delete :created_within
+    search_options = {}
+    search_options[:created_at] = 90.days.ago..Time.now if created_within && created_within == "90days"
+    search_options[:created_at] = 1.year.ago..Time.now if created_within && created_within == "1year"
+    self.search(query, :with => search_options)
   end
 end

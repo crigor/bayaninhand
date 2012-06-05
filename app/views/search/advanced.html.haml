@@ -1,0 +1,35 @@
+%h1 Advanced Search
+%hr
+.advanced-search
+  %form{:action => advanced_search_results_path, :method => "get"}
+    %p Search for a User Name or Organization
+    %label{:for => "search_user_org"} User / Organization Name:
+    %input{:id => "search_user_org", :name => "q", :size => 35, :type => "text"}
+    .clear
+    %input{:alt => "Search", :src => "/assets/btn-search.gif", :type => "image"}
+    .clear
+  %hr
+
+  %form{:action => advanced_search_events_path, :method => :post}
+    %p Search for an Event
+    %label{:for => "search_event_name"} Event Name:
+    %input{:id => "search_event_name", :name => "q", :size => 35, :type => "text"}
+    .clear
+    %label{:for => "search_category"} Category:
+    %select{:style => "width:250px;"}
+      %option{:value => "all"} All
+    .clear
+    %label{:for => "search_created"} Created within:
+    %select{:id => "search_created", :name => "created_within", :style => "width:85px;"}
+      %option{:value => "90days"} 90 days
+      %option{:value => "1year"} 1 year
+    .clear
+    %label{:for => "search_status"} Status:
+    %select{:style => "width:85px;"}
+      %option{:value => "status_all"} All
+      %option{:value => "status_open"} Open
+      %option{:value => "status_closed"} Closed
+      %option{:value => "status_cancelled"} Cancelled
+    .clear
+    %input{:alt => "Search", :src => "/assets/btn-search.gif", :type => "image"}
+    .clear

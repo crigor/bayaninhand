@@ -452,6 +452,21 @@ hr{
   margin: 0px 0px 7px 0px;
 }
 
+/*==================== SEARCH ====================*/
+.advanced-search label, .advanced-search input, .advanced-search select{
+  float: left;
+  margin-bottom: 10px;
+}
+
+.advanced-search label{
+  width: 120px;
+  padding-right: 20px;
+}
+
+.search-results li{
+  line-height: 20px;
+}
+
 /*==================== FOOTER ====================*/
 #footer{
   background: #8fdff6;
