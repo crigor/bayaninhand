@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   define_index do
     indexes :email
     indexes :last_name
+    indexes :first_name
   end
 
   def can_manage?(organization)

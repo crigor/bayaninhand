@@ -5,4 +5,8 @@ class Organization < ActiveRecord::Base
   validates_format_of :email, :with => /^.+@.+\..+$/, :message => "should be valid" # simple check
   belongs_to :organization_type
   has_and_belongs_to_many :categories
+
+  define_index do
+    indexes :name
+  end
 end
