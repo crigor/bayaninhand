@@ -17,7 +17,6 @@ Feature: Event
       | Description          | Event description. |
       | Start Date           | 2020-01-01         |
       | End Date             | 2020-06-30         |
-      | Map                  | map                |
       | Volunteers Needed    | 100                |
     And I select "09:00 AM" from "Start Time"
     And I select "05:00 PM" from "End Time"
