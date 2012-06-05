@@ -1,8 +1,9 @@
-%h1 Organization Dashboard
+%h1 Organization Profile
 %hr/
 .user-dashboard
   %h2= @organization.name
   .dashboard-left
+    = image_tag "dash-menu-top.gif"
     %h4 Organization
     %ul.sidebar-links
       %li
@@ -23,6 +24,7 @@
         = mail_to @organization.email, "Email", :encode => "hex"
       %li
         = link_to "Website", @organization.website
+    = image_tag "dash-menu-btm.gif"
 
   / left
   .dashboard-right
