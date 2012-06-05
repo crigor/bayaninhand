@@ -6,3 +6,8 @@
     - @users.each do |user|
       %li
         = user.email
+  %b>= "#{pluralize(@organizations_total_entries, "organization")} found"
+  %ul
+    - @organizations.each do |organization|
+      %li
+        = link_to organization.name, organization_path(organization)
