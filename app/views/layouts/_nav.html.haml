@@ -3,12 +3,12 @@
     %li{:class => on_current_page("home")}
       %a{:href => root_path} Home
     %li{:class => on_current_page("events")}
-      %a{:href => "opportunities.html"} Volunteer Opportunities
+      = link_to "Volunteer Opportunities", advanced_search_path
     %li
-      %a{:href => "calendar.html"} Calendar
+      %a{:href => ""} Calendar
     %li
-      %a{:href => "organizations.html"} Organizations
+      = link_to "Organizations", advanced_search_path
     %li
-      %a{:href => "about-us.html"} About iVolunteer Philippines
+      %a{:href => ""} About iVolunteer Philippines
     %li
-      %a{:href => "contact-us.html"} Contact Us
+      %a{:href => ""} Contact Us
