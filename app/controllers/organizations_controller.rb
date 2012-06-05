@@ -13,6 +13,8 @@ class OrganizationsController < InheritedResources::Base
 
   def admin
     @organization = resource
+    @upcoming_events = @organization.upcoming_events
+    @finished_events = @organization.finished_events
     authorize! :administer, @organization
   end
 
