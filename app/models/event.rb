@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :organization
   
-  validates_presence_of :title, :description, :organization, :start_date, :end_date, :map, :volunteers_needed
+  validates_presence_of :title, :description, :organization, :start_date, :end_date, :volunteers_needed
   validates_presence_of :categories, :event_types
   validate :check_dates
   validates_numericality_of :volunteers_needed, :greater_than => 0
