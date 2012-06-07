@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :event_types
   has_attached_file :image, :styles => { :medium => "250x200!", :small => "220x140!" }
+  before_create {|event| event.status = "open"}
 
   define_index do
     indexes :title
