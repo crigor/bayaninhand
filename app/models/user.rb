@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :participations
   has_many :events, :through => :participations
   has_and_belongs_to_many :expertises
+  has_many :roles, :class_name => "UserRole"
 
   define_index do
     indexes :email
@@ -46,6 +47,10 @@ class User < ActiveRecord::Base
 
   def finished_events
     self.events.scoped.where("end_date < '#{Date.today}'").order("start_date DESC")
+  end
+
+  def admin?
+    self.roles.any? {|user_role| user_role.role == "admin"}
   end
 
   protected

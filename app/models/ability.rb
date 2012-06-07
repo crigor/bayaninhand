@@ -3,10 +3,10 @@ class Ability
 
   def initialize(user)
     can :manage, Event do |event|
-      user.can_manage?(event.organization)
+      user.can_manage?(event.organization) || user.admin?
     end
     can :administer, Organization do |organization|
-      user.organization_admin?(organization)
+      user.organization_admin?(organization) || user.admin?
     end
     #if user
       #can :manage, :all
