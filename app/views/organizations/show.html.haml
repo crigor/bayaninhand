@@ -7,8 +7,6 @@
     %h4 Organization
     %ul.sidebar-links
       %li
-        %a{:href => "org-dashboard.html"} Articles
-      %li
         = link_to "Profile", organization_path(@organization)
       %li
         %a{:href => "org-events.html"} Events
@@ -24,6 +22,7 @@
         = mail_to @organization.email, "Email", :encode => "hex"
       %li
         = link_to "Website", @organization.website
+    = image_tag @organization.image.url(:small)
     = image_tag "dash-menu-btm.gif"
 
   / left
