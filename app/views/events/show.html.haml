@@ -23,7 +23,7 @@
         %tr
           %td{:valign => "top"}
             %label Organization:
-          %td{:valign => "top"}= link_to @event.organization.name
+          %td{:valign => "top"}= link_to @event.organization.name, organization_path(@event.organization)
     / event-short
     .clear
   / event-highlight
