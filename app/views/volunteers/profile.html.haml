@@ -38,15 +38,5 @@
       = @user.gender
       %br/
       %label Organizations:
-      %ul.feed-list
-      - @user.organizations.each do |organization|
-        %li
-          = link_to organization.name, organization_path(organization)
-      %br/
-      %label Events:
-      %ul.feed-list
-      - @user.upcoming_events.each do |event|
-        %li
-          = event.title
-      %br/
+      = @user.organizations.collect{|org| link_to(org.name, organization_path(org))}.join(", ").html_safe
   .clear
