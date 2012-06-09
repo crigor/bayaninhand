@@ -386,6 +386,12 @@ hr{
   margin-top: -30px;
 }
 
+.category_section{
+  padding-left: 140px;
+  padding-right: 50px;
+}
+
+
 /*====================  USER DASHBOARD  ====================*/
 .user-dashboard h2{
   margin: 10px 0px 10px 0px;
