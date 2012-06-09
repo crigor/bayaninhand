@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iVolunteer Philippines</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="topmost">
+    <div id="search">
+    <form method="post" id="searchform" action="volunteersearch.php" style="margin-bottom:0px">
+      <input type="text" name="searchtext" id="searchtext" value="" size="25" />
+      <input type="button" name="btnSearch" onclick="submitSearch()" value="Search" />
+    </form>
+    </div>
+  </div>
+  
+  <div id="header">
+    <div id="header-content">
+      <div id="logo">
+        <img src="images/ivolunteer-logo.gif" />
+      </div>
+      
+      <div id="member-area">
+        <h2>Member's Corner</h2>
+          
+        <div id="member-area-user">
+          <div class="member-area-welcome">Welcome, username12345</div>
+          <span class="blue">
+            <a href="user-dashboard.html">My Dashboard</a> |  
+            <a href="user-account.html">My Account</a>
+          </span> |  
+          <span class="orange"><a href="">Logout</a></span>
+        </div>         
+      </div><!--member-area-->
+      
+      <div class="clear"></div>
+    </div><!--header-content-->
+  </div>
+  
+  <div id="menu">
+    <ul id="menu-ul">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="opportunities.html">Volunteer Opportunities</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="organizations.html">Organizations</a></li>
+      <li><a href="about-us.html">About iVolunteer Philippines</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <h1>Volunteer Dashboard</h1>
+    <hr />
+    
+    <div class="user-dashboard">
+      <div class="dashboard-left">
+        <img src="images/dash-menu-top.gif" />
+        <h4>Volunteer</h4>
+        <ul>
+          <li><a href="user-dashboard.html">News Feed</a></li>
+          <li><a href="user-profile.html">My Profile</a></li>
+          <li><a href="user-events.html">My Events</a></li>
+          <li><a href="">Forum</a></li>
+        </ul>
+        
+        <h4>Owned Organization</h4>
+        <ul>
+          <li><a href="org-dashboard.html">Youth for Education Group</a></li>
+          <li><a href="register-org.html">Create Organization</a></li>
+        </ul>
+        <img src="images/dash-menu-btm.gif" />
+
+      </div><!--left-->
+      
+      <div class="dashboard-right">
+        <h2>My Events</h2>
+        <hr />
+        <h3>Upcoming Events</h3>
+        <ul class="feed-list">
+          <li>
+            <span class="feed-date">10-Feb-2012</span>
+            <img class="feed-image" src="images/news-img-1.jpg" />
+            <span class="feed-desc">
+              <h4>Dove Orphanage Foundation Visit</h4>
+              <label>Time:</label> 09:00am - 03:00pm<br />
+              <label>Venue:</label> McDonald's, DLSU Taft <br />
+              <label>Reminders:</label> Please bring your own bottle of water. Lunch will be provided. For any immediate concerns, 
+              you may contact Angela Ferrer at 09178305236 See you there! <br />  
+              <span class="readmore"><a href="sample-article.html">Read More ></a></span>
+            </span>
+            <div class="clear"></div>
+          </li>
+
+          <li>
+            <span class="feed-date">23-Jan-2012</span>
+            <img class="feed-image" src="images/news-img-1.jpg" />
+            <span class="feed-desc">
+              <h4>Donation Segregation for Sendong Victims</h4>
+              <label>Time:</label> 10:00am - 05:00pm<br />
+              <label>Venue:</label> #19 Sampaguita Street, Cubao, Quezon City<br />
+              <label>Reminders:</label> If you have more things to donate like canned good and old clothes, kindly bring them in. <br />  
+              <span class="readmore"><a href="sample-article.html">Read More ></a></span>
+            </span>
+            <div class="clear"></div>
+          </li>
+        </ul>
+        <hr />
+        
+        <h3>Finished Events</h3>
+        <ul class="feed-list">           
+          <li>
+            <span class="feed-date">05-Nov-2011</span>
+            <img class="feed-image" src="images/news-img-1.jpg" />
+            <span class="feed-desc">
+              <h4>Dove Orphanage Foundation Visit</h4>
+              <label>Time:</label> 12:00nn - 05:00pm<br />
+              <label>Venue:</label> McDonald's, DLSU Taft <br />
+              <label>Reminders:</label> Please bring your own bottle of water. Lunch will be provided. For any immediate concerns, 
+              you may contact Angela Ferrer at 09178305236 See you there! <br />  
+              <span class="readmore"><a href="sample-article.html">Read More ></a></span>
+            </span>
+            <div class="clear"></div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="clear"></div>
+    </div><!--dashboard-->
+  </div><!--content-->
+  
+  <div id="footer">
+    <div class="center-text">
+      Home  |  Volunteer Opportunities  |  Calendar  |  Organizations  |  About Us  |  Contact Us
+      <br /><br />
+      Copyright &copy;2012 by iVolunteer.net.ph. All Rights Reserved.
+    </div>
+  </div>
+
+</body>
+</html>

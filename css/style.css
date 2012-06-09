@@ -1,0 +1,507 @@
+/*iVolunteer Philippines main stylesheet*/
+
+body{
+  margin:0px;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+h1, h2, #menu-ul{
+  font-family: 'Francois One', Arial, Helvetica, sans-serif;
+}
+
+h1{
+  /*headers, usually followed with a horizontal line <hr/>*/
+  font-size: 20px;
+  font-weight: normal;
+  color: #4f4f4f;
+  margin: 20px 0px 0px 0px;
+}
+
+h2{
+  font-size: 16px;
+  font-weight: normal;
+  margin: 20px 0px 0px 0px;
+}
+
+h3{
+  font-size: 14px;
+}
+
+h4{
+  font-size: 12px;
+}
+
+hr{
+  border: 0;
+  height: 1px;
+  background-color: #4f4f4f;
+  margin: 0px 0px 20px 0px;
+}
+
+/*==================== TOPMOST ====================*/ 
+#topmost{
+  background: #0f8fba;
+  height: 22px;
+  padding: 5px 0px;
+}
+
+#topmost-content{
+  width: 960px;
+  margin: 0px auto;   
+  color: #ffffff;
+}
+
+#like-btn{
+  float:left;
+}
+
+#search{
+  float: right;  
+  text-align: right; 
+}
+
+#search input{
+  font-size: 10px;
+}
+
+/*==================== HEADER ====================*/
+#header{
+  background: #8fdff6;
+  height: 130px;
+}
+
+#header-content{
+  width: 960px;
+  margin: 0px auto;
+}
+
+#logo{  
+  float: left;
+}
+
+#member-area{
+  float: right;
+  width: 415px;
+}
+
+#member-area-user a{
+  font-size: 14px;
+}
+
+.member-area-welcome{
+  padding: 5px 0px 5px 0px;
+  color:#666666;
+}
+
+/*==================== MENU ====================*/
+#menu{
+  background: url(../images/bg-menu.gif) #324452; 
+  height: 40px; 
+}
+
+#menu-ul{
+  width: 960px;
+  margin: 0px auto;
+  list-style: none;
+  text-align: center;
+  padding: 7px 0px 0px 0px;
+
+  font-size: 16px;
+}
+
+#menu-ul li{
+  display: inline;
+  padding: 7px 20px 11px 20px;
+}
+
+#menu-ul a{  
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#menu-ul a:hover{  
+  color: #8fdff6;
+}
+
+#menu-ul .selected{
+  background: #ffffff;
+}
+#menu-ul .selected a{
+  color: #324452;
+}
+
+/*==================== CONTENT ====================*/
+#content{
+  width: 960px;
+  margin: 0px auto;
+  /*border: solid 1px #00FF00;*/
+}
+
+#main-image{
+  margin: 20px 0px 0px 0px;
+  
+  background: url(../images/main-image-1b.jpg);
+  width: 960px;
+  height: 230px;
+}
+
+#main-image-text{
+  padding: 10px 0px 0px 20px;
+  width: 250px;
+  text-align: center;
+  color: #000000;
+}
+
+#opportunities{
+
+}
+/* ================= OPPORTUNITY FILTER =======================*/
+#opp-filter{
+  background: #be3604;
+  height: 60px;
+  padding: 10px 10px 0px 20px;
+  margin: 0px 0px 20px 0px;
+  color: #ffffff;
+  
+  -moz-border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.section{
+  float: left;
+  margin: 0px 40px 0px 0px;
+}
+
+#opp-filter h4{
+  margin: 0px 0px 7px 0px;
+}
+
+/*==================== FEATURED OPPORTUNITIES ===================*/
+#opp-items{
+  padding: 0px;
+}
+.opp-featured{
+  width: 220px;
+  height: 340px;
+  background: #324452;
+  
+  text-align: center;  
+  color: #ffffff;
+  font-size: 13px;
+  
+  float: left;
+  margin: 0px 9px 15px 10px;
+}
+
+.opp-feat-image{
+}
+
+.opp-feat-title{
+  color: #8fdff6;
+  margin: 10px 0px 10px 0px;
+}
+
+.opp-feat-type{
+  margin: 10px 0px 0px 0px;
+}
+
+.opp-feat-date{
+  margin: 20px 0px 0px 0px;
+}
+
+.opp-feat-number{
+  /*volunteers needed*/
+  margin: 0px 0px 20px 0px;
+}
+
+/*==================== NEWS / VOLUNTEERS IN ACTION ====================*/
+#news{
+  width: 460px;
+  float: left;
+}
+
+#featured-org{
+  width: 460px;
+  float: right;
+}
+
+.news-image{
+  float: left;
+  margin: 0px 12px 20px 0px;
+}
+
+.news-desc{
+  width:350px;
+  float: left;
+}
+
+.news-desc h4{
+  margin: 0px 0px 7px 0px;
+}
+
+/*==================== EVENT DETAILS ====================*/
+.event-detail{
+  
+}
+
+.event-detail h1{
+  color: #993300;
+  margin: 0px 0px 10px 0px;
+}
+
+
+.event-highlight{
+  background: url(../images/event-highlight-bg.gif);
+  width: 680px;
+  height: 225px;
+  padding: 15px 20px 10px 20px;
+  float: left;
+  display: inline-block;
+}
+
+.event-image{
+  background: #ffffff;
+  width: 250px;
+  height: 200px;
+  padding: 5px;
+  border: solid 1px #cccccc;
+  
+  float: left;
+}
+
+.event-short{
+  width: 400px;
+  margin: 0px 0px 0px 15px;
+  float: left;
+}
+
+.event-time{
+  background:url(../images/event-time-bg.gif);
+  width: 190px;
+  height: 225px;
+  float: right;
+  display: inline-block;
+  
+  padding: 15px 10px 10px 20px;
+}
+
+.count{
+  background: #363636;
+  width: 35px;
+  height: 30px;
+  padding: 5px 0px 0px 0px;
+  
+  color: #ffffff;
+  font-size: 20px;
+  
+  -moz-border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.vol{
+  background:url(../images/event-time-vol.gif);
+  width: 160px;
+  height: 50px;
+  margin: 10px 0px 15px 0px;
+  
+}
+
+.vol .number{
+  font-size: 20px;
+}
+
+#event-comments{
+  width: 460px;
+  float: left;
+}
+
+#related-events{
+  width: 480px;
+  float: right;
+}
+
+
+/*====================  USER SIGNUP / ORG REGISTRATION ====================*/
+.register{
+  background-color: #f8f8f8;
+  padding: 20px;
+  width: 500px;
+  
+  margin: 0px auto;
+}
+    
+.register label, .register input, .register select{
+  float: left;
+  margin-bottom: 10px;
+}
+ 
+.register label{
+  width: 120px;
+  padding-right: 20px;
+}
+
+.register hr{
+  background-color: #cccccc;
+}
+
+.register .sameline{
+  float: left;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.forceCenter{
+  margin: 20px 0px 0px 185px;
+}
+
+/*====================  USER DASHBOARD  ====================*/
+.user-dashboard h2{
+  margin: 10px 0px 10px 0px;
+}
+
+.dashboard-left{
+  float: left;
+  
+  background: url(../images/dash-menu-bg.gif) repeat-y;
+  width: 160px;
+  margin: 0px 20px 0px 0px;
+}
+
+.dashboard-left h4{
+  padding: 0px 0px 0px 10px;
+}
+
+.dashboard-left ul{
+  line-height: 18px;
+  padding: 0px 5px 0px 30px;
+}
+
+.dashboard-right{
+  float: left;
+  width: 720px; /*730*/
+  padding: 0px 20px 20px 20px;
+  
+  border: solid 1px #cccccc;
+   -moz-border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.dashboard-right hr{
+  background-color: #cccccc;
+  margin: 10px 0px 10px 0px;
+}
+
+
+/*==================== USER DASHBOARD: NEWS FEED / EVENTS ====================*/
+.feed-list{
+  list-style: none;
+  padding: 0px;
+}
+
+.feed-date{
+  float: left;
+  margin: 0px 15px 0px 0px;
+}
+
+.feed-image{
+  float: left;
+  margin: 0px 15px 20px 0px;
+}
+
+.feed-desc{
+  width: 500px;
+  float: left;
+}
+
+.feed-desc h4{
+  margin: 0px 0px 7px 0px;
+}
+
+/*==================== SEARCH ====================*/
+.advanced-search label, .advanced-search input, .advanced-search select{
+  float: left;
+  margin-bottom: 10px;
+}
+
+.advanced-search label{
+  width: 120px;
+  padding-right: 20px;
+}
+
+.search-results li{
+  line-height: 20px;
+}
+
+
+/*==================== FOOTER ====================*/
+#footer{
+  background: #8fdff6;
+  border-top: solid 3px #0f8fba;
+  margin: 20px 0px 0px 0px;
+  padding: 10px 0px 20px 0px;
+  text-align: center;
+}
+
+/*====================  GENERAL   ====================*/
+
+.orange a{
+  color: #be3604;
+  text-decoration: none;
+}
+.orange a:hover{
+  color: #f54200;
+  text-decoration: underline;
+}
+
+.blue a{
+  color: #0066FF;
+  text-decoration: none;
+}
+.blue a:hover{
+  color: #0033FF;
+  text-decoration: underline;
+}
+
+.readmore a{
+  color: #1885ae;
+}
+.readmore a:hover{
+  color: #25b4ea;
+}
+
+.center-text{
+  width: 960px;
+  margin: 0px auto;
+}
+
+.toleft{
+  float: left;
+  margin-right: 5px;
+}
+
+.toright{
+  float:right;
+}
+
+label{
+  font-weight:bold;
+}
+
+.double-space{
+  line-height:24px;
+}
+
+.clear{
+  clear:both;
+}
+

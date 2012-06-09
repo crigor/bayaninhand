@@ -67,6 +67,6 @@
   People who volunteered (#{@event.volunteers.size})
   %ul
     - @event.volunteers.each do |user|
-      %li= user.email
+      %li= user.first_name + " " + user.last_name
 / event-detail
 .clear

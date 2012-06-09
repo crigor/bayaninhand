@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iVolunteer Philippines</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="topmost">
+    <div id="search">
+    <form method="post" id="searchform" action="volunteersearch.php" style="margin-bottom:0px">
+      <input type="text" name="searchtext" id="searchtext" value="" size="25" />
+      <input type="button" name="btnSearch" onclick="submitSearch()" value="Search" />
+    </form>
+    </div>
+  </div>
+  
+  <div id="header">
+    <div id="header-content">
+      <div id="logo">
+        <img src="images/ivolunteer-logo.gif" />
+      </div>
+      
+      <div id="member-area">
+        <form>
+          <h2>Member's Corner</h2>
+          
+          <span class="toleft">
+            Username:<br /><input type="text" name="username" id="username" align="top" />
+          </span>
+          
+          <span class="toleft blue">
+            Password:<br /><input type="password" name="password" id="password" align="top" /><br />
+            <a href="forgot-password.html"><small>Forgot Password?</small></a> | 
+            <a href="register.html"><small>Register</small></a>
+          </span>
+          
+          <span class="toleft blue">    
+            <br /><input type="image" src="images/btn-login.gif" border="0" alt="Login" align="top" />
+          </span>
+        </form>               
+      </div><!--member-area-->
+      
+      <div class="clear"></div>
+    </div><!--header-content-->
+  </div>
+  
+  <div id="menu">
+    <ul id="menu-ul">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="opportunities.html">Volunteer Opportunities</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="organizations.html">Organizations</a></li>
+      <li><a href="about-us.html">About iVolunteer Philippines</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <h1>Search Results</h1>
+    <hr />
+    
+    <div class="search-results">
+      <p>
+        <b>3 Events found:</b>
+        <ul>
+          <li>Feed a Child Project</li>
+          <li>Feed a Child Project 2</li>
+          <li>feed jb please 2</li>          
+        </ul>
+        <p>Didn't find what you're looking for? Try the <a href="search-advanced.html">Advanced Search.</a></p>
+      </p>
+    </div>
+      
+  </div><!--content-->
+  
+  <div id="footer">
+    <div class="center-text">
+      Home  |  Volunteer Opportunities  |  Calendar  |  Organizations  |  About Us  |  Contact Us
+      <br /><br />
+      Copyright &copy;2012 by iVolunteer.net.ph. All Rights Reserved.
+    </div>
+  </div>
+
+</body>
+</html>
