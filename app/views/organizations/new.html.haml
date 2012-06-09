@@ -37,8 +37,9 @@
     = label_tag :organization_category, "Category"
     .category_section
       - Category.all.each do |category|
-        = check_box_tag "organization[category_ids][]", category.id, @organization.categories.include?(category), :id => "organization_category_#{category.id}"
-        = label_tag "user_category_#{category.id}", category.name
+        .category_item
+          = check_box_tag "organization[category_ids][]", category.id, @organization.categories.include?(category), :id => "organization_category_#{category.id}"
+          = label_tag "user_category_#{category.id}", category.name
     .clear
     %br/
     %br/

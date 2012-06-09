@@ -388,7 +388,13 @@ hr{
 
 .category_section{
   padding-left: 140px;
-  padding-right: 50px;
+  padding-right: 40px;
+}
+
+.category_item{
+  width: 160px;
+  height: 30px;
+  float: left;
 }
 
 
