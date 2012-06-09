@@ -35,10 +35,11 @@
     = f.text_area :mission_statement, :rows => 5, :cols => 38
     .clear
     = label_tag :organization_category, "Category"
-    - Category.all.each do |category|
-      %div
-        = check_box_tag "organization[category_ids][]", category.id, @organization.categories.include?(category), :id => "organization_category_#{category.id}"
-        = label_tag "user_category_#{category.id}", category.name
+    .category_section
+      - Category.all.each do |category|
+        .category_item
+          = check_box_tag "organization[category_ids][]", category.id, @organization.categories.include?(category), :id => "organization_category_#{category.id}"
+          = label_tag "user_category_#{category.id}", category.name
     .clear
     %br/
     %br/
