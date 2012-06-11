@@ -1,3 +1,63 @@
-= @organization.name
-- @organization.events.each do |event|
-  %li= link_to event.title, organization_event_url(@organization, event)
+%h1 Organization Profile
+%hr/
+.user-dashboard
+  %h2= @organization.name
+  .dashboard-left
+    = image_tag "dash-menu-top.gif"
+    %h4 Organization
+    %ul.sidebar-links
+      %li
+        = link_to "Profile", organization_path(@organization)
+      %li
+        = link_to "Events", organization_events_path(@organization)
+    %h4 Contact Details
+    %ul.contact-details
+      %li
+        %label Contact Person
+        = @organization.contact_person
+      %li
+        %label Contact Number
+        = @organization.phone_number
+      %li
+        = mail_to @organization.email, "Email", :encode => "hex"
+      %li
+        = link_to "Website", @organization.website
+    = image_tag @organization.image.url(:small)
+    = image_tag "dash-menu-btm.gif"
+
+  .dashboard-right
+    %h2 Events
+    %hr/
+    %h3 Upcoming Events
+    %ul.feed-list
+      - @upcoming_events.each do |event|
+        %li
+          %span.feed-date= event.start_date
+          = image_tag event.image.url(:small), :class => "feed-image", :style => "width:90px;height:90px"
+          %span.feed-desc
+            %h4= event.title
+            %label> Time:&nbsp;
+            = time_text(event)
+            %br
+            %label> Venue:&nbsp;
+            = event.address
+            %br
+            %span.readmore>= link_to "Read More", organization_event_url(event.organization, event)
+          .clear
+    %h3 Finished Events
+    %ul.feed-list
+      - @finished_events.each do |event|
+        %li
+          %span.feed-date= event.start_date
+          = image_tag event.image.url(:small), :class => "feed-image", :style => "width:90px;height:90px"
+          %span.feed-desc
+            %h4= event.title
+            %label> Time:&nbsp;
+            = time_text(event)
+            %br
+            %label> Venue:&nbsp;
+            = event.address
+            %br
+            %span.readmore>= link_to "Read More", organization_event_url(event.organization, event)
+          .clear
+
