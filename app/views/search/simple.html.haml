@@ -1,10 +1,15 @@
 %h1 Search Results
 %hr
-#search-results
+.search-results
   %b>= "#{pluralize(@events_total_entries, "event")} found"
   %ul
     - @events.each do |event|
       %li
-        = link_to event.title, organization_event_url(event.organization, event)
+        = image_tag event.image.url(:small), :class => "search-results-img", :style => "width:50px;height:50px"
+        %span.search-results-desc
+          = link_to event.title, organization_event_url(event.organization, event)
+          %br
+          #{event.description[0..150]}...
+      .clear
   %p
     Didn't find what you're looking for? Try the #{link_to "Advanced Search", advanced_search_path}
