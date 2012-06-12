@@ -7,6 +7,8 @@
     %h4 Organization
     %ul.sidebar-links
       %li
+        = link_to "My Profile", organization_url(@organization)
+      %li
         = link_to "Create event", new_organization_event_url(@organization)
     = image_tag "dash-menu-btm.gif"
 

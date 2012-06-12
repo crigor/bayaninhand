@@ -32,6 +32,12 @@ class EventsController < InheritedResources::Base
     redirect_to organization_event_url(@event.organization, @event)
   end
 
+  def index
+    @organization = Organization.find params[:organization_id]
+    @upcoming_events = @organization.upcoming_events
+    @finished_events = @organization.finished_events
+  end
+
   private
   def set_times
     @start_time_selected = @event.start_time ? @event.start_time.strftime("%I:%M %p") : ""
