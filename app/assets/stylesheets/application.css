@@ -476,7 +476,17 @@ hr{
 }
 
 .search-results li{
-  line-height: 20px;
+  list-style: none;
+}
+
+.search-results-img{
+  float: left;
+  margin: 0px 10px 10px 0px;
+}
+
+.search-results-desc{
+  width: 500px;
+  float: left;
 }
 
 /*==================== FOOTER ====================*/
