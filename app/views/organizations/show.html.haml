@@ -9,7 +9,7 @@
       %li
         = link_to "Profile", organization_path(@organization)
       %li
-        %a{:href => "org-events.html"} Events
+        = link_to "Events", organization_events_path(@organization)
     %h4 Contact Details
     %ul.contact-details
       %li
