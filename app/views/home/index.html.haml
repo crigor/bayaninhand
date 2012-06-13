@@ -25,7 +25,7 @@
       %select{:id => "event_category", :style => "width:200px;", :onchange => "select_category()"}
         %option{:value => "all"} All
         - @categories.each do |category|
-          %option{:value => "#{category.name}"} #{category.name}
+          %option{:value => "#{category.name}", :selected => ("selected" if category.name==@selected_category)} #{category.name}
     %span.section
       %h4 Popular Categories
       - @popular_categories.each do |category|
