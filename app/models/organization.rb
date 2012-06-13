@@ -5,7 +5,7 @@ class Organization < ActiveRecord::Base
   validates_format_of :email, :with => /^.+@.+\..+$/, :message => "should be valid" # simple check
   belongs_to :organization_type
   has_and_belongs_to_many :categories
-  has_attached_file :image, :styles => { :small => "100x100!" }, :url => "/system/organization_images/:id/:style/:filename"
+  has_attached_file :image, :styles => { :small => "100x100!" }, :url => "/system/organization_images/:id/:style/:filename", :default_url => "/default/organization/:style.jpg"
 
   define_index do
     indexes :name
