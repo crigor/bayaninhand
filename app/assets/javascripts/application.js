@@ -17,3 +17,12 @@ function toggle_region() {
     $('#region_div').hide();
   }
 }
+
+function select_category() {
+  category = $("#event_category").val();
+  if(category == "all") {
+    window.location.href = "/";
+  } else {
+    window.location.href = "/?category=" + escape(category);
+  }
+}
