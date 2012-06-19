@@ -1,7 +1,7 @@
 %h1 Advanced Search
 %hr
 .advanced-search
-  %form{:action => advanced_search_results_path, :method => "get"}
+  = form_tag advanced_search_results_path, :method => :get do
     %p Search for an Organization
     %label{:for => "search_user_org"} Organization Name:
     %input{:id => "search_user_org", :name => "q", :size => 35, :type => "text"}
@@ -10,7 +10,7 @@
     .clear
   %hr
 
-  %form{:action => advanced_search_events_path, :method => :post}
+  = form_tag advanced_search_events_path do
     %p Search for an Event
     %label{:for => "search_event_name"} Event Name:
     %input{:id => "search_event_name", :name => "q", :size => 35, :type => "text"}
