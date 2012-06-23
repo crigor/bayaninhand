@@ -13,7 +13,9 @@ Bayaninhand::Application.routes.draw do
 
   resources :participations
 
-  devise_for :users
+  devise_for :users do
+    get 'users', :to => 'volunteers#profile', :as => :user_root
+  end
 
   #resources :events
 
