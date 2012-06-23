@@ -54,7 +54,7 @@
             still needed
       - if user_signed_in? && current_user.volunteered?(@event)
         = image_tag("already-joined.gif")
-      - else
+      - elsif @event.has_time_left?
         - if @event.volunteers_still_needed <= 0
           = image_tag("btn-join-disabled.gif")
         - else
@@ -68,7 +68,7 @@
   %ul
     - @event.volunteers.each do |user|
       %li
-        = user.first_name + ' ' + user.last_name + ' '
+        = user.full_name + ' '
         = link_to user.email, "/users/edit"
 / event-detail
 .clear

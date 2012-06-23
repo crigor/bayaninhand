@@ -52,6 +52,10 @@ class User < ActiveRecord::Base
   def admin?
     self.roles.any? {|user_role| user_role.role == "admin"}
   end
+  
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 
   protected
 
