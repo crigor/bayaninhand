@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :title, :description, :organization, :start_date, :end_date, :volunteers_needed
   validates_presence_of :categories, :event_types
   validate :check_dates
-  validates_numericality_of :volunteers_needed, :greater_than => 0
+  validates_numericality_of :volunteers_needed, :greater_than => 0, :only_integer => true
   has_many :participations
   has_many :volunteers, :source => :user, :through => :participations
   scope :upcoming, lambda { where("end_date >= ?", Date.today).limit(8) }
