@@ -9,5 +9,5 @@
         %span.search-results-desc
           = link_to event.title, organization_event_url(event.organization, event)
           %br
-          #{event.description[0..150]}...
+          #{event.description.html_safe[0..150]}...
       .clear
