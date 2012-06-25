@@ -4,6 +4,7 @@
   %h2= @organization.name
   .dashboard-left
     = image_tag "dash-menu-top.gif"
+    = image_tag @organization.image.url(:small), :id => "organization-logo"
     %h4 Organization
     %ul.sidebar-links
       %li
@@ -22,7 +23,6 @@
         = mail_to @organization.email, "Email", :encode => "hex"
       %li
         = link_to "Website", @organization.website
-    = image_tag @organization.image.url(:small)
     = image_tag "dash-menu-btm.gif"
 
   .dashboard-right
