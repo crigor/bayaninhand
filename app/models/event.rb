@@ -32,6 +32,10 @@ class Event < ActiveRecord::Base
     minutes = (seconds / 1.minute).to_i % 60
     [days, hours, minutes]
   end
+  
+  def has_time_left?
+    start_date_and_time - Time.now > 0
+  end
 
   def start_date_and_time
     Time.local(self.start_date.year, self.start_date.month, self.start_date.day, (self.start_time.hour rescue 0), (self.start_time.min rescue 0))
