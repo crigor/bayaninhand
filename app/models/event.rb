@@ -57,6 +57,16 @@ class Event < ActiveRecord::Base
     search_options = {}
     search_options[:created_at] = 90.days.ago..Time.now if created_within && created_within == "90days"
     search_options[:created_at] = 1.year.ago..Time.now if created_within && created_within == "1year"
-    self.search(query, :with => search_options)
+
+    # category
+    category_options = {}
+    category_id = options.delete :category_id
+    if !category_id.nil? || category_id == "all"
+      category = Category.first(:conditions => {:id => category_id})
+      if !category.nil?
+        category_options = {:categories => category.name}
+      end
+    end
+    self.search(query, :conditions => category_options, :with => search_options)
   end
 end
