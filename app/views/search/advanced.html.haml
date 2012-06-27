@@ -16,8 +16,10 @@
     %input{:id => "search_event_name", :name => "q", :size => 35, :type => "text"}
     .clear
     %label{:for => "search_category"} Category:
-    %select{:style => "width:250px;"}
+    %select{:name => "search_category_id", :style => "width:250px;"}
       %option{:value => "all"} All
+      - @categories.each do |category|
+        %option{:value => "#{category.id}"} #{category.name}
     .clear
     %label{:for => "search_created"} Created within:
     %select{:id => "search_created", :name => "created_within", :style => "width:85px;"}

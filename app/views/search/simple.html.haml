@@ -9,7 +9,7 @@
         %span.search-results-desc
           = link_to event.title, organization_event_url(event.organization, event)
           %br
-          #{event.description[0..150]}...
+          #{event.description.html_safe[0..150]}...
       .clear
   %p
     Didn't find what you're looking for? Try the #{link_to "Advanced Search", advanced_search_path}
