@@ -1,6 +1,6 @@
 class Organization < ActiveRecord::Base
   has_many :events
-  validates_presence_of :name, :address, :contact_person, :phone_number, :email, :website, :organization_type, :country, :mission_statement, :description
+  validates_presence_of :name, :address, :contact_person, :phone_number, :email, :organization_type, :country, :mission_statement, :description
   validates_numericality_of :phone_number, :only_integer => true, :message => "should be a valid number"
   validates_format_of :email, :with => /^.+@.+\..+$/, :message => "should be valid" # simple check
   belongs_to :organization_type
@@ -12,7 +12,11 @@ class Organization < ActiveRecord::Base
   end
 
   def upcoming_events
-    self.events.scoped.where("end_date >= '#{Date.today}'").order("start_date")
+    self.events.scoped.where("start_date > '#{Date.today}'").order("start_date")
+  end
+  
+  def ongoing_events
+    self.events.scoped.where("start_date <= ? AND end_date > ?", Date.today, Date.today).order("start_date")
   end
 
   def finished_events

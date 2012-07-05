@@ -42,7 +42,11 @@ class User < ActiveRecord::Base
   end
 
   def upcoming_events
-    self.events.scoped.where("end_date >= '#{Date.today}'").order("start_date")
+    self.events.scoped.where("start_date > ?", Date.today).order("start_date")
+  end
+  
+  def ongoing_events
+    self.events.scoped.where("start_date <= ? AND end_date > ?", Date.today, Date.today).order("start_date")
   end
 
   def finished_events
