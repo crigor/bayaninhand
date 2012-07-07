@@ -57,6 +57,8 @@ Bayaninhand::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.default_url_options = { :host => "ivolunteer.com.ph" }
+  config.action_mailer.delivery_method = :smtp
+  sendgrid_config = YAML.load_file(Rails.root.join('config', 'sendgrid.yml'))["production"]
+  config.action_mailer.smtp_settings = sendgrid_config
 end
