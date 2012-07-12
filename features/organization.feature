@@ -47,3 +47,15 @@ Feature: Organization
     And I should see "Philippines"
     And I should see "Lorem Ipsum Statement"
     And I should see "This is a test organization"
+
+  Scenario: Organization creator should be able to edit organization details
+    Given I am logged in
+    And I create an organization with the name "Bantay Bata"
+    And I am on the organization admin page of "Bantay Bata"
+    And I follow "Edit Profile"
+    Then I should be on the organization edit page of "Bantay Bata"
+    And I fill in "Name" with "Child Security 163"
+    When I press "Submit"
+    Then I should see "Organization was successfully updated."
+    And I should see "Child Security 163"
+    And I should not see "Bantay Bata"
