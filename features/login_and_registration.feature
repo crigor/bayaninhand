@@ -9,16 +9,6 @@ Feature: Login and registration
     When I sign up with email "test@ivolunteer.com.ph" and password "mypassword"
     Then I should be on the dashboard page
     And I should have an expertise of "Education"
-    And I should see "Welcome! You have signed up successfully."
-
-  Scenario: User creates an account and confirms it
-    Given I am an unauthenticated user
-    When I sign up with email "test@ivolunteer.com.ph" and password "mypassword"
-    Then "test@ivolunteer.com.ph" should receive an email
-    When I open the email
-    Then I should see "confirm" in the email body
-    When I follow "Confirm my account" in the email
-    Then I should see "successfully confirmed"
 
   Scenario: User logins in with valid credentials
     Given I am an existing user
