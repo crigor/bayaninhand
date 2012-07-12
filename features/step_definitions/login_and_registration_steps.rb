@@ -76,5 +76,10 @@ def signup(email=nil, password=nil)
     And I choose "Male"
     And I check the expertise "Education"
     And I click the submit button
+    Then "test@ivolunteer.com.ph" should receive an email
+    When I open the email
+    Then I should see "confirm" in the email body
+    When I follow "Confirm my account" in the email
+    Then I should see "successfully confirmed"
   }
 end
