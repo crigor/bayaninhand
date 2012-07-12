@@ -28,6 +28,9 @@ module NavigationHelpers
     when /^the organization admin page of "(.*)"$/
       o = Organization.find_by_name($1)
       admin_organization_path(o)
+    when /^the organization edit page of "(.*)"$/
+      o = Organization.find_by_name($1)
+      edit_organization_path(o)
     when /^the organization page of "(.*)"$/
       o = Organization.find_by_name($1)
       organization_path(o)

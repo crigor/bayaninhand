@@ -5,52 +5,5 @@
     Please fill up the form below to register your organization. Once your organization account is activated, you may start creating Events and looking for volunteers.
     %br/
     %br/
-  = form_for @organization do |f|
-    = f.error_messages
-    = f.label :name, "Organization Name"
-    = f.text_field :name, :size => 50
-    .clear
-    = f.label :address, "Address"
-    = f.text_field :address, :size => 50
-    .clear
-    = f.label :contact_person, "Contact Person"
-    = f.text_field :contact_person, :size => 50
-    .clear
-    = f.label :phone_number, "Contact Number"
-    = f.text_field :phone_number, :size => 50
-    .clear
-    = f.label :email
-    = f.text_field :email, :size => 50
-    .clear
-    = f.label :website
-    = f.text_field :website, :size => 50
-    .clear
-    = f.label :organization_type_id, "Organization Type"
-    = f.select :organization_type_id, OrganizationType.all.map{|o| [o.name, o.id]}, {:include_blank => true}, {:style => "width:250px"}
-    .clear
-    = f.label :country
-    = f.select :country, Carmen.countries.collect {|c| [c[0], c[0]] }, {:include_blank => true}, {:style => "width:250px"}
-    .clear
-    = f.label :mission_statement, "Mission Statement"
-    = f.text_area :mission_statement, :rows => 5, :cols => 38
-    .clear
-    = label_tag :organization_category, "Category"
-    .category_section
-      - Category.all.each do |category|
-        .category_item
-          = check_box_tag "organization[category_ids][]", category.id, @organization.categories.include?(category), :id => "organization_category_#{category.id}"
-          = label_tag "user_category_#{category.id}", category.name
-    .clear
-    %br/
-    %br/
-    .clear
-    = f.label :image
-    = f.file_field :image
-    .clear
-    = f.label :description
-    = f.text_area :description, :rows => 15, :cols => 38
-    .clear
-    .forceCenter
-      %input{:alt => "Submit", :src => "/assets/btn-submit.gif", :type => "image"}/
-    .clear
+  = render :partial => 'form'
 / register
