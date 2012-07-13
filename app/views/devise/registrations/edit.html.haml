@@ -8,11 +8,11 @@
     = f.label :email
     = f.email_field :email, :size => 50
     .clear
-    = f.label :password
+    = f.label :password, "New Password"
     %i (leave blank if you don't want to change it)
     = f.password_field :password, :size => 50
     .clear
-    = f.label :password_confirmation
+    = f.label :password_confirmation, "New Password Confirmation", :style => "width:200px;"
     = f.password_field :password_confirmation, :size => 50
     .clear
     = f.label :current_password
