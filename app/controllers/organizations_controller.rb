@@ -29,4 +29,16 @@ class OrganizationsController < InheritedResources::Base
     end
   end
 
+  def edit
+    @organization = resource
+    authorize! :administer, @organization
+    edit!
+  end
+
+  def update
+    @organization = resource
+    authorize! :administer, @organization
+    update!
+  end
+
 end
