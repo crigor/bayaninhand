@@ -59,3 +59,10 @@ Feature: Organization
     Then I should see "Organization was successfully updated."
     And I should see "Child Security 163"
     And I should not see "Bantay Bata"
+
+  @allow-rescue
+  Scenario: Ordinary user on the org edit page
+    Given I am logged in
+    And an organization exists with a name of "DSWD"
+    When I go to the organization edit page of "DSWD"
+    Then I should see "You are not allowed to view this page"
