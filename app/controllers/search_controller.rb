@@ -8,7 +8,7 @@ class SearchController < ApplicationController
   end
 
   def advanced
-
+    @categories = Category.all(:order => "name")
   end
 
   def advanced_results
@@ -22,7 +22,7 @@ class SearchController < ApplicationController
   def advanced_events
     @query = params[:q]
     @created_within = params[:created_within]
-    @events = Event.advanced_search(@query, :created_within => @created_within)
+    @events = Event.advanced_search(@query, :created_within => @created_within, :category_id => params[:search_category_id])
     @events_total_entries = @events.total_entries
   end
 end

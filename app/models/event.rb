@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :title, :description, :organization, :start_date, :end_date, :volunteers_needed
   validates_presence_of :categories, :event_types
   validate :check_dates
-  validates_numericality_of :volunteers_needed, :greater_than => 0
+  validates_numericality_of :volunteers_needed, :greater_than => 0, :only_integer => true
   has_many :participations
   has_many :volunteers, :source => :user, :through => :participations
   scope :upcoming, lambda { where("end_date >= ?", Date.today).limit(8) }
@@ -57,6 +57,16 @@ class Event < ActiveRecord::Base
     search_options = {}
     search_options[:created_at] = 90.days.ago..Time.now if created_within && created_within == "90days"
     search_options[:created_at] = 1.year.ago..Time.now if created_within && created_within == "1year"
-    self.search(query, :with => search_options)
+
+    # category
+    category_options = {}
+    category_id = options.delete :category_id
+    if !category_id.nil? || category_id == "all"
+      category = Category.first(:conditions => {:id => category_id})
+      if !category.nil?
+        category_options = {:categories => category.name}
+      end
+    end
+    self.search(query, :conditions => category_options, :with => search_options)
   end
 end
