@@ -10,7 +10,7 @@
     .clear
   %hr
 
-  = form_tag advanced_search_events_path do
+  = form_tag advanced_search_events_path, :method => :get do
     %p Search for an Event
     %label{:for => "search_event_name"} Event Name:
     %input{:id => "search_event_name", :name => "q", :size => 35, :type => "text"}

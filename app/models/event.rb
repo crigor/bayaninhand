@@ -68,6 +68,6 @@ class Event < ActiveRecord::Base
         category_options = {:categories => category.name}
       end
     end
-    self.search(query, :conditions => category_options, :with => search_options)
+    self.search(query, :conditions => category_options, :with => search_options, :page => options[:page])
   end
 end
