@@ -5,5 +5,5 @@ en:
   activerecord:
     attributes:
       organization:
-        name: "Organization name"
-        phone_number: "Contact number"
+        name: "Organization Name"
+        phone_number: "Contact Number"
