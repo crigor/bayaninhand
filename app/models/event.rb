@@ -14,7 +14,7 @@ class Event < ActiveRecord::Base
   before_create {|event| event.status = "open"}
 
   define_index do
-    indexes :title
+    indexes :title, :sortable => true
     indexes categories.name, :as => :categories
     indexes :status
     has :start_date, :end_date
@@ -68,6 +68,6 @@ class Event < ActiveRecord::Base
         category_options = {:categories => category.name}
       end
     end
-    self.search(query, :conditions => category_options, :with => search_options, :page => options[:page])
+    self.search(query, :conditions => category_options, :with => search_options, :page => options[:page], :order => :title)
   end
 end
