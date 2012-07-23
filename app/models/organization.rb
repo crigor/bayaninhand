@@ -9,7 +9,7 @@ class Organization < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "100x100!" }, :url => "/system/organization_images/:id/:style/:filename", :default_url => "/default/organization/:style.jpg"
 
   define_index do
-    indexes :name
+    indexes :name, :sortable => true
   end
 
   def upcoming_events
