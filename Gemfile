@@ -18,6 +18,7 @@ gem 'carmen'
 gem 'paperclip'
 gem 'tinymce-rails'
 gem 'thinking-sphinx'
+gem 'will_paginate'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

@@ -199,6 +199,7 @@ GEM
       raindrops (~> 0.7)
     warden (1.1.1)
       rack (>= 1.0)
+    will_paginate (3.0.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -231,3 +232,4 @@ DEPENDENCIES
   tinymce-rails
   uglifier
   unicorn
+  will_paginate
