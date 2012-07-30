@@ -8,7 +8,7 @@
       %a{:href => ""} Calendar
     %li
       = link_to "Organizations", advanced_search_path
-    %li
-      %a{:href => ""} About iVolunteer Philippines
+    %li{:class => on_current_page("about")}
+      = link_to "About iVolunteer Philippines", about_path
     %li
       %a{:href => ""} Contact Us

@@ -20,7 +20,7 @@ module ApplicationHelper
   end
   
   def on_current_page(current_page)
-    return (current_page == controller_name) ? "selected" : ""
+    return [controller_name, @highlighted_page].include?(current_page) ? "selected" : ""
   end
 
 end
