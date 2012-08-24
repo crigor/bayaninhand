@@ -254,10 +254,10 @@ Then /^show me the page$/ do
 end
 
 Then /^I should not get a response with status (\d+)$/ do |status|
-  page.driver.status_code.should_not == status
+  page.driver.status_code.to_i.should_not == status.to_i
 end
 
 Then /^I should get a response with status (\d+)$/ do |status|
-  page.driver.status_code.should == status
+  page.driver.status_code.to_i.should == status.to_i
 end
 

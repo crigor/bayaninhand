@@ -23,6 +23,9 @@ module NavigationHelpers
       #new_organization_event_path(Organization.find_by_name($1))
       o = Organization.find_by_name($1)
       "/organizations/#{o.id}/events/new"
+    when /^the edit event page for "(.*)"$/
+      event = Event.find_by_title($1)
+      "/organizations/#{event.organization.id}/events/#{event.id}/edit"
     when /^the create organization page$/
       "/organizations"
     when /^the organization admin page of "(.*)"$/
