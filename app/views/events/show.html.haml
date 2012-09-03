@@ -64,7 +64,7 @@
   %hr/
   %img{:align => "right", :src => @event.image.url(:medium), :style => "margin-left: 40px;"}/
   = @event.description.html_safe
-  - if can?(:manage, @event)
+  - if current_user && can?(:manage, @event)
     People who volunteered (#{@event.volunteers.size})
     %ul
       - @event.volunteers.each do |user|
