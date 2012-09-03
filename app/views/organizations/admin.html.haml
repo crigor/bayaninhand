@@ -32,6 +32,8 @@
             = event.address
             %br
             %span.readmore>= link_to "Read More", organization_event_url(event.organization, event)
+            &nbsp;&nbsp;
+            = link_to "Edit Details", edit_organization_event_url(event.organization, event)
           .clear
     %h3 Ongoing Events
     %ul.feed-list
