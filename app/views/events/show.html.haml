@@ -64,11 +64,13 @@
   %hr/
   %img{:align => "right", :src => @event.image.url(:medium), :style => "margin-left: 40px;"}/
   = @event.description.html_safe
-  People who volunteered (#{@event.volunteers.size})
-  %ul
-    - @event.volunteers.each do |user|
-      %li
-        = user.full_name + ' '
-        = link_to user.email, "/users/edit"
+  - if current_user && can?(:manage, @event)
+    People who volunteered (#{@event.volunteers.size})
+    %ul
+      - @event.volunteers.each do |user|
+        %li
+          = user.full_name + ' '
+          = user.email
+    = link_to "Edit Details", edit_organization_event_url(@event.organization, @event)
 / event-detail
 .clear

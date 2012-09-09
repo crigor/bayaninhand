@@ -1,5 +1,5 @@
 class EventsController < InheritedResources::Base
-  before_filter :authenticate_user!, :only => [:new, :volunteer]
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :volunteer]
   belongs_to :organization
 
   def new
@@ -18,6 +18,24 @@ class EventsController < InheritedResources::Base
     set_times
     create!
     authorize! :create, @event
+  end
+
+  def edit
+    @event = resource
+    authorize! :update, @event
+    @organization = Organization.find params[:organization_id]
+    @event.organization = @organization
+    set_times
+    edit!
+  end
+
+  def update
+    @event = resource
+    authorize! :update, @event
+    @organization = Organization.find params[:organization_id]
+    @event.organization = @organization
+    set_times
+    update!
   end
 
   def show
