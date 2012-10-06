@@ -70,4 +70,8 @@ class Event < ActiveRecord::Base
     end
     self.search(query, :conditions => category_options, :with => search_options, :page => options[:page], :order => :title)
   end
+
+  def self.recently_added(limit = 5)
+    self.order("created_at DESC").limit(limit)
+  end
 end
