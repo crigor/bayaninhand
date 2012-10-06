@@ -43,8 +43,8 @@ ActiveAdmin::Dashboards.build do
 
   section "Recent Events" do
     ul do
-      Event.recently_added(5).collect do |event|
-        li "#{link_to(event.title, admin_event_path(event))} by #{link_to(event.organization.name, admin_organization_path(event.organization))}".html_safe
+      Event.recently_added(10).collect do |event|
+        li "#{link_to(event.title, admin_event_path(event))} by #{link_to(event.organization.name, admin_organization_path(event.organization))} #{date_text(event)}".html_safe
       end
     end
   end
