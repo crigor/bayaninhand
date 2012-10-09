@@ -19,9 +19,11 @@ gem 'paperclip'
 gem 'tinymce-rails'
 gem 'thinking-sphinx'
 gem 'will_paginate'
+gem 'activeadmin'
+gem 'sass-rails'
+gem "meta_search",    '>= 1.1.0.pre'
 
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
   gem 'therubyracer'
