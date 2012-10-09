@@ -18,4 +18,9 @@
       - @user.organizations.each do |organization|
         %li
           = link_to organization.name, organization_url(organization)
+  - if @user.admin?
+    %h4 Admin
+    %ul
+      %li
+        = link_to "Admin", admin_dashboard_path
   = image_tag "dash-menu-btm.gif"
