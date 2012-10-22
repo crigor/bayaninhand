@@ -9,6 +9,9 @@
     %ul.sidebar-links
       %li
         = link_to "Profile", organization_path(@organization)
+      - if current_user && can?(:administer, @organization)
+        %li
+          = link_to "Edit Profile", edit_organization_path(@organization)
       %li
         = link_to "Events", organization_events_path(@organization)
     %h4 Contact Details
