@@ -24,7 +24,7 @@ class OrganizationsController < InheritedResources::Base
     create! do |success, failure|
       success.html do
         OrganizationRole.create(:organization => @organization, :role => "owner", :user => current_user)
-        redirect_to admin_organization_path(@organization)
+        redirect_to user_admin_organization_path(@organization)
       end
     end
   end

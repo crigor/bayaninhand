@@ -30,7 +30,7 @@ module NavigationHelpers
       "/organizations"
     when /^the organization admin page of "(.*)"$/
       o = Organization.find_by_name($1)
-      admin_organization_path(o)
+      user_admin_organization_path(o)
     when /^the organization edit page of "(.*)"$/
       o = Organization.find_by_name($1)
       edit_organization_path(o)
