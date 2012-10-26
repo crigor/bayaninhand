@@ -44,7 +44,7 @@
     .forceCenter
       %input{:alt => "Submit", :src => "/assets/btn-submit.gif", :type => "image"}/
     .clear
-    = link_to "Go back", admin_organization_url(@organization), :class => "btn"
+    = link_to "Go back", user_admin_organization_url(@organization), :class => "btn"
 / register
 :javascript
   $('#event_start_date').datepicker({ dateFormat: 'yy-mm-dd' });

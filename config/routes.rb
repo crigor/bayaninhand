@@ -27,7 +27,7 @@ Bayaninhand::Application.routes.draw do
 
   resources :organizations do
     member do
-      get 'admin'
+      get 'admin', :as => :user_admin
     end
     resources :events do
       member do

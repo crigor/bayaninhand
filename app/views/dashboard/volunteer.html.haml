@@ -7,4 +7,4 @@ My Events
     - @user.administered_organizations.each do |organization|
       %li
         = link_to organization.name, organization_url(organization)
-        = link_to "Admin", admin_organization_url(organization)
+        = link_to "Admin", user_admin_organization_url(organization)
