@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      #{@user[:name]} sent a message:
+    %p
+      = @user[:message]
+      %br/
+    %p
+      Click reply or send an email to #{@user[:email]}. Phone number is #{@number}.

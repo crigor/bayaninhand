@@ -9,6 +9,7 @@ Bayaninhand::Application.routes.draw do
   match "advanced-search-results" => "search#advanced_results", :as => :advanced_search_results
   match "advanced-search-events" => "search#advanced_events", :as => :advanced_search_events
   match "about" => "pages#about", :as => :about
+  match "contact-us" => "pages#contact_us", :as => :contact_us
 
   resources :volunteers do
     get 'profile', :on => :collection

@@ -10,5 +10,5 @@
       = link_to "Organizations", advanced_search_path
     %li{:class => on_current_page("about")}
       = link_to "About iVolunteer Philippines", about_path
-    %li
-      %a{:href => ""} Contact Us
+    %li{:class =>  on_current_page("contact_us")}
+      = link_to "Contact Us", contact_us_path
