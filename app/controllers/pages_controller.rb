@@ -21,6 +21,12 @@ class PagesController < ApplicationController
       else
         render and return # show the page again with errors
       end
+    else # get request
+      if current_user
+        @name = current_user.full_name
+        @email = current_user.email
+        @number = current_user.mobile_number
+      end
     end
   end
 end
