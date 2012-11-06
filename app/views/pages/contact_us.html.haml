@@ -1,0 +1,40 @@
+%h1 Contact Us
+%hr/
+.register
+  - if !@errors.empty?
+    - @errors.each do |error|
+      = error
+      %br/
+  %p
+    Got questions? Leave a message and we will get back to you as soon as we can.
+    %br/
+    %br/
+  = form_tag "/contact-us" do
+    %label{:for => "user_name"} Name*:
+    %input#user_name.xlarge{:name => "user[name]", :size => "50", :type => "text", :value => @name}/
+    .clear
+    %label{:for => "user_email"} Email*:
+    %input#user_email.xlarge{:name => "user[email]", :size => "50", :type => "email", :value => @email}/
+    .clear
+    %label{:for => "user_number"} Contact Number:
+    %input#user_number.xlarge{:name => "user[number]", :size => "50", :type => "text", :value => @number}/
+    .clear
+    %label{:for => "user_message"} Message*:
+    = text_area_tag "user[message]", @message, :id => "user_message", :cols => "38", :rows => "15"
+    %br/
+    %br/
+    .clear
+    %p
+      %em
+        *Fields are required.
+        %br/
+        %br/
+        Note: You may also send an email to
+        = succeed "." do
+          %a{:href => "mail:contactus@ivolunteer.com.ph"} contactus@ivolunteer.com.ph
+    %hr/
+    .clear
+    / NOTE: had to force this by setting margin-left because it doesn't align using <center> tag
+    .forceCenter
+      %input{:alt => "Submit", :src => asset_path("btn-submit.gif"), :type => "image"}/
+    .clear
