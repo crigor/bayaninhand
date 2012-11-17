@@ -11,5 +11,6 @@
           %br
           #{event.description.html_safe}
       .clear
+  = will_paginate @events
   %p
     Didn't find what you're looking for? Try the #{link_to "Advanced Search", advanced_search_path}
