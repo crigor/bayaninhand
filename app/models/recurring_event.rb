@@ -1,16 +1,17 @@
 class RecurringEvent < ActiveRecord::Base
   include IceCube
   belongs_to :organization
-  attr_accessor :category_ids, :event_type_ids
+  attr_accessor :image, :category_ids, :event_type_ids
 
-  def create_multiple_events(image)
+  def create_multiple_events
     schedule = Schedule.new start_date_and_time
     day = frequency_day.blank? ? start_date.strftime("%A") : frequency_day
     schedule.add_recurrence_rule Rule.weekly.day(day.downcase.to_sym)
     schedule.occurrences(end_date_and_time).each do |date|
+      date = date.strftime("%Y-%m-%d")
       event = Event.new :title => title, :description => description,
-        :address => address, :start_date => start_date,
-        :end_date => end_date, :start_time => start_time,
+        :address => address, :start_date => date,
+        :end_date => date, :start_time => start_time, # start_date and end_date should be the date from ice_cube
         :end_time => end_time, :volunteers_needed => volunteers_needed,
         :status => status, :organization => organization,
         :category_ids => category_ids, :event_type_ids => event_type_ids,

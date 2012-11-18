@@ -26,7 +26,8 @@ class EventsController < InheritedResources::Base
     elsif @recurring && !@frequency_day.blank? && @event.errors.empty?
       @recurring_event = RecurringEvent.from_event(@event)
       @recurring_event.frequency_day = @frequency_day
-      @recurring_event.create_multiple_events(params[:image])
+      @recurring_event.image = params[:event][:image]
+      @recurring_event.create_multiple_events
       render :text => "Multiple events created"
     elsif !@recurring && @event.save
       redirect_to organization_event_path(@event.organization, @event)
