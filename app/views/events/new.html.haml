@@ -31,6 +31,16 @@
     = f.label :end_time, "End Time"
     = f.select :end_time, @times, :selected => @end_time_selected, :style => "width:250px"
     .clear
+    = label_tag :recurring, "Recurring Event?"
+    = check_box_tag :recurring, 1, @recurring
+    Check the box if this is a recurring event
+    .clear
+    = label_tag :frequency, "Frequency"
+    = select_tag :frequency, options_for_select([["weekly"]])
+    .clear
+    = label_tag :frequency_day, "Day"
+    = select_tag :frequency_day, options_for_select(["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], @frequency_day)
+    .clear
     = f.label :volunteers_needed, "Volunteers Needed"
     = f.text_field :volunteers_needed, :size => 10
     .clear

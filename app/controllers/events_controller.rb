@@ -16,8 +16,23 @@ class EventsController < InheritedResources::Base
     @organization = Organization.find params[:organization_id]
     @event.organization = @organization
     set_times
-    create!
+    @recurring = params[:recurring]
+    @frequency_day = params[:frequency_day]
     authorize! :create, @event
+    @event.valid? # populate @event.errors
+    if @recurring && (@frequency_day.blank? || !@event.errors.empty?)
+      @event.errors[:base] << "You must choose a day if this event is recurring" if @frequency_day.blank?
+      render :action => :new
+    elsif @recurring && !@frequency_day.blank? && @event.errors.empty?
+      @recurring_event = RecurringEvent.from_event(@event)
+      @recurring_event.frequency_day = @frequency_day
+      @recurring_event.create_multiple_events(params[:image])
+      render :text => "Multiple events created"
+    elsif !@recurring && @event.save
+      redirect_to organization_event_path(@event.organization, @event)
+    elsif !@recurring && @event.errors
+      render :action => :new
+    end
   end
 
   def edit
