@@ -6,7 +6,10 @@ class RecurringEvent < ActiveRecord::Base
   def create_multiple_events
     schedule = Schedule.new start_date_and_time
     day = frequency_day.blank? ? start_date.strftime("%A") : frequency_day
-    schedule.add_recurrence_rule Rule.weekly.day(day.downcase.to_sym)
+    days = frequency_days.empty? ? [start_date.strftime("%A")] : frequency_days
+    days.map! {|day| day.downcase.to_sym}
+    schedule.add_recurrence_rule Rule.weekly.day(*days)
+    ctr = 0
     schedule.occurrences(end_date_and_time).each do |date|
       date = date.strftime("%Y-%m-%d")
       event = Event.new :title => title, :description => description,
@@ -16,8 +19,10 @@ class RecurringEvent < ActiveRecord::Base
         :status => status, :organization => organization,
         :category_ids => category_ids, :event_type_ids => event_type_ids,
         :image => image
-      event.save
+      result = event.save
+      ctr = ctr + 1 if result
     end
+    ctr
   end
 
   def start_date_and_time
@@ -42,6 +47,14 @@ class RecurringEvent < ActiveRecord::Base
       :category_ids => event.category_ids,
       :event_type_ids => event.event_type_ids)
     return recurring_event
+  end
+
+  def frequency_days=(days)
+    @frequency_days = days.join(",")
+  end
+
+  def frequency_days
+    @frequency_days.split(",")
   end
 
 end

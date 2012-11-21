@@ -6,6 +6,7 @@ class EventsController < InheritedResources::Base
     @event = Event.new
     @organization = Organization.find params[:organization_id]
     @event.organization = @organization
+    @frequency_days = []
     set_times
     new!
     authorize! :create, @event
@@ -17,18 +18,19 @@ class EventsController < InheritedResources::Base
     @event.organization = @organization
     set_times
     @recurring = params[:recurring]
-    @frequency_day = params[:frequency_day]
+    @frequency_days = params[:frequency_days] || []
     authorize! :create, @event
     @event.valid? # populate @event.errors
-    if @recurring && (@frequency_day.blank? || !@event.errors.empty?)
-      @event.errors[:base] << "You must choose a day if this event is recurring" if @frequency_day.blank?
+    if @recurring && (@frequency_days.empty? || !@event.errors.empty?)
+      @event.errors[:base] << "You must choose a day if this event is recurring" if @frequency_days.empty?
       render :action => :new
-    elsif @recurring && !@frequency_day.blank? && @event.errors.empty?
+    elsif @recurring && !@frequency_days.empty? && @event.errors.empty?
       @recurring_event = RecurringEvent.from_event(@event)
-      @recurring_event.frequency_day = @frequency_day
+      @recurring_event.frequency_days = @frequency_days
       @recurring_event.image = params[:event][:image]
-      @recurring_event.create_multiple_events
-      render :text => "Multiple events created"
+      saved = @recurring_event.create_multiple_events
+      flash[:notice] = "#{view_context.pluralize(saved, 'event')} created"
+      redirect_to organization_events_path(@organization)
     elsif !@recurring && @event.save
       redirect_to organization_event_path(@event.organization, @event)
     elsif !@recurring && @event.errors
