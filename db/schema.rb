@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121005234349) do
+ActiveRecord::Schema.define(:version => 20121210123210) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20121005234349) do
     t.datetime "image_updated_at"
     t.integer  "volunteers_needed"
     t.string   "status"
+    t.integer  "recurring_event_id"
   end
 
   create_table "expertises", :force => true do |t|
@@ -149,6 +150,23 @@ ActiveRecord::Schema.define(:version => 20121005234349) do
     t.datetime "updated_at"
   end
 
+  create_table "recurring_events", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "organization_id"
+    t.text     "address"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "volunteers_needed"
+    t.string   "status"
+    t.string   "frequency"
+    t.string   "frequency_day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_roles", :force => true do |t|
     t.string   "role"
     t.integer  "user_id"
@@ -182,6 +200,8 @@ ActiveRecord::Schema.define(:version => 20121005234349) do
     t.string   "middle_name"
     t.string   "mobile_number"
     t.string   "gender"
+    t.boolean  "terms_and_conditions"
+    t.string   "unconfirmed_email"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

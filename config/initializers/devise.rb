@@ -204,4 +204,5 @@ Devise.setup do |config|
   config.warden do |manager|
     manager.failure_app = LoginFailure
   end
+  config.reconfirmable = true
 end
