@@ -6,7 +6,7 @@ class Ability
       user.can_manage?(event.organization) || user.admin?
     end
     can :administer, Organization do |organization|
-      user.organization_admin?(organization) || user.admin?
+      user.can_manage?(organization) || user.admin?
     end
     #if user
       #can :manage, :all
