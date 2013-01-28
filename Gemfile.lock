@@ -41,6 +41,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    acts_as_commentable (3.0.1)
     addressable (2.2.7)
     arel (2.2.3)
     awesome_print (1.0.2)
@@ -232,6 +233,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_commentable (= 3.0.1)
   awesome_print
   cancan (= 1.6.5)
   carmen
