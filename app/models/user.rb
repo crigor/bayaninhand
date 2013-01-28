@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def can_manage?(organization)
-    self.owned_organizations.include?(organization)
+    self.organization_admin?(organization)
   end
 
   def volunteered?(event)
