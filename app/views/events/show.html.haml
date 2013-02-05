@@ -64,6 +64,7 @@
   %hr/
   %img{:align => "right", :src => @event.image.url(:medium), :style => "margin-left: 40px;"}/
   = @event.description.html_safe
+
   - if current_user && can?(:manage, @event)
     People who volunteered (#{@event.volunteers.size})
     %ul
@@ -72,5 +73,14 @@
           = user.full_name + ' '
           = user.email
     = link_to "Edit Details", edit_organization_event_url(@event.organization, @event)
+
+  #comments
+    %h2 Comments
+    - if current_user
+      = render :partial => 'comments/form'
+    - else
+      %p
+        Log in to comment
+    = render :partial => 'comments/comment', :collection => @comments, :as => :comment
 / event-detail
 .clear
