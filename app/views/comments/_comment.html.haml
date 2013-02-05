@@ -1,0 +1,6 @@
+%div.comment{ :id => "comment-#{comment.id}" }
+  %hr
+  %h4
+    = comment.user.full_name
+    %small= comment.updated_at
+  %p= comment.comment

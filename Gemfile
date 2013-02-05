@@ -23,6 +23,8 @@ gem 'activeadmin'
 gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
 gem "ice_cube"
+gem 'acts_as_commentable', '3.0.1'
+gem 'simple_form'
 
 group :assets do
   gem 'coffee-rails', "~> 3.1.0"

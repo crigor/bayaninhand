@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :organization
-  
+  acts_as_commentable
+
   validates_presence_of :title, :description, :organization, :start_date, :end_date, :volunteers_needed
   validates_presence_of :categories, :event_types
   validate :check_dates

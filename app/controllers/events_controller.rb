@@ -61,6 +61,8 @@ class EventsController < InheritedResources::Base
     @days_left = @event.time_left[0]
     @hours_left = @event.time_left[1]
     @minutes_left = @event.time_left[2]
+    @comments = @event.comments.dup
+    @comment = @event.comments.new :user => current_user
   end
 
   def volunteer
