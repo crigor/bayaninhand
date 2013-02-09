@@ -58,6 +58,11 @@
           = check_box_tag "user[expertise_ids][]", expertise.id, @user.expertises.include?(expertise), :id => "user_expertise_#{expertise_name_underscore}"
           = label_tag "user_expertise_#{expertise_name_underscore}", expertise.name
     .clear
+    = f.label :terms_and_conditions
+    = f.check_box :terms_and_conditions
+    I agree to the
+    = link_to 'terms and conditions', terms_and_conditions_path, :target => "_blank"
+    .clear
     .forceCenter
       %input.btn.primary{:type => "image", :src => "/assets/btn-submit.gif", :alt => "submit", :data => "registration-submit"}
 = javascript_tag :defer => "defer" do

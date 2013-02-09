@@ -557,3 +557,13 @@ label{
   display: block;
   margin: 10px auto 0;
 }
+
+/* terms and conditions */
+.policies{
+  line-height: 17px;
+}
+
+.policies-subtitle{
+  font-weight: bold;
+}
+/* */
