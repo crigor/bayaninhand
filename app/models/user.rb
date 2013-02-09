@@ -5,11 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :region, :city, :nationality, :expertise_ids
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :region, :city, :nationality, :expertise_ids, :terms_and_conditions
   validates_presence_of :first_name, :middle_name, :last_name, :mobile_number, :gender, :date_of_birth, :country, :city, :nationality
   validates_presence_of :region, :if => Proc.new {|u| u.country == "Philippines"}
   validates_presence_of :expertises
   validates_numericality_of :mobile_number, :only_integer => true, :message => "should be a valid number"
+  validates :terms_and_conditions, :acceptance => { :accept => true }, :on => :create
 
   has_many :organizations, :through => :organization_roles
   has_many :owned_organizations, :source => :organization, :through => :organization_roles, :conditions => ['role = ?', 'owner']
