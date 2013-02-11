@@ -75,6 +75,7 @@ def signup(email=nil, password=nil)
     And I select "NCR" from "Region"
     And I choose "Male"
     And I check the expertise "Education"
+    And I check "Terms and conditions"
     And I click the submit button
     Then "test@ivolunteer.com.ph" should receive an email
     When I open the email
