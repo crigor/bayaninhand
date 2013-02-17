@@ -42,6 +42,9 @@ GEM
     activesupport (3.1.0)
       multi_json (~> 1.0)
     addressable (2.2.7)
+    airbrake (3.1.2)
+      activesupport
+      builder
     arel (2.2.3)
     awesome_print (1.0.2)
     bcrypt-ruby (3.0.1)
@@ -232,6 +235,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  airbrake
   awesome_print
   cancan (= 1.6.5)
   carmen
