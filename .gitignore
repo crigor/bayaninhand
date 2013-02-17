@@ -5,6 +5,8 @@ tmp/
 .sass-cache/
 config/database.yml
 config/sphinx.yml
+config/sendgrid.yml
+config/settings.yml
 **/*.swp
 .rvmrc
 *.swp
