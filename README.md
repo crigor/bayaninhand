@@ -1,3 +1,8 @@
+### Requirements
+
+* Ruby 1.9.2
+* Sphinx
+
 ### Setting up
 
 #### 1. Fork the repo
@@ -9,8 +14,6 @@
 #### 3. Do a bundle install
 
 	$ bundle install
-
-Please use Ruby 1.9.2.
 
 #### 4. Edit config/database.yml to reflect your database
 
