@@ -74,13 +74,15 @@
           = user.email
     = link_to "Edit Details", edit_organization_event_url(@event.organization, @event)
 
-  #comments
-    %h2 Comments
-    - if current_user
-      = render :partial => 'comments/form'
-    - else
-      %p
-        Log in to comment
-    = render :partial => 'comments/comment', :collection => @comments, :as => :comment
+
+  - if feature?("comments")
+    #comments
+      %h2 Comments
+      - if current_user
+        = render :partial => 'comments/form'
+      - else
+        %p
+          Log in to comment
+      = render :partial => 'comments/comment', :collection => @comments, :as => :comment
 / event-detail
 .clear
