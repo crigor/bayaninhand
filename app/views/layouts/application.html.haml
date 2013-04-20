@@ -29,3 +29,5 @@
       .clear
 
     = render :partial => "layouts/footer"
+    - if production?
+      = render :partial => "shared/analytics"

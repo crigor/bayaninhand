@@ -23,4 +23,7 @@ module ApplicationHelper
     return [controller_name, @highlighted_page].include?(current_page) ? "selected" : ""
   end
 
+  def production?
+    Rails.env.production?
+  end
 end
