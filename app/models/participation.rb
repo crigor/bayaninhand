@@ -6,6 +6,10 @@ class Participation < ActiveRecord::Base
     p = Participation.new
     p.event = event
     p.user = user
-    p.save
+    result = p.save
+    if result
+      # send email
+      EventMailer.new_volunteer(p).deliver
+    end
   end
 end
