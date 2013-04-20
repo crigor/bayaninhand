@@ -41,6 +41,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    acts_as_commentable (3.0.1)
     addressable (2.2.7)
     airbrake (3.1.2)
       activesupport
@@ -198,6 +199,9 @@ GEM
       ffi (~> 1.0.9)
       json_pure
       rubyzip
+    simple_form (2.0.4)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -235,6 +239,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_commentable (= 3.0.1)
   airbrake
   awesome_print
   cancan (= 1.6.5)
@@ -257,6 +262,7 @@ DEPENDENCIES
   paperclip
   rails (= 3.1.0)
   sass-rails
+  simple_form
   therubyracer
   thinking-sphinx
   tinymce-rails

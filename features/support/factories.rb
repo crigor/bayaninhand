@@ -49,4 +49,8 @@ end
 Factory.define :expertise do |e|
 end
 
+Factory.define :user_role do |role|
+  role.user
+end
+
 require "factory_girl/step_definitions"

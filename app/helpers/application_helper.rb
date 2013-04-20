@@ -26,4 +26,11 @@ module ApplicationHelper
   def production?
     Rails.env.production?
   end
+
+  def feature?(feature)
+    if current_user && current_user.admin?
+      return true
+    end
+    return false
+  end
 end

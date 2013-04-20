@@ -22,6 +22,8 @@ gem 'will_paginate'
 gem 'activeadmin'
 gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
+gem 'acts_as_commentable', '3.0.1'
+gem 'simple_form'
 gem 'airbrake'
 
 group :assets do
