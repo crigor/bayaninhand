@@ -17,6 +17,10 @@ module EventsHelper
     end
   end
 
+  def date_time_text(event)
+    "#{date_text(event)}, #{time_text(event)}"
+  end
+
   def pluralize_time(count, singular, plural = nil)
     (count == 1)  ? singular : (plural || singular.pluralize)
   end
