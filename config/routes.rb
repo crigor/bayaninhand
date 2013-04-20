@@ -12,6 +12,7 @@ Bayaninhand::Application.routes.draw do
   match "contact-us" => "pages#contact_us", :as => :contact_us
   match "terms-and-conditions" => "pages#terms_and_conditions", :as => :terms_and_conditions
   match "privacy-policy" => "pages#privacy_policy", :as => :privacy_policy
+  post "/emails" => "emails#create"
 
   resources :volunteers do
     get 'profile', :on => :collection
