@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '0.3.7'
+gem 'mysql2', '0.3.10'
 gem 'inherited_resources', '1.2.2'
 gem 'devise'
 gem 'cancan', '1.6.5'
