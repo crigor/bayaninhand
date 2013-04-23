@@ -4,11 +4,10 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %body
     %p
-      You have a new volunteer for #{@event.title}
+      You have a reply from #{@user.full_name}:
 
       %br/
-      #{@user.full_name}
-      #{@user.email}
+      #{@inbound_mail.body.to_s}
 
       %br/
       Event Details
@@ -16,5 +15,5 @@
       Where: #{@event.address}
 
       %br/
-      Reply here to contact the volunteer.
+      You can reply to this email.
 

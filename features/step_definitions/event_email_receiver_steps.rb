@@ -1,6 +1,8 @@
 When /^I reply to the email notification for "([^"]*)"$/ do |event_title|
   event = Event.where(:title => event_title).first
-  email = "event-#{event.id}@mail-test.ivolunteer.com.ph"
+  user = User.where(:email => "test@ivolunteer.com.ph").first
+  participation = Participation.where(:event_id => event.id, :user_id => user.id).first
+  email = "#{participation.id}@mail-test.ivolunteer.com.ph"
   params =  {
       "SPF" => "pass",
       "charsets" => '{"from": "UTF-8", "subject": "UTF-8", "text": "ISO-8859-1", "to": "UTF-8"}',

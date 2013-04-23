@@ -5,7 +5,9 @@ Feature: EventEmailReceiver
 
   Scenario: User receives an email after joining an event then replies
     Given I am logged in
-    Given an event exists with a title of "Event"
+    Given the following event exists:
+      | Title | Address |
+      | Event | Address |
     And I am on the event page of "Event"
     And I click the volunteer button
     Then "test@ivolunteer.com.ph" should receive an email

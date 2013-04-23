@@ -1,13 +1,16 @@
 class EventEmailReceiver < Incoming::Strategies::SendGrid
   def receive(mail)
     Rails.logger.info("mail: #{mail.inspect}")
-    event = Event.find(mail.to.first.split("@").first.gsub("event-",""))
+    participation = Participation.find(mail.to.first.split("@").first)
     user = User.where(:email => mail.from.first).first
-    if event && user
-      participation = Participation.where(:event_id => event.id, :user_id => user.id).first
+    if participation && user
       event_message = EventMessage.new :participation => participation, :sender => user, :sender_email => user.email
       event_message.body = mail.body.to_s
-      event_message.save
+      result = event_message.save
+      if result
+        # send the emails to the user and organization admins
+        EventMailer.reply_from_inbound(participation, mail).deliver
+      end
     else
       # log the message and investigate
     end
