@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      You have a new volunteer for #{@event.title}
+
+      %br/
+      #{@user.full_name}
+      #{@user.email}
+
+      %br/
+      Event Details
+      Where: #{@event.address}
+
+      %br/
+      Click reply here to contact the volunteer.
+

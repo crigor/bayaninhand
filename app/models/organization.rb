@@ -6,6 +6,9 @@ class Organization < ActiveRecord::Base
   validates_format_of :website, :with => /^((http|https):\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+).[a-z]{2,5}([.]{1}[a-z0-9]{1,5})?(\/.)?$/ix, :message => "is invalid", :allow_blank => true, :allow_nil => true
   belongs_to :organization_type
   has_and_belongs_to_many :categories
+  has_many :organization_roles
+  has_many :admins, :source => :user, :through => :organization_roles, :conditions => ["organization_roles.role in ('owner', 'admin')"]
+
   has_attached_file :image, :styles => { :small => "100x100!" }, :url => "/system/organization_images/:id/:style/:filename", :default_url => "/default/organization/:style.jpg"
 
   define_index do
@@ -22,5 +25,9 @@ class Organization < ActiveRecord::Base
 
   def finished_events
     self.events.scoped.where("end_date < '#{Date.today}'").order("start_date DESC, start_time DESC")
+  end
+
+  def admin_emails
+    self.admins.map &:email
   end
 end

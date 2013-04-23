@@ -11,6 +11,7 @@ class Participation < ActiveRecord::Base
     if result
       # send email
       EventMailer.new_volunteer(p).deliver
+      EventMailer.new_volunteer_for_organization(p).deliver
     end
   end
 end
