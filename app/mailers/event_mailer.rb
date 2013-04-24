@@ -23,7 +23,7 @@ class EventMailer < ActionMailer::Base
     to << @user.email
     to = to - [inbound_mail.from.first]
     to.uniq!
-    @body = if @inbound_mail.body.to_s.blank?
+    @mail_body = if @inbound_mail.body.to_s.blank?
                ""
             else
               @inbound_mail.body.to_s.
