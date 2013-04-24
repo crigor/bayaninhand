@@ -23,6 +23,22 @@ class EventMailer < ActionMailer::Base
     to << @user.email
     to = to - [inbound_mail.from.first]
     to.uniq!
+    @body = if @inbound_mail.body.to_s.blank?
+               ""
+            else
+              @inbound_mail.body.to_s.
+                split(/^\s*[-]+\s*Original Message\s*[-]+\s*$/).first.
+                split(/^\s*--\s*$/).first.
+                gsub(/On.*wrote:/, '').
+                split(/[\r]*\n/).reject do |line|
+                  line =~ /^\s*>/ ||
+                    line =~ /^\s*Sent from my /
+                end.
+                join("\n").
+                gsub(/^\s*On.*\r?\n?\s*.*\s*wrote:$/,'').
+                strip
+            end
+
     mail(:to => to, :reply_to => "#{participation.id}@mail-staging.ivolunteer.com.ph", :subject => "iVolunteer Reply")
   end
 end
