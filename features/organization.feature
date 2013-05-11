@@ -13,7 +13,7 @@ Feature: Organization
       | Contact Person | Contact Person |
       | Contact Number | 1234 |
       | Email | org@ivolunteer.com.ph |
-      | Website | ivolunteer.com.ph |
+      | Website | http://ivolunteer.com.ph/ |
       | Mission Statement | Mission Statement |
       | Description | Description |
     And I select "Philippines" from "Country"
