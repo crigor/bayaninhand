@@ -71,7 +71,8 @@
       - @event.volunteers.each do |user|
         %li
           = user.full_name + ' '
-          = user.email
+          = user.email + ' '
+          = user.mobile_number
     = link_to "Edit Details", edit_organization_event_url(@event.organization, @event)
 
 
