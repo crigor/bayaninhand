@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      Thank you for volunteering for #{@event.title}
+
+      %br/
+      Here are the details
+      When: #{date_time_text(@event)}
+      Where: #{@event.address}
+
+      %br/
+      Reply here to contact iVolunteer.
+
