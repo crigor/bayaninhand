@@ -187,7 +187,7 @@ GEM
     rspec-expectations (2.8.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.8.0)
-    rubyzip (0.9.6.1)
+    rubyzip (2.0.0)
     sass (3.1.15)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
